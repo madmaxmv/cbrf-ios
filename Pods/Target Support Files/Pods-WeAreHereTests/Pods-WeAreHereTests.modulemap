@@ -1,6 +1,0 @@
-framework module Pods_WeAreHereTests {
-  umbrella header "Pods-WeAreHereTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
