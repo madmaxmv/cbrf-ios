@@ -1,5 +1,5 @@
 //
-//  Copyright © 2017 LLC "Globus Media". All rights reserved.
+//  Copyright © 2018 Matyushenko Maxim. All rights reserved.
 //
 
 import UIKit
