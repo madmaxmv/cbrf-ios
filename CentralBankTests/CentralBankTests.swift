@@ -1,15 +1,15 @@
 //
-//  WeAreHereTests.swift
-//  WeAreHereTests
+//  CentralBankTests.swift
+//  CentralBankTests
 //
-//  Created by Максим on 16/12/2017.
-//  Copyright © 2017 Matyushenko Maxim. All rights reserved.
+//  Created by Максим on 20/01/2018.
+//  Copyright © 2018 Matyushenko Maxim. All rights reserved.
 //
 
 import XCTest
-@testable import WeAreHere
+@testable import CentralBank
 
-class WeAreHereTests: XCTestCase {
+class CentralBankTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

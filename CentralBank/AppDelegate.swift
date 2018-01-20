@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  WeAreHere
+//  CentralBank
 //
-//  Created by Максим on 16/12/2017.
-//  Copyright © 2017 Matyushenko Maxim. All rights reserved.
+//  Created by Максим on 20/01/2018.
+//  Copyright © 2018 Matyushenko Maxim. All rights reserved.
 //
 
 import UIKit

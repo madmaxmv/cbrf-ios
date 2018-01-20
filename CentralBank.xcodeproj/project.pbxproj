@@ -1,0 +1,782 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		16CA0357129A5946A1CC54BD /* Pods_CentralBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922C14567C38826D44CB7C24 /* Pods_CentralBankTests.framework */; };
+		7387C9C6F27D10284C815C2C /* Pods_CentralBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F864CDDE86FC491BEA61CAF /* Pods_CentralBank.framework */; };
+		9451DE8220134B3600F69318 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9451DE8120134B3600F69318 /* AppDelegate.swift */; };
+		9451DE8420134B3600F69318 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9451DE8320134B3600F69318 /* ViewController.swift */; };
+		9451DE8720134B3600F69318 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9451DE8520134B3600F69318 /* Main.storyboard */; };
+		9451DE8920134B3600F69318 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9451DE8820134B3600F69318 /* Assets.xcassets */; };
+		9451DE8C20134B3600F69318 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9451DE8A20134B3600F69318 /* LaunchScreen.storyboard */; };
+		9451DE9720134B3700F69318 /* CentralBankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9451DE9620134B3700F69318 /* CentralBankTests.swift */; };
+		9451DEA220134B3700F69318 /* CentralBankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9451DEA120134B3700F69318 /* CentralBankUITests.swift */; };
+		F4876BD9EE5513337B352902 /* Pods_CentralBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00791B83A1CCCAF9799577FA /* Pods_CentralBankUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9451DE9320134B3700F69318 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9451DE7620134B3600F69318 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9451DE7D20134B3600F69318;
+			remoteInfo = CentralBank;
+		};
+		9451DE9E20134B3700F69318 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9451DE7620134B3600F69318 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9451DE7D20134B3600F69318;
+			remoteInfo = CentralBank;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00791B83A1CCCAF9799577FA /* Pods_CentralBankUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CentralBankUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C8B7EA92C16D2D29DD7EE21 /* Pods-CentralBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentralBank.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CentralBank/Pods-CentralBank.debug.xcconfig"; sourceTree = "<group>"; };
+		23FA04999E22765E68B901F9 /* Pods-CentralBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentralBank.release.xcconfig"; path = "Pods/Target Support Files/Pods-CentralBank/Pods-CentralBank.release.xcconfig"; sourceTree = "<group>"; };
+		4F864CDDE86FC491BEA61CAF /* Pods_CentralBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CentralBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		856E0B0C6477CB28D15A8B88 /* Pods-CentralBankTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentralBankTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CentralBankTests/Pods-CentralBankTests.release.xcconfig"; sourceTree = "<group>"; };
+		922C14567C38826D44CB7C24 /* Pods_CentralBankTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CentralBankTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9451DE7E20134B3600F69318 /* CentralBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CentralBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9451DE8120134B3600F69318 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9451DE8320134B3600F69318 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9451DE8620134B3600F69318 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9451DE8820134B3600F69318 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9451DE8B20134B3600F69318 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9451DE8D20134B3600F69318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9451DE9220134B3700F69318 /* CentralBankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CentralBankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9451DE9620134B3700F69318 /* CentralBankTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralBankTests.swift; sourceTree = "<group>"; };
+		9451DE9820134B3700F69318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9451DE9D20134B3700F69318 /* CentralBankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CentralBankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9451DEA120134B3700F69318 /* CentralBankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralBankUITests.swift; sourceTree = "<group>"; };
+		9451DEA320134B3700F69318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A160BB35A8ADD71AB4F5F92D /* Pods-CentralBankTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentralBankTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CentralBankTests/Pods-CentralBankTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B9EA4B42959A20B5370C069A /* Pods-CentralBankUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentralBankUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CentralBankUITests/Pods-CentralBankUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DF51C8FE7B4876D00C87E705 /* Pods-CentralBankUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentralBankUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CentralBankUITests/Pods-CentralBankUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9451DE7B20134B3600F69318 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7387C9C6F27D10284C815C2C /* Pods_CentralBank.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9451DE8F20134B3700F69318 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16CA0357129A5946A1CC54BD /* Pods_CentralBankTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9451DE9A20134B3700F69318 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4876BD9EE5513337B352902 /* Pods_CentralBankUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02220217AC1EBEDFD2854A32 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1C8B7EA92C16D2D29DD7EE21 /* Pods-CentralBank.debug.xcconfig */,
+				23FA04999E22765E68B901F9 /* Pods-CentralBank.release.xcconfig */,
+				A160BB35A8ADD71AB4F5F92D /* Pods-CentralBankTests.debug.xcconfig */,
+				856E0B0C6477CB28D15A8B88 /* Pods-CentralBankTests.release.xcconfig */,
+				B9EA4B42959A20B5370C069A /* Pods-CentralBankUITests.debug.xcconfig */,
+				DF51C8FE7B4876D00C87E705 /* Pods-CentralBankUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9451DE7520134B3600F69318 = {
+			isa = PBXGroup;
+			children = (
+				9451DE8020134B3600F69318 /* CentralBank */,
+				9451DE9520134B3700F69318 /* CentralBankTests */,
+				9451DEA020134B3700F69318 /* CentralBankUITests */,
+				9451DE7F20134B3600F69318 /* Products */,
+				02220217AC1EBEDFD2854A32 /* Pods */,
+				D42370E128EC47C8B2A71665 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9451DE7F20134B3600F69318 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9451DE7E20134B3600F69318 /* CentralBank.app */,
+				9451DE9220134B3700F69318 /* CentralBankTests.xctest */,
+				9451DE9D20134B3700F69318 /* CentralBankUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9451DE8020134B3600F69318 /* CentralBank */ = {
+			isa = PBXGroup;
+			children = (
+				9451DE8120134B3600F69318 /* AppDelegate.swift */,
+				9451DE8320134B3600F69318 /* ViewController.swift */,
+				9451DE8520134B3600F69318 /* Main.storyboard */,
+				9451DE8820134B3600F69318 /* Assets.xcassets */,
+				9451DE8A20134B3600F69318 /* LaunchScreen.storyboard */,
+				9451DE8D20134B3600F69318 /* Info.plist */,
+			);
+			path = CentralBank;
+			sourceTree = "<group>";
+		};
+		9451DE9520134B3700F69318 /* CentralBankTests */ = {
+			isa = PBXGroup;
+			children = (
+				9451DE9620134B3700F69318 /* CentralBankTests.swift */,
+				9451DE9820134B3700F69318 /* Info.plist */,
+			);
+			path = CentralBankTests;
+			sourceTree = "<group>";
+		};
+		9451DEA020134B3700F69318 /* CentralBankUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9451DEA120134B3700F69318 /* CentralBankUITests.swift */,
+				9451DEA320134B3700F69318 /* Info.plist */,
+			);
+			path = CentralBankUITests;
+			sourceTree = "<group>";
+		};
+		D42370E128EC47C8B2A71665 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F864CDDE86FC491BEA61CAF /* Pods_CentralBank.framework */,
+				922C14567C38826D44CB7C24 /* Pods_CentralBankTests.framework */,
+				00791B83A1CCCAF9799577FA /* Pods_CentralBankUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9451DE7D20134B3600F69318 /* CentralBank */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9451DEA620134B3700F69318 /* Build configuration list for PBXNativeTarget "CentralBank" */;
+			buildPhases = (
+				66A7739C285BCEA97AEA3E61 /* [CP] Check Pods Manifest.lock */,
+				9451DE7A20134B3600F69318 /* Sources */,
+				9451DE7B20134B3600F69318 /* Frameworks */,
+				9451DE7C20134B3600F69318 /* Resources */,
+				67CA82D67C868AD32BF370BE /* [CP] Embed Pods Frameworks */,
+				DCA62BB3A7A35B56E16BF7D9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CentralBank;
+			productName = CentralBank;
+			productReference = 9451DE7E20134B3600F69318 /* CentralBank.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9451DE9120134B3700F69318 /* CentralBankTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9451DEA920134B3700F69318 /* Build configuration list for PBXNativeTarget "CentralBankTests" */;
+			buildPhases = (
+				189523F75931D0D0980FF2AA /* [CP] Check Pods Manifest.lock */,
+				9451DE8E20134B3700F69318 /* Sources */,
+				9451DE8F20134B3700F69318 /* Frameworks */,
+				9451DE9020134B3700F69318 /* Resources */,
+				DED9481C01842A5DB62BFB6A /* [CP] Embed Pods Frameworks */,
+				941D44D76EA67A15D24D00A3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9451DE9420134B3700F69318 /* PBXTargetDependency */,
+			);
+			name = CentralBankTests;
+			productName = CentralBankTests;
+			productReference = 9451DE9220134B3700F69318 /* CentralBankTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9451DE9C20134B3700F69318 /* CentralBankUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9451DEAC20134B3700F69318 /* Build configuration list for PBXNativeTarget "CentralBankUITests" */;
+			buildPhases = (
+				C8B28F945A822C48AA427095 /* [CP] Check Pods Manifest.lock */,
+				9451DE9920134B3700F69318 /* Sources */,
+				9451DE9A20134B3700F69318 /* Frameworks */,
+				9451DE9B20134B3700F69318 /* Resources */,
+				C2840C07CA5FEE38EDE9F1E1 /* [CP] Embed Pods Frameworks */,
+				6680230A0638C9F47BC60AC0 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9451DE9F20134B3700F69318 /* PBXTargetDependency */,
+			);
+			name = CentralBankUITests;
+			productName = CentralBankUITests;
+			productReference = 9451DE9D20134B3700F69318 /* CentralBankUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9451DE7620134B3600F69318 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Matyushenko Maxim";
+				TargetAttributes = {
+					9451DE7D20134B3600F69318 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					9451DE9120134B3700F69318 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9451DE7D20134B3600F69318;
+					};
+					9451DE9C20134B3700F69318 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9451DE7D20134B3600F69318;
+					};
+				};
+			};
+			buildConfigurationList = 9451DE7920134B3600F69318 /* Build configuration list for PBXProject "CentralBank" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9451DE7520134B3600F69318;
+			productRefGroup = 9451DE7F20134B3600F69318 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9451DE7D20134B3600F69318 /* CentralBank */,
+				9451DE9120134B3700F69318 /* CentralBankTests */,
+				9451DE9C20134B3700F69318 /* CentralBankUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9451DE7C20134B3600F69318 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9451DE8C20134B3600F69318 /* LaunchScreen.storyboard in Resources */,
+				9451DE8920134B3600F69318 /* Assets.xcassets in Resources */,
+				9451DE8720134B3600F69318 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9451DE9020134B3700F69318 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9451DE9B20134B3700F69318 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		189523F75931D0D0980FF2AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CentralBankTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6680230A0638C9F47BC60AC0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CentralBankUITests/Pods-CentralBankUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66A7739C285BCEA97AEA3E61 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CentralBank-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67CA82D67C868AD32BF370BE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CentralBank/Pods-CentralBank-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxFeedback/RxFeedback.framework",
+				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxViewController/RxViewController.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Action.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxFeedback.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxViewController.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CentralBank/Pods-CentralBank-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		941D44D76EA67A15D24D00A3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CentralBankTests/Pods-CentralBankTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2840C07CA5FEE38EDE9F1E1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CentralBankUITests/Pods-CentralBankUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8B28F945A822C48AA427095 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CentralBankUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCA62BB3A7A35B56E16BF7D9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CentralBank/Pods-CentralBank-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DED9481C01842A5DB62BFB6A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CentralBankTests/Pods-CentralBankTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9451DE7A20134B3600F69318 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9451DE8420134B3600F69318 /* ViewController.swift in Sources */,
+				9451DE8220134B3600F69318 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9451DE8E20134B3700F69318 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9451DE9720134B3700F69318 /* CentralBankTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9451DE9920134B3700F69318 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9451DEA220134B3700F69318 /* CentralBankUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9451DE9420134B3700F69318 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9451DE7D20134B3600F69318 /* CentralBank */;
+			targetProxy = 9451DE9320134B3700F69318 /* PBXContainerItemProxy */;
+		};
+		9451DE9F20134B3700F69318 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9451DE7D20134B3600F69318 /* CentralBank */;
+			targetProxy = 9451DE9E20134B3700F69318 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9451DE8520134B3600F69318 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9451DE8620134B3600F69318 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9451DE8A20134B3600F69318 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9451DE8B20134B3600F69318 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9451DEA420134B3700F69318 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9451DEA520134B3700F69318 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9451DEA720134B3700F69318 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C8B7EA92C16D2D29DD7EE21 /* Pods-CentralBank.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HQ576M92UA;
+				INFOPLIST_FILE = CentralBank/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = matmax.CentralBank;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9451DEA820134B3700F69318 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23FA04999E22765E68B901F9 /* Pods-CentralBank.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HQ576M92UA;
+				INFOPLIST_FILE = CentralBank/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = matmax.CentralBank;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9451DEAA20134B3700F69318 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A160BB35A8ADD71AB4F5F92D /* Pods-CentralBankTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HQ576M92UA;
+				INFOPLIST_FILE = CentralBankTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = matmax.CentralBankTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CentralBank.app/CentralBank";
+			};
+			name = Debug;
+		};
+		9451DEAB20134B3700F69318 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 856E0B0C6477CB28D15A8B88 /* Pods-CentralBankTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HQ576M92UA;
+				INFOPLIST_FILE = CentralBankTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = matmax.CentralBankTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CentralBank.app/CentralBank";
+			};
+			name = Release;
+		};
+		9451DEAD20134B3700F69318 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9EA4B42959A20B5370C069A /* Pods-CentralBankUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HQ576M92UA;
+				INFOPLIST_FILE = CentralBankUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = matmax.CentralBankUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CentralBank;
+			};
+			name = Debug;
+		};
+		9451DEAE20134B3700F69318 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF51C8FE7B4876D00C87E705 /* Pods-CentralBankUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HQ576M92UA;
+				INFOPLIST_FILE = CentralBankUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = matmax.CentralBankUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CentralBank;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9451DE7920134B3600F69318 /* Build configuration list for PBXProject "CentralBank" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9451DEA420134B3700F69318 /* Debug */,
+				9451DEA520134B3700F69318 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9451DEA620134B3700F69318 /* Build configuration list for PBXNativeTarget "CentralBank" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9451DEA720134B3700F69318 /* Debug */,
+				9451DEA820134B3700F69318 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9451DEA920134B3700F69318 /* Build configuration list for PBXNativeTarget "CentralBankTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9451DEAA20134B3700F69318 /* Debug */,
+				9451DEAB20134B3700F69318 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9451DEAC20134B3700F69318 /* Build configuration list for PBXNativeTarget "CentralBankUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9451DEAD20134B3700F69318 /* Debug */,
+				9451DEAE20134B3700F69318 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9451DE7620134B3600F69318 /* Project object */;
+}
