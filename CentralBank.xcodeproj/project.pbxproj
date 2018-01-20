@@ -164,19 +164,6 @@
 			path = AppState;
 			sourceTree = "<group>";
 		};
-		943E0AF3201355E4000C62C1 /* SceneCoordinator */ = {
-			isa = PBXGroup;
-			children = (
-				943E0AFD20135795000C62C1 /* AlertActionSheet.swift */,
-				943E0AFC20135795000C62C1 /* Scene.swift */,
-				943E0B0020135795000C62C1 /* SceneAction.swift */,
-				943E0AFE20135795000C62C1 /* SceneCoordinator.swift */,
-				943E0AFF20135795000C62C1 /* SceneTransitionType.swift */,
-			);
-			name = SceneCoordinator;
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		943E0AF420135690000C62C1 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +235,18 @@
 			path = Launch;
 			sourceTree = "<group>";
 		};
+		943E0B1C2013653F000C62C1 /* SceneCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				943E0AFD20135795000C62C1 /* AlertActionSheet.swift */,
+				943E0AFC20135795000C62C1 /* Scene.swift */,
+				943E0B0020135795000C62C1 /* SceneAction.swift */,
+				943E0AFE20135795000C62C1 /* SceneCoordinator.swift */,
+				943E0AFF20135795000C62C1 /* SceneTransitionType.swift */,
+			);
+			path = SceneCoordinator;
+			sourceTree = "<group>";
+		};
 		9451DE7520134B3600F69318 = {
 			isa = PBXGroup;
 			children = (
@@ -273,10 +272,10 @@
 		9451DE8020134B3600F69318 /* CentralBank */ = {
 			isa = PBXGroup;
 			children = (
+				943E0AD820135457000C62C1 /* AppState */,
 				943E0B1720135DBE000C62C1 /* Extensions */,
 				943E0AFB20135723000C62C1 /* Resources */,
-				943E0AF3201355E4000C62C1 /* SceneCoordinator */,
-				943E0AD820135457000C62C1 /* AppState */,
+				943E0B1C2013653F000C62C1 /* SceneCoordinator */,
 				943E0AD72013544B000C62C1 /* Scenes */,
 				9451DE8120134B3600F69318 /* AppDelegate.swift */,
 			);
