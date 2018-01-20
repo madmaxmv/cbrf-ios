@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExchangeRatesViewController" customModule="CentralBank" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RatesViewController" customModule="CentralBank" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="iN0-l3-epB" id="reT-IW-Ht3"/>
             </connections>
@@ -19,7 +19,19 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="97b-X1-DKn">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="97b-X1-DKn" secondAttribute="trailing" id="6QH-10-WlC"/>
+                <constraint firstItem="97b-X1-DKn" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="SmN-Au-vlw"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="97b-X1-DKn" secondAttribute="bottom" id="YZy-OA-GUv"/>
+                <constraint firstItem="97b-X1-DKn" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="eSD-Xp-BRn"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>
     </objects>

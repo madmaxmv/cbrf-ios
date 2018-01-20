@@ -24,7 +24,7 @@ extension TabItem {
 
         switch self {
         case let .exchangeRates(_, title, icon, selectedIcon):
-            var vc = ExchangeRatesViewController(nibName: "ExchangeRates", bundle: nil)
+            var vc = RatesViewController(nibName: "Rates", bundle: nil)
             vc.tabBarItem = UITabBarItem(title: title, image: icon, selectedImage: selectedIcon)
             var nc = NavigationController(rootViewController: vc)
             nc.setNavigationBarHidden(true, animated: false)

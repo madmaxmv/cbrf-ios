@@ -11,9 +11,9 @@ import RxCocoa
 import RxFeedback
 import RxOptional
 
-class ExchangeRatesViewController: UIViewController, ViewType {
+class RatesViewController: UIViewController, ViewType {
     
-    var state: Driver<ExchangeRatesViewState>!
+    var state: Driver<RatesViewState>!
  
     func subscribe(to stateStore: AppStateStore) {
         
