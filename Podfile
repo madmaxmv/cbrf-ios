@@ -1,7 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '9.0'
 
-target 'WeAreHere' do
+target 'CentralBank' do
   use_frameworks!
 
   # Rx
@@ -15,12 +15,12 @@ target 'WeAreHere' do
   pod 'RxViewController'
 
 
-  target 'WeAreHereTests' do
+  target 'CentralBankTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-  target 'WeAreHereUITests' do
+  target 'CentralBankUITests' do
     inherit! :search_paths
     # Pods for testing
   end
