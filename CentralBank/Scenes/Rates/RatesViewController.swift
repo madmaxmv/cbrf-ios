@@ -20,7 +20,7 @@ class RatesViewController: UIViewController, ViewType {
         // State
         state = stateStore
             .stateBus
-            .map { $0.exchangeRates.viewState }
+            .map { $0.rates.viewState }
             .distinctUntilChanged()
     }
 }

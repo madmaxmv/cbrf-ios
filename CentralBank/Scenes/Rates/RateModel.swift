@@ -14,5 +14,5 @@ struct RateModel {
     let currencyName: String
     let nominal: Int
     let value: Double
-    let difference: Double?
+    let difference: Double
 }

@@ -39,6 +39,8 @@
 		9452577120136A8000684439 /* RateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452577020136A8000684439 /* RateCell.swift */; };
 		9452577320137D7400684439 /* RateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9452577220137D7400684439 /* RateCell.xib */; };
 		9452577520137F7900684439 /* RateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452577420137F7900684439 /* RateModel.swift */; };
+		945257772013E32900684439 /* RatesSideEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945257762013E32900684439 /* RatesSideEffects.swift */; };
+		9452577920146E0300684439 /* RateViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452577820146E0300684439 /* RateViewState.swift */; };
 		F4876BD9EE5513337B352902 /* Pods_CentralBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00791B83A1CCCAF9799577FA /* Pods_CentralBankUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +104,8 @@
 		9452577020136A8000684439 /* RateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCell.swift; sourceTree = "<group>"; };
 		9452577220137D7400684439 /* RateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateCell.xib; sourceTree = "<group>"; };
 		9452577420137F7900684439 /* RateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateModel.swift; sourceTree = "<group>"; };
+		945257762013E32900684439 /* RatesSideEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesSideEffects.swift; sourceTree = "<group>"; };
+		9452577820146E0300684439 /* RateViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewState.swift; sourceTree = "<group>"; };
 		A160BB35A8ADD71AB4F5F92D /* Pods-CentralBankTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentralBankTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CentralBankTests/Pods-CentralBankTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B9EA4B42959A20B5370C069A /* Pods-CentralBankUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentralBankUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CentralBankUITests/Pods-CentralBankUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF51C8FE7B4876D00C87E705 /* Pods-CentralBankUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentralBankUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CentralBankUITests/Pods-CentralBankUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -217,6 +221,7 @@
 				943E0B1F20136938000C62C1 /* RatesViewController.swift */,
 				943E0B1220135A31000C62C1 /* RatesState.swift */,
 				9452577420137F7900684439 /* RateModel.swift */,
+				945257762013E32900684439 /* RatesSideEffects.swift */,
 			);
 			path = Rates;
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 				9452577220137D7400684439 /* RateCell.xib */,
 				9452577020136A8000684439 /* RateCell.swift */,
 				943E0B1D2013681A000C62C1 /* RatesTableSection.swift */,
+				9452577820146E0300684439 /* RateViewState.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -632,6 +638,7 @@
 			files = (
 				9452577120136A8000684439 /* RateCell.swift in Sources */,
 				943E0ADF201354D0000C62C1 /* AppState.swift in Sources */,
+				9452577920146E0300684439 /* RateViewState.swift in Sources */,
 				943E0AFA201356A0000C62C1 /* TabBarViewState.swift in Sources */,
 				943E0AF9201356A0000C62C1 /* TabBarController.swift in Sources */,
 				943E0B0220135795000C62C1 /* AlertActionSheet.swift in Sources */,
@@ -654,6 +661,7 @@
 				943E0B1E2013681A000C62C1 /* RatesTableSection.swift in Sources */,
 				943E0AF8201356A0000C62C1 /* TabItem.swift in Sources */,
 				943E0AE4201354D0000C62C1 /* State.swift in Sources */,
+				945257772013E32900684439 /* RatesSideEffects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

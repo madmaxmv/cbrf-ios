@@ -9,13 +9,14 @@ struct AppState {
     var tabBarState = TabBarViewState.initial
     
     /// Стейт экрана с курсом валют.
-    var exchangeRates = RatesState()
+    var rates = RatesState()
 }
 
 // MARK: - State
 extension AppState {
 
     enum Event {
+        case rates(RatesState.Event)
     }
 
     static let initial = AppState()

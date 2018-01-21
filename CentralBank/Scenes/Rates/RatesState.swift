@@ -12,7 +12,7 @@ final class RatesState: State {
     /// ViewState экрана с курсом валют.
     var viewState: RatesViewState = .initial
 
-    /// Все курсы
+    /// Все курсы валют.
     var rates: [RateModel] = []
 }
 
