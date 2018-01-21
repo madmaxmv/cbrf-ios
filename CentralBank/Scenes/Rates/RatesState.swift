@@ -27,6 +27,7 @@ extension RatesState {
         switch event {
         case .ratesAcquired(let rates):
             self.rates = rates
+            self.viewState.content = RatesTableSection.makeContent(for: rates)
         }
     }
 }

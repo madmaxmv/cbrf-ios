@@ -16,6 +16,11 @@ class RateCell: UITableViewCell {
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var differenceLabel: UILabel!
 
-
+    func setup(with state: RateViewState) {
+        codeLabel.text = state.characterCode
+        detailsLabel.text = state.details
+        valueLabel.text = state.value
+        differenceLabel.text = state.difference
+    }
     
 }

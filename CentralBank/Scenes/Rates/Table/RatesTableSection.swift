@@ -61,3 +61,9 @@ extension RatesTableSection.Item: IdentifiableType, Equatable {
         }
     }
 }
+
+extension RatesTableSection {
+    static func makeContent(for rates: [RateModel]) -> [RatesTableSection] {
+        return [.rates(items: rates.map { .rate(RateViewState(model: $0))})]
+    }
+}

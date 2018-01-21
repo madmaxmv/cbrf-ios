@@ -10,6 +10,9 @@ import Foundation
 
 struct RatesViewState {
 
+    /// Содержимое таблицы.
+    var content: [RatesTableSection] = []
+    
     static var initial: RatesViewState {
         return RatesViewState()
     }
@@ -18,6 +21,6 @@ struct RatesViewState {
 
 extension RatesViewState: Equatable {
     public static func == (lhs: RatesViewState, rhs: RatesViewState) -> Bool {
-        return true
+        return lhs.content == rhs.content
     }
 }
