@@ -16,8 +16,7 @@ struct TabBarViewState {
     init() {
         tabs = [
             .exchangeRates(index: 1,
-                           title: NSLocalizedString("Exchange rates",
-                                                    comment: "Курсы вылют"),
+                           title: NSLocalizedString("Rates", comment: "Курсы"),
                            icon: UIImage(),
                            selectedIcon: UIImage()
             )

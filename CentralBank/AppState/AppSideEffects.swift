@@ -10,12 +10,16 @@ struct AppSideEffects {
 
     private let _coordinator: SceneCoordinator
     private let _backgroundScheduler: SchedulerType
+    
+    private let _rates: RatesSideEffects
 
     init(coordinator: SceneCoordinator,
          backgroundScheduler: SchedulerType) {
         
         _coordinator = coordinator
         _backgroundScheduler = backgroundScheduler
+        
+        _rates = RatesSideEffectsImpl()
     }
 }
 
@@ -26,6 +30,7 @@ extension AppSideEffects: SideEffects {
 
     var effects: [ScheduledEffect] {
         var effects: [ScheduledEffect] = []
+        effects.append(contentsOf: _rates.effects)
         return effects
     }
 }

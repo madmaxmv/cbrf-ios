@@ -9,5 +9,5 @@ protocol State {
     associatedtype Event
 
     /// Reducer состояния.
-    static func reduce(state: Self, event: Event) -> Self
+    mutating func reduce(event: Event)
 }

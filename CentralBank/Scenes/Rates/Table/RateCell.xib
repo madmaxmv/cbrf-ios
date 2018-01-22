@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="72" id="wwe-um-lF1" customClass="RateCell" customModule="CentralBank" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wwe-um-lF1" id="h9X-yz-U9f">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="71.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ade-zX-ex5">
+                        <rect key="frame" x="50" y="11" width="40.5" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 Доллар США" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3L-Q6-FwD">
+                        <rect key="frame" x="50" y="39" width="103.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="56,5892" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdS-Ga-mAq">
+                        <rect key="frame" x="287" y="11.5" width="79" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 0,5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAP-1H-Znf">
+                        <rect key="frame" x="333.5" y="37" width="32.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="hAP-1H-Znf" firstAttribute="top" secondItem="VdS-Ga-mAq" secondAttribute="bottom" constant="1.5" id="EnR-Zq-aIl"/>
+                    <constraint firstAttribute="bottom" secondItem="D3L-Q6-FwD" secondAttribute="bottom" constant="14.5" id="NgY-wk-YXi"/>
+                    <constraint firstItem="D3L-Q6-FwD" firstAttribute="leading" secondItem="ade-zX-ex5" secondAttribute="leading" id="UYb-TZ-gA2"/>
+                    <constraint firstItem="ade-zX-ex5" firstAttribute="leading" secondItem="h9X-yz-U9f" secondAttribute="leading" constant="50" id="aaJ-a6-JjA"/>
+                    <constraint firstAttribute="trailing" secondItem="VdS-Ga-mAq" secondAttribute="trailing" constant="9" id="arb-jV-811"/>
+                    <constraint firstItem="VdS-Ga-mAq" firstAttribute="centerY" secondItem="ade-zX-ex5" secondAttribute="centerY" id="dyH-PO-HYv"/>
+                    <constraint firstItem="ade-zX-ex5" firstAttribute="top" secondItem="h9X-yz-U9f" secondAttribute="top" constant="11" id="uv0-Nc-RAk"/>
+                    <constraint firstItem="D3L-Q6-FwD" firstAttribute="top" secondItem="ade-zX-ex5" secondAttribute="bottom" constant="4" id="vXl-B0-2kx"/>
+                    <constraint firstItem="hAP-1H-Znf" firstAttribute="trailing" secondItem="VdS-Ga-mAq" secondAttribute="trailing" id="xjY-V1-xPR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="codeLabel" destination="ade-zX-ex5" id="yWP-hE-7Tj"/>
+                <outlet property="detailsLabel" destination="D3L-Q6-FwD" id="NOt-Td-aDh"/>
+                <outlet property="differenceLabel" destination="hAP-1H-Znf" id="1oT-3Z-9nZ"/>
+                <outlet property="valueLabel" destination="VdS-Ga-mAq" id="4LU-If-Vl2"/>
+            </connections>
+            <point key="canvasLocation" x="62.5" y="18"/>
+        </tableViewCell>
+    </objects>
+</document>

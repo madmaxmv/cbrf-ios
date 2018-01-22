@@ -25,16 +25,23 @@
 		943E0B0520135795000C62C1 /* SceneAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0B0020135795000C62C1 /* SceneAction.swift */; };
 		943E0B0820135876000C62C1 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0B0720135876000C62C1 /* Assets.swift */; };
 		943E0B0B20135980000C62C1 /* NavigaionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0B0A20135980000C62C1 /* NavigaionController.swift */; };
-		943E0B0E201359D0000C62C1 /* ExchangeRatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0B0D201359D0000C62C1 /* ExchangeRatesViewController.swift */; };
-		943E0B1120135A14000C62C1 /* ExchangeRatesViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0B1020135A14000C62C1 /* ExchangeRatesViewState.swift */; };
-		943E0B1320135A31000C62C1 /* ExchangeRatesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0B1220135A31000C62C1 /* ExchangeRatesState.swift */; };
+		943E0B1120135A14000C62C1 /* RatesViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0B1020135A14000C62C1 /* RatesViewState.swift */; };
+		943E0B1320135A31000C62C1 /* RatesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0B1220135A31000C62C1 /* RatesState.swift */; };
 		943E0B1620135DB2000C62C1 /* ObservableType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0B1520135DB1000C62C1 /* ObservableType+Extensions.swift */; };
-		943E0B1920136039000C62C1 /* ExchangeRates.xib in Resources */ = {isa = PBXBuildFile; fileRef = 943E0B1820136039000C62C1 /* ExchangeRates.xib */; };
+		943E0B1920136039000C62C1 /* Rates.xib in Resources */ = {isa = PBXBuildFile; fileRef = 943E0B1820136039000C62C1 /* Rates.xib */; };
+		943E0B1E2013681A000C62C1 /* RatesTableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0B1D2013681A000C62C1 /* RatesTableSection.swift */; };
+		943E0B2020136938000C62C1 /* RatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0B1F20136938000C62C1 /* RatesViewController.swift */; };
 		9451DE8220134B3600F69318 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9451DE8120134B3600F69318 /* AppDelegate.swift */; };
 		9451DE8920134B3600F69318 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9451DE8820134B3600F69318 /* Assets.xcassets */; };
 		9451DE8C20134B3600F69318 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9451DE8A20134B3600F69318 /* LaunchScreen.storyboard */; };
 		9451DE9720134B3700F69318 /* CentralBankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9451DE9620134B3700F69318 /* CentralBankTests.swift */; };
 		9451DEA220134B3700F69318 /* CentralBankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9451DEA120134B3700F69318 /* CentralBankUITests.swift */; };
+		9452577120136A8000684439 /* RateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452577020136A8000684439 /* RateCell.swift */; };
+		9452577320137D7400684439 /* RateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9452577220137D7400684439 /* RateCell.xib */; };
+		9452577520137F7900684439 /* RateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452577420137F7900684439 /* RateModel.swift */; };
+		945257772013E32900684439 /* RatesSideEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945257762013E32900684439 /* RatesSideEffects.swift */; };
+		9452577920146E0300684439 /* RateViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452577820146E0300684439 /* RateViewState.swift */; };
+		9452577B201487B300684439 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452577A201487B300684439 /* ReusableView.swift */; };
 		F4876BD9EE5513337B352902 /* Pods_CentralBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00791B83A1CCCAF9799577FA /* Pods_CentralBankUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,11 +85,12 @@
 		943E0B0020135795000C62C1 /* SceneAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneAction.swift; path = CentralBank/SceneCoordinator/SceneAction.swift; sourceTree = SOURCE_ROOT; };
 		943E0B0720135876000C62C1 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		943E0B0A20135980000C62C1 /* NavigaionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigaionController.swift; sourceTree = "<group>"; };
-		943E0B0D201359D0000C62C1 /* ExchangeRatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesViewController.swift; sourceTree = "<group>"; };
-		943E0B1020135A14000C62C1 /* ExchangeRatesViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesViewState.swift; sourceTree = "<group>"; };
-		943E0B1220135A31000C62C1 /* ExchangeRatesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesState.swift; sourceTree = "<group>"; };
+		943E0B1020135A14000C62C1 /* RatesViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesViewState.swift; sourceTree = "<group>"; };
+		943E0B1220135A31000C62C1 /* RatesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesState.swift; sourceTree = "<group>"; };
 		943E0B1520135DB1000C62C1 /* ObservableType+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extensions.swift"; sourceTree = "<group>"; };
-		943E0B1820136039000C62C1 /* ExchangeRates.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExchangeRates.xib; sourceTree = "<group>"; };
+		943E0B1820136039000C62C1 /* Rates.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Rates.xib; sourceTree = "<group>"; };
+		943E0B1D2013681A000C62C1 /* RatesTableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesTableSection.swift; sourceTree = "<group>"; };
+		943E0B1F20136938000C62C1 /* RatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatesViewController.swift; sourceTree = "<group>"; };
 		9451DE7E20134B3600F69318 /* CentralBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CentralBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9451DE8120134B3600F69318 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9451DE8820134B3600F69318 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,6 +102,12 @@
 		9451DE9D20134B3700F69318 /* CentralBankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CentralBankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9451DEA120134B3700F69318 /* CentralBankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralBankUITests.swift; sourceTree = "<group>"; };
 		9451DEA320134B3700F69318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9452577020136A8000684439 /* RateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCell.swift; sourceTree = "<group>"; };
+		9452577220137D7400684439 /* RateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateCell.xib; sourceTree = "<group>"; };
+		9452577420137F7900684439 /* RateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateModel.swift; sourceTree = "<group>"; };
+		945257762013E32900684439 /* RatesSideEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesSideEffects.swift; sourceTree = "<group>"; };
+		9452577820146E0300684439 /* RateViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewState.swift; sourceTree = "<group>"; };
+		9452577A201487B300684439 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		A160BB35A8ADD71AB4F5F92D /* Pods-CentralBankTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentralBankTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CentralBankTests/Pods-CentralBankTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B9EA4B42959A20B5370C069A /* Pods-CentralBankUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentralBankUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CentralBankUITests/Pods-CentralBankUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF51C8FE7B4876D00C87E705 /* Pods-CentralBankUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentralBankUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CentralBankUITests/Pods-CentralBankUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,7 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				943E0B1A20136199000C62C1 /* Launch */,
-				943E0B0C201359AB000C62C1 /* ExchangeRates */,
+				943E0B0C201359AB000C62C1 /* Rates */,
 				943E0B0920135975000C62C1 /* Navigation */,
 				943E0AF420135690000C62C1 /* TabBar */,
 			);
@@ -162,19 +176,6 @@
 				943E0ADB201354D0000C62C1 /* ViewType.swift */,
 			);
 			path = AppState;
-			sourceTree = "<group>";
-		};
-		943E0AF3201355E4000C62C1 /* SceneCoordinator */ = {
-			isa = PBXGroup;
-			children = (
-				943E0AFD20135795000C62C1 /* AlertActionSheet.swift */,
-				943E0AFC20135795000C62C1 /* Scene.swift */,
-				943E0B0020135795000C62C1 /* SceneAction.swift */,
-				943E0AFE20135795000C62C1 /* SceneCoordinator.swift */,
-				943E0AFF20135795000C62C1 /* SceneTransitionType.swift */,
-			);
-			name = SceneCoordinator;
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		943E0AF420135690000C62C1 /* TabBar */ = {
@@ -213,21 +214,27 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
-		943E0B0C201359AB000C62C1 /* ExchangeRates */ = {
+		943E0B0C201359AB000C62C1 /* Rates */ = {
 			isa = PBXGroup;
 			children = (
 				943E0B0F201359F8000C62C1 /* Table */,
-				943E0B1820136039000C62C1 /* ExchangeRates.xib */,
-				943E0B0D201359D0000C62C1 /* ExchangeRatesViewController.swift */,
-				943E0B1020135A14000C62C1 /* ExchangeRatesViewState.swift */,
-				943E0B1220135A31000C62C1 /* ExchangeRatesState.swift */,
+				943E0B1820136039000C62C1 /* Rates.xib */,
+				943E0B1020135A14000C62C1 /* RatesViewState.swift */,
+				943E0B1F20136938000C62C1 /* RatesViewController.swift */,
+				943E0B1220135A31000C62C1 /* RatesState.swift */,
+				9452577420137F7900684439 /* RateModel.swift */,
+				945257762013E32900684439 /* RatesSideEffects.swift */,
 			);
-			path = ExchangeRates;
+			path = Rates;
 			sourceTree = "<group>";
 		};
 		943E0B0F201359F8000C62C1 /* Table */ = {
 			isa = PBXGroup;
 			children = (
+				9452577220137D7400684439 /* RateCell.xib */,
+				9452577020136A8000684439 /* RateCell.swift */,
+				943E0B1D2013681A000C62C1 /* RatesTableSection.swift */,
+				9452577820146E0300684439 /* RateViewState.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -236,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				943E0B1520135DB1000C62C1 /* ObservableType+Extensions.swift */,
+				9452577A201487B300684439 /* ReusableView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -246,6 +254,18 @@
 				9451DE8A20134B3600F69318 /* LaunchScreen.storyboard */,
 			);
 			path = Launch;
+			sourceTree = "<group>";
+		};
+		943E0B1C2013653F000C62C1 /* SceneCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				943E0AFD20135795000C62C1 /* AlertActionSheet.swift */,
+				943E0AFC20135795000C62C1 /* Scene.swift */,
+				943E0B0020135795000C62C1 /* SceneAction.swift */,
+				943E0AFE20135795000C62C1 /* SceneCoordinator.swift */,
+				943E0AFF20135795000C62C1 /* SceneTransitionType.swift */,
+			);
+			path = SceneCoordinator;
 			sourceTree = "<group>";
 		};
 		9451DE7520134B3600F69318 = {
@@ -273,10 +293,10 @@
 		9451DE8020134B3600F69318 /* CentralBank */ = {
 			isa = PBXGroup;
 			children = (
+				943E0AD820135457000C62C1 /* AppState */,
 				943E0B1720135DBE000C62C1 /* Extensions */,
 				943E0AFB20135723000C62C1 /* Resources */,
-				943E0AF3201355E4000C62C1 /* SceneCoordinator */,
-				943E0AD820135457000C62C1 /* AppState */,
+				943E0B1C2013653F000C62C1 /* SceneCoordinator */,
 				943E0AD72013544B000C62C1 /* Scenes */,
 				9451DE8120134B3600F69318 /* AppDelegate.swift */,
 			);
@@ -427,7 +447,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				943E0B1920136039000C62C1 /* ExchangeRates.xib in Resources */,
+				943E0B1920136039000C62C1 /* Rates.xib in Resources */,
+				9452577320137D7400684439 /* RateCell.xib in Resources */,
 				9451DE8C20134B3600F69318 /* LaunchScreen.storyboard in Resources */,
 				9451DE8920134B3600F69318 /* Assets.xcassets in Resources */,
 			);
@@ -618,15 +639,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9452577B201487B300684439 /* ReusableView.swift in Sources */,
+				9452577120136A8000684439 /* RateCell.swift in Sources */,
 				943E0ADF201354D0000C62C1 /* AppState.swift in Sources */,
+				9452577920146E0300684439 /* RateViewState.swift in Sources */,
 				943E0AFA201356A0000C62C1 /* TabBarViewState.swift in Sources */,
 				943E0AF9201356A0000C62C1 /* TabBarController.swift in Sources */,
 				943E0B0220135795000C62C1 /* AlertActionSheet.swift in Sources */,
 				943E0AE0201354D0000C62C1 /* AppSideEffects.swift in Sources */,
-				943E0B1120135A14000C62C1 /* ExchangeRatesViewState.swift in Sources */,
-				943E0B0E201359D0000C62C1 /* ExchangeRatesViewController.swift in Sources */,
+				943E0B1120135A14000C62C1 /* RatesViewState.swift in Sources */,
+				9452577520137F7900684439 /* RateModel.swift in Sources */,
 				943E0B0320135795000C62C1 /* SceneCoordinator.swift in Sources */,
-				943E0B1320135A31000C62C1 /* ExchangeRatesState.swift in Sources */,
+				943E0B2020136938000C62C1 /* RatesViewController.swift in Sources */,
+				943E0B1320135A31000C62C1 /* RatesState.swift in Sources */,
 				943E0B0B20135980000C62C1 /* NavigaionController.swift in Sources */,
 				943E0B1620135DB2000C62C1 /* ObservableType+Extensions.swift in Sources */,
 				943E0B0820135876000C62C1 /* Assets.swift in Sources */,
@@ -637,8 +662,10 @@
 				943E0AE2201354D0000C62C1 /* AppStateStore.swift in Sources */,
 				943E0B0120135795000C62C1 /* Scene.swift in Sources */,
 				9451DE8220134B3600F69318 /* AppDelegate.swift in Sources */,
+				943E0B1E2013681A000C62C1 /* RatesTableSection.swift in Sources */,
 				943E0AF8201356A0000C62C1 /* TabItem.swift in Sources */,
 				943E0AE4201354D0000C62C1 /* State.swift in Sources */,
+				945257772013E32900684439 /* RatesSideEffects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

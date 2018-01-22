@@ -9,23 +9,26 @@ struct AppState {
     var tabBarState = TabBarViewState.initial
     
     /// Стейт экрана с курсом валют.
-    var exchangeRates = ExchangeRatesState()
+    var rates = RatesState()
 }
 
 // MARK: - State
-extension AppState: State {
+extension AppState {
 
     enum Event {
+        case rates(RatesState.Event)
     }
 
     static let initial = AppState()
 
-    //swiftlint:disable cyclomatic_complexity function_body_length
     static func reduce(state: AppState, event: AppState.Event) -> AppState {
-
         debugPrint(event)
-
-        return state
+        let _state = state
+        switch event {
+        case .rates(let event):
+            _state.rates.reduce(event: event)
+        }
+        return _state
     }
 }
 
