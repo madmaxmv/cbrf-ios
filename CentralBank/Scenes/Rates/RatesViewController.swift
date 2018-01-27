@@ -12,7 +12,7 @@ import RxFeedback
 import RxDataSources
 import RxOptional
 
-class RatesViewController: UIViewController, ViewType {
+class RatesViewController: UIViewController, UITableViewDelegate, DataDrivenView {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -54,7 +54,6 @@ class RatesViewController: UIViewController, ViewType {
             .distinctUntilChanged()
         
         // UI
-     
         state
             .map { $0.content }
             .distinctUntilChanged { $0 == $1 }
@@ -63,5 +62,3 @@ class RatesViewController: UIViewController, ViewType {
 
     }
 }
-
-extension RatesViewController: UITableViewDelegate {}

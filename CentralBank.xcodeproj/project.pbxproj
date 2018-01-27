@@ -11,7 +11,7 @@
 		7387C9C6F27D10284C815C2C /* Pods_CentralBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F864CDDE86FC491BEA61CAF /* Pods_CentralBank.framework */; };
 		943E0ADF201354D0000C62C1 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0AD9201354CF000C62C1 /* AppState.swift */; };
 		943E0AE0201354D0000C62C1 /* AppSideEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0ADA201354CF000C62C1 /* AppSideEffects.swift */; };
-		943E0AE1201354D0000C62C1 /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0ADB201354D0000C62C1 /* ViewType.swift */; };
+		943E0AE1201354D0000C62C1 /* DataDrivenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0ADB201354D0000C62C1 /* DataDrivenView.swift */; };
 		943E0AE2201354D0000C62C1 /* AppStateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0ADC201354D0000C62C1 /* AppStateStore.swift */; };
 		943E0AE3201354D0000C62C1 /* SideEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0ADD201354D0000C62C1 /* SideEffects.swift */; };
 		943E0AE4201354D0000C62C1 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0ADE201354D0000C62C1 /* State.swift */; };
@@ -76,7 +76,7 @@
 		922C14567C38826D44CB7C24 /* Pods_CentralBankTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CentralBankTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		943E0AD9201354CF000C62C1 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		943E0ADA201354CF000C62C1 /* AppSideEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSideEffects.swift; sourceTree = "<group>"; };
-		943E0ADB201354D0000C62C1 /* ViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
+		943E0ADB201354D0000C62C1 /* DataDrivenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDrivenView.swift; sourceTree = "<group>"; };
 		943E0ADC201354D0000C62C1 /* AppStateStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStateStore.swift; sourceTree = "<group>"; };
 		943E0ADD201354D0000C62C1 /* SideEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideEffects.swift; sourceTree = "<group>"; };
 		943E0ADE201354D0000C62C1 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
@@ -183,7 +183,7 @@
 				943E0ADC201354D0000C62C1 /* AppStateStore.swift */,
 				943E0ADD201354D0000C62C1 /* SideEffects.swift */,
 				943E0ADE201354D0000C62C1 /* State.swift */,
-				943E0ADB201354D0000C62C1 /* ViewType.swift */,
+				943E0ADB201354D0000C62C1 /* DataDrivenView.swift */,
 			);
 			path = AppState;
 			sourceTree = "<group>";
@@ -705,7 +705,7 @@
 				943E0B1620135DB2000C62C1 /* ObservableType+Extensions.swift in Sources */,
 				943E0B0820135876000C62C1 /* Assets.swift in Sources */,
 				943E0AE3201354D0000C62C1 /* SideEffects.swift in Sources */,
-				943E0AE1201354D0000C62C1 /* ViewType.swift in Sources */,
+				943E0AE1201354D0000C62C1 /* DataDrivenView.swift in Sources */,
 				945257842016823900684439 /* CentralBankXMLParser.swift in Sources */,
 				9452577F2016683E00684439 /* CentralBankAPI.swift in Sources */,
 				943E0B0520135795000C62C1 /* SceneAction.swift in Sources */,
