@@ -9,6 +9,7 @@
 import Foundation
 
 struct RateViewState {
+    let flag: String
     let characterCode: String
     let details: String
     let value: String
@@ -18,7 +19,7 @@ struct RateViewState {
     
     init(model: RateModel) {
         self.model = model
-        
+        flag = model.flag.emoji
         characterCode = model.characterCode
         details = "\(model.nominal) \(model.currencyName)"
         value = String(model.value)

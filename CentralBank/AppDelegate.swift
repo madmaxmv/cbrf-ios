@@ -21,7 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         coordinator = SceneCoordinatorImpl(window: window!)
+        let service = APIService()
+        
         let sideEffects = AppSideEffects(coordinator: coordinator,
+                                         centralBankService: service,
                                          backgroundScheduler: ConcurrentDispatchQueueScheduler(qos: .userInitiated))
         
         appStateStore = AppStateStore(sideEffects: sideEffects)
