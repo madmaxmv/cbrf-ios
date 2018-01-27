@@ -16,6 +16,13 @@ class RateCell: UITableViewCell {
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var differenceLabel: UILabel!
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        codeLabel.textColor = .mainText
+        detailsLabel.textColor = .secondaryText
+        contentView.addSeparator()
+    }
+    
     func setup(with state: RateViewState) {
         flagLabel.text = state.flag
         codeLabel.text = state.characterCode
@@ -23,5 +30,4 @@ class RateCell: UITableViewCell {
         valueLabel.text = state.value
         differenceLabel.text = state.difference
     }
-    
 }
