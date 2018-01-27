@@ -9,7 +9,7 @@
 import UIKit
 
 class RateCell: UITableViewCell {
-    
+    @IBOutlet weak var flagLabel: UILabel!
     @IBOutlet weak var codeLabel: UILabel!
     @IBOutlet weak var detailsLabel: UILabel!
     
@@ -17,6 +17,7 @@ class RateCell: UITableViewCell {
     @IBOutlet weak var differenceLabel: UILabel!
 
     func setup(with state: RateViewState) {
+        flagLabel.text = state.flag
         codeLabel.text = state.characterCode
         detailsLabel.text = state.details
         valueLabel.text = state.value

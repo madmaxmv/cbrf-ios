@@ -14,6 +14,11 @@ target 'CentralBank' do
   pod 'RxFeedback',    '~> 1.0'
   pod 'RxViewController'
 
+  # Network
+  pod 'Moya', '~> 10.0', :subspecs => ['Core', 'RxSwift']
+
+  # XML parsing
+  pod 'SWXMLHash', '~> 4.0.0'
 
   target 'CentralBankTests' do
     inherit! :search_paths
