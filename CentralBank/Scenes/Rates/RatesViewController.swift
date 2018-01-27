@@ -25,6 +25,8 @@ class RatesViewController: UIViewController, ViewType {
 
         tableView.separatorStyle = .none
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.showsVerticalScrollIndicator = false
+        tableView.showsHorizontalScrollIndicator = false
         tableView.estimatedRowHeight = 72
         tableView.register(RateCell.self)
 
