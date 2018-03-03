@@ -22,7 +22,7 @@ extension AppState {
     static let initial = AppState()
 
     static func reduce(state: AppState, event: AppState.Event) -> AppState {
-        debugPrint(event)
+//        debugPrint(event)
         let _state = state
         switch event {
         case .rates(let event):

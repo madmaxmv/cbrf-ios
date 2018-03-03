@@ -24,22 +24,23 @@ extension RatesSideEffects {
 
 struct RatesSideEffectsImpl: RatesSideEffects {
     
+    private let _services: AppServices
     private let _backgroundScheduler: SchedulerType
-    private let _centralBankService: CentralBankService
     
-    init(centralBankService: CentralBankService,
+    
+    init(services: AppServices,
          backgroundScheduler: SchedulerType) {
+        _services = services
         _backgroundScheduler = backgroundScheduler
-        _centralBankService = centralBankService
     }
     
     var acquireRates: () -> Observable<SideEffects.State.Event> {
         return {
-            return self._centralBankService
+            return self._services.ratesService
                 .rates(on: Date())
                 .asObservable()
-                .map { apiModels -> [RateModel] in
-                    return apiModels.map { RateModel(apiModel: $0) }
+                .map { rates -> [RateModel] in
+                    return rates.map { RateModel(apiModel: $0) }
                 }
                 .map { .rates(.ratesAcquired($0)) }
                 .subscribeOn(self._backgroundScheduler)

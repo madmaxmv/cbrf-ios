@@ -1,8 +1,4 @@
 //
-//  RateModel.swift
-//  CentralBank
-//
-//  Created by Максим on 20/01/2018.
 //  Copyright © 2018 Matyushenko Maxim. All rights reserved.
 //
 
@@ -19,13 +15,13 @@ struct RateModel {
 }
 
 extension RateModel {
-    init(apiModel: RateAPIModel) {
+    init(apiModel: CurrencyDailyRate) {
         flag = Flag(rawValue: apiModel.characterCode) ?? .unknown
         code = Int(apiModel.code) ?? 0
         characterCode = apiModel.characterCode
         currencyName = apiModel.name
         nominal = apiModel.nominal
-        value = Double(apiModel.value.replacingOccurrences(of: ",", with: ".")) ?? 0
+        value = apiModel.value
         difference = 0.0
     }
 }

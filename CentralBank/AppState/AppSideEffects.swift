@@ -11,20 +11,20 @@ struct AppSideEffects {
     private let _coordinator: SceneCoordinator
     private let _backgroundScheduler: SchedulerType
     
-    private let _centralBankService: CentralBankService
+    private let _services: AppServices
     
     private let _rates: RatesSideEffects
 
     init(coordinator: SceneCoordinator,
-         centralBankService: CentralBankService,
+         services: AppServices,
          backgroundScheduler: SchedulerType) {
         
         _coordinator = coordinator
         _backgroundScheduler = backgroundScheduler
         
-        _centralBankService = centralBankService
+        _services = services
         
-        _rates = RatesSideEffectsImpl(centralBankService: centralBankService,
+        _rates = RatesSideEffectsImpl(services: _services,
                                       backgroundScheduler: backgroundScheduler)
     }
 }
