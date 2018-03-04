@@ -11,18 +11,19 @@ struct RateModel {
     let currencyName: String
     let nominal: Int
     let value: Double
-    let difference: Double
+    let difference: Double?
 }
 
 extension RateModel {
-    init(apiModel: CurrencyDailyRate) {
+    init(apiModel: CurrencyDailyRate, difference: Double? = nil) {
         flag = Flag(rawValue: apiModel.characterCode) ?? .unknown
         code = Int(apiModel.code) ?? 0
         characterCode = apiModel.characterCode
         currencyName = apiModel.name
         nominal = apiModel.nominal
         value = apiModel.value
-        difference = 0.0
+
+        self.difference = difference
     }
 }
 

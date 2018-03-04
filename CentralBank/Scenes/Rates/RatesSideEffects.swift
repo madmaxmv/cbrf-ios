@@ -39,9 +39,6 @@ struct RatesSideEffectsImpl: RatesSideEffects {
             return self._services.ratesService
                 .rates(on: Date())
                 .asObservable()
-                .map { rates -> [RateModel] in
-                    return rates.map { RateModel(apiModel: $0) }
-                }
                 .map { .rates(.ratesAcquired($0)) }
                 .subscribeOn(self._backgroundScheduler)
         }

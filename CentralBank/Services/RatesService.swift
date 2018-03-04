@@ -9,6 +9,7 @@ import RxSwift
 enum RatesError: Error {
     case emptyStore
     case storeUnavailable
+    case responseFailed
 }
 
 struct RatesService {
@@ -27,23 +28,45 @@ struct RatesService {
         _dateConverter = dateConverter
     }
     
-    func rates(on date: Date) -> Observable<[CurrencyDailyRate]> {
-        let searchDate = _dateConverter.date(removedTimeOffsetFor: date)
+    func rates(on date: Date) -> Observable<[RateModel]> {
+        let yesterday = _dateConverter.date(removedTimeOffsetFor: date.addingTimeInterval(-24 * 60 * 60))
+        let today = _dateConverter.date(removedTimeOffsetFor: date)
 
+        return Observable
+            .combineLatest(dailyRates(on: yesterday), dailyRates(on: today)) { yesterdayRates, todayRates in
+                
+                
+                return zip(yesterdayRates, todayRates)
+                    .flatMap { yesterdayRate, todayRate in
+                        guard yesterdayRate.code == todayRate.code else {
+                            return nil
+                        }
+                        return RateModel(apiModel: todayRate,
+                                         difference: todayRate.value - yesterdayRate.value)
+                    }
+            }.catchError { error in
+                return self.dailyRates(on: yesterday)
+                    .map { rates in
+                        return rates.map { RateModel(apiModel: $0) }
+                }
+        }
+    }
+    
+    func dailyRates(on date: Date) -> Observable<[CurrencyDailyRate]> {
         return Observable<[CurrencyDailyRate]>
             .create { observer in
-                self._store?.getRates(on: searchDate) { rates in
+                self._store?.getRates(on: date) { rates in
                     rates.isEmpty
                         ? observer.on(.error(RatesError.emptyStore))
                         : observer.on(.next(rates))
-                } ?? observer.on(.error(RatesError.storeUnavailable))
-
+                    } ?? observer.on(.error(RatesError.storeUnavailable))
+                
                 return Disposables.create()
             }.catchError { _ in
                 return self._remote
-                    .rates(on: searchDate)
+                    .rates(on: date)
                     .map { $0.rates }
-                    .do(onNext: { self._store?.save(rates: $0, on: searchDate) } )
-            }
+                    .do(onNext: { self._store?.save(rates: $0, on: date) } )
+        }
     }
 }

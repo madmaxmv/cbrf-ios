@@ -13,7 +13,7 @@ struct RateViewState {
     let characterCode: String
     let details: String
     let value: String
-    let difference: String
+    let difference: String?
     
     let model: RateModel
     
@@ -23,7 +23,15 @@ struct RateViewState {
         characterCode = model.characterCode
         details = "\(model.nominal) \(model.currencyName)"
         value = String(model.value)
-        difference = String(model.difference)
+        
+        switch model.difference {
+        case .some(let diff) where diff > 0:
+            self.difference = String(format: "+%.5f", diff)
+        case .some(let diff) where diff < 0:
+            difference = String(format: "-%.5f", diff)
+        default:
+            self.difference = nil
+        }
     }
 }
 
