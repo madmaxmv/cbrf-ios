@@ -1,8 +1,4 @@
 //
-//  CentralBankEndpoint.swift
-//  CentralBank
-//
-//  Created by Максим on 22/01/2018.
 //  Copyright © 2018 Matyushenko Maxim. All rights reserved.
 //
 

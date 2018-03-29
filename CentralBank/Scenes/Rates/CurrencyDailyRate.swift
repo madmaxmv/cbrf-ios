@@ -1,32 +1,29 @@
 //
-//  RateModel.swift
-//  CentralBank
-//
-//  Created by Максим on 20/01/2018.
 //  Copyright © 2018 Matyushenko Maxim. All rights reserved.
 //
 
 import Foundation
 
-struct RateModel {
+struct CurrencyDailyRate {
     let flag: Flag
     let code: Int
     let characterCode: String
     let currencyName: String
     let nominal: Int
     let value: Double
-    let difference: Double
+    let difference: Double?
 }
 
-extension RateModel {
-    init(apiModel: RateAPIModel) {
+extension CurrencyDailyRate {
+    init(apiModel: RateAPIModel, difference: Double? = nil) {
         flag = Flag(rawValue: apiModel.characterCode) ?? .unknown
         code = Int(apiModel.code) ?? 0
         characterCode = apiModel.characterCode
         currencyName = apiModel.name
         nominal = apiModel.nominal
-        value = Double(apiModel.value.replacingOccurrences(of: ",", with: ".")) ?? 0
-        difference = 0.0
+        value = apiModel.value
+
+        self.difference = difference
     }
 }
 

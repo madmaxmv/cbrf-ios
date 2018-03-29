@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17C88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Currency" representedClassName=".Currency" syncable="YES">
+        <attribute name="characterCode" attributeType="String" syncable="YES"/>
+        <attribute name="currencyCode" attributeType="String" syncable="YES"/>
+        <attribute name="currencyId" attributeType="String" syncable="YES"/>
+        <attribute name="isIncluded" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="nominal" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="order" attributeType="Integer 32" defaultValueString="1" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="rates" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Rate" inverseName="currency" inverseEntity="Rate" syncable="YES"/>
+    </entity>
+    <entity name="Rate" representedClassName=".Rate" syncable="YES">
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="value" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="currency" maxCount="1" deletionRule="Nullify" destinationEntity="Currency" inverseName="rates" inverseEntity="Currency" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Currency" positionX="-254" positionY="-45" width="128" height="165"/>
+        <element name="Rate" positionX="-54" positionY="18" width="128" height="90"/>
+    </elements>
+</model>

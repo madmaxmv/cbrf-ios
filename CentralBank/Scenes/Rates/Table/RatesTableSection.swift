@@ -13,7 +13,7 @@ enum RatesTableSection {
     case rates(items: [Item])
     
     enum Item {
-        case rate(RateViewState)
+        case rate(RateCell.State)
     }
 }
 
@@ -63,7 +63,7 @@ extension RatesTableSection.Item: IdentifiableType, Equatable {
 }
 
 extension RatesTableSection {
-    static func makeContent(for rates: [RateModel]) -> [RatesTableSection] {
-        return [.rates(items: rates.map { .rate(RateViewState(model: $0))})]
+    static func makeContent(for rates: [CurrencyDailyRate]) -> [RatesTableSection] {
+        return [.rates(items: rates.map { .rate(RateCell.State(model: $0))})]
     }
 }

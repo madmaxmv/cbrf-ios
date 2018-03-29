@@ -7,7 +7,7 @@ import RxSwift
 import RxCocoa
 
 /// Tab Bar Controller основного меню.
-class TabBarController: UITabBarController, ViewType {
+class TabBarController: UITabBarController, DataDrivenView {
 
     var state: Driver<TabBarViewState>!
 

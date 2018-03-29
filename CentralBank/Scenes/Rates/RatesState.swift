@@ -13,21 +13,28 @@ final class RatesState: State {
     var viewState: RatesViewState = .initial
 
     /// Все курсы валют.
-    var rates: [RateModel] = []
+    var ratesResult: RatesResult? = nil
 }
 
 extension RatesState {
     enum Event {
-        case ratesAcquired([RateModel])
+        case ratesResult(RatesResult)
     }
 }
 
 extension RatesState {
     func reduce(event: RatesState.Event) {
         switch event {
-        case .ratesAcquired(let rates):
-            self.rates = rates
-            self.viewState.content = RatesTableSection.makeContent(for: rates)
+        case .ratesResult(let result):
+            self.ratesResult = result
+            
+            switch result {
+            case .success(let rates),
+                 .today(let rates, _),
+                 .yesterday(let rates, _):
+                self.viewState.content = RatesTableSection.makeContent(for: rates)
+            default: break
+            }
         }
     }
 }
@@ -35,7 +42,7 @@ extension RatesState {
 
 extension RatesState {
     var queryAcquireRates: Void? {
-        return rates.isEmpty ? () : nil
+        return (ratesResult == nil) ? () : nil
     }
 }
 

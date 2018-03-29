@@ -1,8 +1,4 @@
 //
-//  AppDelegate.swift
-//  CentralBank
-//
-//  Created by Максим on 20/01/2018.
 //  Copyright © 2018 Matyushenko Maxim. All rights reserved.
 //
 
@@ -21,10 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         coordinator = SceneCoordinatorImpl(window: window!)
-        let service = APIService()
+        let services = Services(groupIdentifier: "group.ru.madmaxmv.centralbank")
         
         let sideEffects = AppSideEffects(coordinator: coordinator,
-                                         centralBankService: service,
+                                         services: services,
                                          backgroundScheduler: ConcurrentDispatchQueueScheduler(qos: .userInitiated))
         
         appStateStore = AppStateStore(sideEffects: sideEffects)

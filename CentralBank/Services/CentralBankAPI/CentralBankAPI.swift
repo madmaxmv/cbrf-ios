@@ -12,22 +12,23 @@ import RxSwift
 
 protocol CentralBankService {
     
-    func rates(on date: Date) -> Single<[RateAPIModel]>
+    func rates(on date: Date) -> Observable<DailyRatesData>
 }
 
 struct APIService: CentralBankService {
     
-    func rates(on date: Date) -> Single<[RateAPIModel]> {
-        return Single<[RateAPIModel]>
-            .create { single in
+    func rates(on date: Date) -> Observable<DailyRatesData> {
+        return Observable<DailyRatesData>
+            .create { observer in
                 MoyaProvider<CentralBankEndpoint>().request(.rates(date)) { result in
                     switch result {
                     case .success(let response):
-                        let rates = XMLDecoder(data: response.data).decode()
-                        single(.success(rates))
+                        let rates: DailyRatesData = XMLDecoder(data: response.data).decode()
+                        observer.on(.next(rates))
                     case .failure(let error):
-                        single(.error(error))
+                        observer.on(.error(error))
                     }
+                    observer.on(.completed)
                 }
                 return Disposables.create()
         }

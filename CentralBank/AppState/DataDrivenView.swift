@@ -6,7 +6,7 @@ import UIKit
 import RxCocoa
 
 /// Data-driven view.
-protocol ViewType {
+protocol DataDrivenView {
     /// Общий стейт приложения (системы).
     associatedtype StateStore
     /// Тип стейта данного view.
@@ -17,7 +17,7 @@ protocol ViewType {
     func subscribe(to stateStore: StateStore)
 }
 
-extension ViewType where Self: UIViewController {
+extension DataDrivenView where Self: UIViewController {
 
     mutating func bind(with stateStore: Self.StateStore) {
         loadViewIfNeeded()

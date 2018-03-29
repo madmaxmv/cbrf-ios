@@ -23,7 +23,7 @@ class RateCell: UITableViewCell {
         contentView.addSeparator()
     }
     
-    func setup(with state: RateViewState) {
+    func setup(with state: State) {
         flagLabel.text = state.flag
         codeLabel.text = state.characterCode
         detailsLabel.text = state.details
@@ -31,3 +31,42 @@ class RateCell: UITableViewCell {
         differenceLabel.text = state.difference
     }
 }
+
+extension RateCell {
+    struct State {
+        let flag: String
+        let characterCode: String
+        let details: String
+        let value: String
+        let difference: String?
+        
+        let model: CurrencyDailyRate
+        
+        init(model: CurrencyDailyRate) {
+            self.model = model
+            flag = model.flag.emoji
+            characterCode = model.characterCode
+            details = "\(model.nominal) \(model.currencyName)"
+            value = String(model.value)
+            
+            switch model.difference {
+            case .some(let diff) where diff > 0:
+                self.difference = String(format: "%.5f", diff)
+            case .some(let diff) where diff < 0:
+                difference = String(format: "%.5f", diff)
+            default:
+                self.difference = nil
+            }
+        }
+    }
+}
+
+extension RateCell.State: Equatable {
+    public static func == (lhs: RateCell.State, rhs: RateCell.State) -> Bool {
+        return lhs.characterCode == rhs.characterCode
+            && lhs.details == rhs.details
+            && lhs.value == rhs.value
+            && lhs.difference == rhs.difference
+    }
+}
+
