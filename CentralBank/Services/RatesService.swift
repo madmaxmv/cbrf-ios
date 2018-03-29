@@ -6,6 +6,13 @@ import Foundation
 import Result
 import RxSwift
 
+ enum RatesResult {
+    case success(rates: [CurrencyDailyRate])
+    case today(rates: [CurrencyDailyRate], error: RatesError)
+    case yesterday(rates: [CurrencyDailyRate], error: RatesError)
+    case failed(error: RatesError)
+ }
+ 
 enum RatesError: Error {
     case emptyStore
     case storeUnavailable
@@ -28,32 +35,37 @@ struct RatesService {
         _dateConverter = dateConverter
     }
     
-    func rates(on date: Date) -> Observable<[RateModel]> {
+    func rates(on date: Date) -> Observable<RatesResult> {
         let yesterday = _dateConverter.date(removedTimeOffsetFor: date.addingTimeInterval(-24 * 60 * 60))
         let today = _dateConverter.date(removedTimeOffsetFor: date)
 
         return Observable
             .combineLatest(dailyRates(on: yesterday), dailyRates(on: today)) { yesterdayRates, todayRates in
-                
-                
-                return zip(yesterdayRates, todayRates)
+                let _rates: [CurrencyDailyRate] = zip(yesterdayRates, todayRates)
                     .flatMap { yesterdayRate, todayRate in
                         guard yesterdayRate.code == todayRate.code else {
                             return nil
                         }
-                        return RateModel(apiModel: todayRate,
-                                         difference: todayRate.value - yesterdayRate.value)
+                        return CurrencyDailyRate(apiModel: todayRate,
+                                                 difference: todayRate.value - yesterdayRate.value)
                     }
+                return RatesResult.success(rates: _rates)
             }.catchError { error in
-                return self.dailyRates(on: yesterday)
+                guard let ratesError = error as? RatesError else {
+                    return .error(error)
+                }
+                return self.dailyRates(on: today)
                     .map { rates in
-                        return rates.map { RateModel(apiModel: $0) }
+                        return rates.map { CurrencyDailyRate(apiModel: $0)}
+                    }
+                    .map {
+                        return RatesResult.today(rates: $0, error: ratesError)
                 }
         }
     }
     
-    func dailyRates(on date: Date) -> Observable<[CurrencyDailyRate]> {
-        return Observable<[CurrencyDailyRate]>
+    func dailyRates(on date: Date) -> Observable<[RateAPIModel]> {
+        return Observable<[RateAPIModel]>
             .create { observer in
                 self._store?.getRates(on: date) { rates in
                     rates.isEmpty

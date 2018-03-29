@@ -38,9 +38,8 @@
 		9451DEA220134B3700F69318 /* CentralBankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9451DEA120134B3700F69318 /* CentralBankUITests.swift */; };
 		9452577120136A8000684439 /* RateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452577020136A8000684439 /* RateCell.swift */; };
 		9452577320137D7400684439 /* RateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9452577220137D7400684439 /* RateCell.xib */; };
-		9452577520137F7900684439 /* RateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452577420137F7900684439 /* RateModel.swift */; };
+		9452577520137F7900684439 /* CurrencyDailyRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452577420137F7900684439 /* CurrencyDailyRate.swift */; };
 		945257772013E32900684439 /* RatesSideEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945257762013E32900684439 /* RatesSideEffects.swift */; };
-		9452577920146E0300684439 /* RateViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452577820146E0300684439 /* RateViewState.swift */; };
 		9452577B201487B300684439 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452577A201487B300684439 /* ReusableView.swift */; };
 		9452577F2016683E00684439 /* CentralBankAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452577E2016683E00684439 /* CentralBankAPI.swift */; };
 		9452578220166E4B00684439 /* CentralBankEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452578120166E4B00684439 /* CentralBankEndpoint.swift */; };
@@ -52,8 +51,8 @@
 		946278D02038790000645B99 /* RatesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278CF2038790000645B99 /* RatesStore.swift */; };
 		946278D62039779500645B99 /* Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278D52039779500645B99 /* Managed.swift */; };
 		946278D8203977BD00645B99 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278D7203977BD00645B99 /* NSManagedObjectContext+Extensions.swift */; };
-		946278DA204AD18D00645B99 /* CurrencyDailyRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278D9204AD18D00645B99 /* CurrencyDailyRate.swift */; };
-		946278DC204AD31400645B99 /* DailyRates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278DB204AD31400645B99 /* DailyRates.swift */; };
+		946278DA204AD18D00645B99 /* RateAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278D9204AD18D00645B99 /* RateAPIModel.swift */; };
+		946278DC204AD31400645B99 /* DailyRatesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278DB204AD31400645B99 /* DailyRatesData.swift */; };
 		946278DE204AECAF00645B99 /* RatesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278DD204AECAF00645B99 /* RatesService.swift */; };
 		946278E0204AF8C600645B99 /* DateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278DF204AF8C600645B99 /* DateConverter.swift */; };
 		946278E2204AF99F00645B99 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278E1204AF99F00645B99 /* AppServices.swift */; };
@@ -121,9 +120,8 @@
 		9451DEA320134B3700F69318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9452577020136A8000684439 /* RateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCell.swift; sourceTree = "<group>"; };
 		9452577220137D7400684439 /* RateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateCell.xib; sourceTree = "<group>"; };
-		9452577420137F7900684439 /* RateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateModel.swift; sourceTree = "<group>"; };
+		9452577420137F7900684439 /* CurrencyDailyRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDailyRate.swift; sourceTree = "<group>"; };
 		945257762013E32900684439 /* RatesSideEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesSideEffects.swift; sourceTree = "<group>"; };
-		9452577820146E0300684439 /* RateViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewState.swift; sourceTree = "<group>"; };
 		9452577A201487B300684439 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		9452577E2016683E00684439 /* CentralBankAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralBankAPI.swift; sourceTree = "<group>"; };
 		9452578120166E4B00684439 /* CentralBankEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralBankEndpoint.swift; sourceTree = "<group>"; };
@@ -135,8 +133,8 @@
 		946278CF2038790000645B99 /* RatesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesStore.swift; sourceTree = "<group>"; };
 		946278D52039779500645B99 /* Managed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Managed.swift; sourceTree = "<group>"; };
 		946278D7203977BD00645B99 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
-		946278D9204AD18D00645B99 /* CurrencyDailyRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDailyRate.swift; sourceTree = "<group>"; };
-		946278DB204AD31400645B99 /* DailyRates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRates.swift; sourceTree = "<group>"; };
+		946278D9204AD18D00645B99 /* RateAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateAPIModel.swift; sourceTree = "<group>"; };
+		946278DB204AD31400645B99 /* DailyRatesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRatesData.swift; sourceTree = "<group>"; };
 		946278DD204AECAF00645B99 /* RatesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesService.swift; sourceTree = "<group>"; };
 		946278DF204AF8C600645B99 /* DateConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConverter.swift; sourceTree = "<group>"; };
 		946278E1204AF99F00645B99 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
@@ -257,7 +255,7 @@
 				943E0B1020135A14000C62C1 /* RatesViewState.swift */,
 				943E0B1F20136938000C62C1 /* RatesViewController.swift */,
 				943E0B1220135A31000C62C1 /* RatesState.swift */,
-				9452577420137F7900684439 /* RateModel.swift */,
+				9452577420137F7900684439 /* CurrencyDailyRate.swift */,
 				945257762013E32900684439 /* RatesSideEffects.swift */,
 			);
 			path = Rates;
@@ -269,7 +267,6 @@
 				9452577220137D7400684439 /* RateCell.xib */,
 				9452577020136A8000684439 /* RateCell.swift */,
 				943E0B1D2013681A000C62C1 /* RatesTableSection.swift */,
-				9452577820146E0300684439 /* RateViewState.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -386,8 +383,8 @@
 		945257802016686A00684439 /* Rates */ = {
 			isa = PBXGroup;
 			children = (
-				946278DB204AD31400645B99 /* DailyRates.swift */,
-				946278D9204AD18D00645B99 /* CurrencyDailyRate.swift */,
+				946278DB204AD31400645B99 /* DailyRatesData.swift */,
+				946278D9204AD18D00645B99 /* RateAPIModel.swift */,
 			);
 			path = Rates;
 			sourceTree = "<group>";
@@ -751,7 +748,6 @@
 				946278CC2038616900645B99 /* Rate.swift in Sources */,
 				943E0ADF201354D0000C62C1 /* AppState.swift in Sources */,
 				946278D62039779500645B99 /* Managed.swift in Sources */,
-				9452577920146E0300684439 /* RateViewState.swift in Sources */,
 				943E0AFA201356A0000C62C1 /* TabBarViewState.swift in Sources */,
 				94A61AF9201CD2E400299A4A /* UIView+extensions.swift in Sources */,
 				946278E2204AF99F00645B99 /* AppServices.swift in Sources */,
@@ -759,7 +755,7 @@
 				943E0B0220135795000C62C1 /* AlertActionSheet.swift in Sources */,
 				943E0AE0201354D0000C62C1 /* AppSideEffects.swift in Sources */,
 				943E0B1120135A14000C62C1 /* RatesViewState.swift in Sources */,
-				9452577520137F7900684439 /* RateModel.swift in Sources */,
+				9452577520137F7900684439 /* CurrencyDailyRate.swift in Sources */,
 				943E0B0320135795000C62C1 /* SceneCoordinator.swift in Sources */,
 				946278D02038790000645B99 /* RatesStore.swift in Sources */,
 				943E0B2020136938000C62C1 /* RatesViewController.swift in Sources */,
@@ -767,10 +763,10 @@
 				946278E0204AF8C600645B99 /* DateConverter.swift in Sources */,
 				943E0B1320135A31000C62C1 /* RatesState.swift in Sources */,
 				943E0B0B20135980000C62C1 /* NavigaionController.swift in Sources */,
-				946278DA204AD18D00645B99 /* CurrencyDailyRate.swift in Sources */,
+				946278DA204AD18D00645B99 /* RateAPIModel.swift in Sources */,
 				943E0B1620135DB2000C62C1 /* ObservableType+Extensions.swift in Sources */,
 				943E0B0820135876000C62C1 /* Assets.swift in Sources */,
-				946278DC204AD31400645B99 /* DailyRates.swift in Sources */,
+				946278DC204AD31400645B99 /* DailyRatesData.swift in Sources */,
 				943E0AE3201354D0000C62C1 /* SideEffects.swift in Sources */,
 				943E0AE1201354D0000C62C1 /* DataDrivenView.swift in Sources */,
 				945257842016823900684439 /* XMLDecoder.swift in Sources */,

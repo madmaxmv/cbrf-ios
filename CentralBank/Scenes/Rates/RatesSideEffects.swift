@@ -36,10 +36,9 @@ struct RatesSideEffectsImpl: RatesSideEffects {
     
     var acquireRates: () -> Observable<SideEffects.State.Event> {
         return {
-            return self._services.ratesService
+            self._services.ratesService
                 .rates(on: Date())
-                .asObservable()
-                .map { .rates(.ratesAcquired($0)) }
+                .map { .rates(.ratesResult($0)) }
                 .subscribeOn(self._backgroundScheduler)
         }
     }

@@ -5,7 +5,7 @@
 import Foundation
 import SWXMLHash
 
-struct CurrencyDailyRate {
+struct RateAPIModel {
     /// Уникальный идентификатор валюты.
     let id: String
     /// Численный код валюты.
@@ -20,7 +20,7 @@ struct CurrencyDailyRate {
     let value: Double
 }
 
-extension CurrencyDailyRate: XMLDecodable {
+extension RateAPIModel: XMLDecodable {
     init(xml: XMLIndexer) {
         id = xml.element!.attribute(by: "ID")!.text
         code = xml["NumCode"].element!.text

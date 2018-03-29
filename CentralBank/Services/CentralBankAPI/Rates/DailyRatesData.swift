@@ -5,14 +5,14 @@
 import Foundation
 import SWXMLHash
 
-struct DailyRates {
-    let rates: [CurrencyDailyRate]
+struct DailyRatesData {
+    let rates: [RateAPIModel]
 }
 
-extension DailyRates: XMLDecodable {
+extension DailyRatesData: XMLDecodable {
     init(xml: XMLIndexer) {
         rates = xml["ValCurs"].children.map {
-            CurrencyDailyRate(xml: $0)
+            RateAPIModel(xml: $0)
         }
     }
 }

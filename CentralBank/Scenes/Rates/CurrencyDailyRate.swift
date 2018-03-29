@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct RateModel {
+struct CurrencyDailyRate {
     let flag: Flag
     let code: Int
     let characterCode: String
@@ -14,8 +14,8 @@ struct RateModel {
     let difference: Double?
 }
 
-extension RateModel {
-    init(apiModel: CurrencyDailyRate, difference: Double? = nil) {
+extension CurrencyDailyRate {
+    init(apiModel: RateAPIModel, difference: Double? = nil) {
         flag = Flag(rawValue: apiModel.characterCode) ?? .unknown
         code = Int(apiModel.code) ?? 0
         characterCode = apiModel.characterCode
