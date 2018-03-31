@@ -1,8 +1,4 @@
 //
-//  ExchangeRatesViewController.swift
-//  CentralBank
-//
-//  Created by Максим on 20/01/2018.
 //  Copyright © 2018 Matyushenko Maxim. All rights reserved.
 //
 
@@ -15,6 +11,12 @@ import RxOptional
 class RatesViewController: UIViewController, UITableViewDelegate, DataDrivenView {
     
     @IBOutlet weak var tableView: UITableView!
+
+    lazy var refreshControl: UIRefreshControl = {
+        let control = UIRefreshControl()
+        control.tintColor = .activity
+        return control
+    }()
     
     var dataSource: RxTableViewSectionedAnimatedDataSource<RatesTableSection>!
     var state: Driver<RatesViewState>!
@@ -29,6 +31,7 @@ class RatesViewController: UIViewController, UITableViewDelegate, DataDrivenView
         tableView.showsHorizontalScrollIndicator = false
         tableView.estimatedRowHeight = 72
         tableView.register(RateCell.self)
+        tableView.addSubview(refreshControl)
 
         dataSource = RxTableViewSectionedAnimatedDataSource<RatesTableSection>(configureCell:
             { _, tableView, indexPath, item in
@@ -58,6 +61,18 @@ class RatesViewController: UIViewController, UITableViewDelegate, DataDrivenView
             .map { $0.content }
             .distinctUntilChanged { $0 == $1 }
             .drive(tableView.rx.items(dataSource: dataSource))
+            .disposed(by: bag)
+        
+        state.map { $0.isLoading }
+            .distinctUntilChanged()
+            .drive(refreshControl.rx.isRefreshing)
+            .disposed(by: bag)
+        
+        // Events
+        refreshControl.rx
+            .controlEvent(.valueChanged)
+            .map { .rates(.refreshRates) }
+            .bind(to: stateStore.eventBus)
             .disposed(by: bag)
 
     }

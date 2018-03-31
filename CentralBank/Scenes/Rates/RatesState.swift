@@ -1,8 +1,4 @@
 //
-//  ExchangeRatesState.swift
-//  CentralBank
-//
-//  Created by Максим on 20/01/2018.
 //  Copyright © 2018 Matyushenko Maxim. All rights reserved.
 //
 
@@ -19,6 +15,7 @@ final class RatesState: State {
 extension RatesState {
     enum Event {
         case ratesResult(RatesResult)
+        case refreshRates
     }
 }
 
@@ -26,15 +23,19 @@ extension RatesState {
     func reduce(event: RatesState.Event) {
         switch event {
         case .ratesResult(let result):
-            self.ratesResult = result
+            ratesResult = result
             
             switch result {
             case .success(let rates),
                  .today(let rates, _),
                  .yesterday(let rates, _):
-                self.viewState.content = RatesTableSection.makeContent(for: rates)
+                viewState.isLoading = false
+                viewState.content = RatesTableSection.makeContent(for: rates)
             default: break
             }
+        case .refreshRates:
+            viewState.isLoading = true
+            ratesResult = nil
         }
     }
 }
