@@ -27,7 +27,6 @@ extension TabItem {
             var vc = RatesViewController(nibName: "Rates", bundle: nil)
             vc.tabBarItem = UITabBarItem(title: title, image: icon, selectedImage: selectedIcon)
             var nc = NavigationController(rootViewController: vc)
-            nc.setNavigationBarHidden(true, animated: false)
 
             // enable slide-back action when navigation bar hidden.
             nc.interactivePopGestureRecognizer?.isEnabled = true

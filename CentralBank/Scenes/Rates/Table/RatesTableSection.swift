@@ -64,6 +64,9 @@ extension RatesTableSection.Item: IdentifiableType, Equatable {
 
 extension RatesTableSection {
     static func makeContent(for rates: [CurrencyDailyRate]) -> [RatesTableSection] {
-        return [.rates(items: rates.map { .rate(RateCell.State(model: $0))})]
+        let items: [Item] = rates
+            .map { .rate(RateCell.State(model: $0)) }
+
+        return [.rates(items: items)]
     }
 }

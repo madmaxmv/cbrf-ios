@@ -1,23 +1,10 @@
- //
+//
 //  Copyright © 2018 Matyushenko Maxim. All rights reserved.
 //
 
 import Foundation
 import Result
 import RxSwift
-
- enum RatesResult {
-    case success(rates: [CurrencyDailyRate])
-    case today(rates: [CurrencyDailyRate], error: RatesError)
-    case yesterday(rates: [CurrencyDailyRate], error: RatesError)
-    case failed(error: RatesError)
- }
- 
-enum RatesError: Error {
-    case emptyStore
-    case storeUnavailable
-    case responseFailed
-}
 
 struct RatesService {
     /// Сервис для доступа к удаленным даным.
@@ -63,6 +50,17 @@ struct RatesService {
                     }
                     .map { sortMethod($0) }
                     .map { RatesResult.today(rates: $0, error: ratesError) }
+        }
+    }
+
+    func currenies() -> Observable<[Currency]> {
+        return Observable<[Currency]>
+            .create { observer in
+                self._store?.currenies { currenies in
+                    observer.on(.next(currenies))
+                    observer.on(.completed)
+                }
+                return Disposables.create()
         }
     }
     

@@ -25,7 +25,7 @@ class LocalStore {
 
     lazy var readContext: NSManagedObjectContext = {
         let coordinator = self.coordinator
-        var managedObjectContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         managedObjectContext.persistentStoreCoordinator = coordinator
         managedObjectContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
         return managedObjectContext

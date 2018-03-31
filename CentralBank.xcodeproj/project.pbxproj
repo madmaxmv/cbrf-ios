@@ -19,7 +19,7 @@
 		943E0AF9201356A0000C62C1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0AF6201356A0000C62C1 /* TabBarController.swift */; };
 		943E0AFA201356A0000C62C1 /* TabBarViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0AF7201356A0000C62C1 /* TabBarViewState.swift */; };
 		943E0B0120135795000C62C1 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0AFC20135795000C62C1 /* Scene.swift */; };
-		943E0B0220135795000C62C1 /* AlertActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0AFD20135795000C62C1 /* AlertActionSheet.swift */; };
+		943E0B0220135795000C62C1 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0AFD20135795000C62C1 /* Alert.swift */; };
 		943E0B0320135795000C62C1 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0AFE20135795000C62C1 /* SceneCoordinator.swift */; };
 		943E0B0420135795000C62C1 /* SceneTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0AFF20135795000C62C1 /* SceneTransitionType.swift */; };
 		943E0B0520135795000C62C1 /* SceneAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0B0020135795000C62C1 /* SceneAction.swift */; };
@@ -56,7 +56,13 @@
 		946278DE204AECAF00645B99 /* RatesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278DD204AECAF00645B99 /* RatesService.swift */; };
 		946278E0204AF8C600645B99 /* DateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278DF204AF8C600645B99 /* DateConverter.swift */; };
 		946278E2204AF99F00645B99 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278E1204AF99F00645B99 /* AppServices.swift */; };
-		94729CA9206D8A170026C45D /* RatesSortPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CA8206D8A170026C45D /* RatesSortPolicy.swift */; };
+		94729CA9206D8A170026C45D /* RatesSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CA8206D8A170026C45D /* RatesSort.swift */; };
+		94729CAE206FFC9D0026C45D /* СurreniesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CAD206FFC9D0026C45D /* СurreniesViewController.swift */; };
+		94729CB0206FFE700026C45D /* СurreniesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CAF206FFE700026C45D /* СurreniesState.swift */; };
+		94729CB2206FFEB40026C45D /* СurreniesViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CB1206FFEB40026C45D /* СurreniesViewState.swift */; };
+		94729CB5207005AB0026C45D /* RatesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CB4207005AB0026C45D /* RatesResult.swift */; };
+		94729CB7207005DD0026C45D /* RatesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CB6207005DD0026C45D /* RatesError.swift */; };
+		94729CBB20700C5B0026C45D /* СurreniesSideEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CBA20700C5B0026C45D /* СurreniesSideEffects.swift */; };
 		94A61AF7201CCBEC00299A4A /* UIColor+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A61AF6201CCBEC00299A4A /* UIColor+extensions.swift */; };
 		94A61AF9201CD2E400299A4A /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A61AF8201CD2E400299A4A /* UIView+extensions.swift */; };
 		F4876BD9EE5513337B352902 /* Pods_CentralBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00791B83A1CCCAF9799577FA /* Pods_CentralBankUITests.framework */; };
@@ -96,7 +102,7 @@
 		943E0AF6201356A0000C62C1 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		943E0AF7201356A0000C62C1 /* TabBarViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewState.swift; sourceTree = "<group>"; };
 		943E0AFC20135795000C62C1 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Scene.swift; path = CentralBank/SceneCoordinator/Scene.swift; sourceTree = SOURCE_ROOT; };
-		943E0AFD20135795000C62C1 /* AlertActionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertActionSheet.swift; path = CentralBank/SceneCoordinator/AlertActionSheet.swift; sourceTree = SOURCE_ROOT; };
+		943E0AFD20135795000C62C1 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alert.swift; path = CentralBank/SceneCoordinator/Alert.swift; sourceTree = SOURCE_ROOT; };
 		943E0AFE20135795000C62C1 /* SceneCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneCoordinator.swift; path = CentralBank/SceneCoordinator/SceneCoordinator.swift; sourceTree = SOURCE_ROOT; };
 		943E0AFF20135795000C62C1 /* SceneTransitionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneTransitionType.swift; path = CentralBank/SceneCoordinator/SceneTransitionType.swift; sourceTree = SOURCE_ROOT; };
 		943E0B0020135795000C62C1 /* SceneAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneAction.swift; path = CentralBank/SceneCoordinator/SceneAction.swift; sourceTree = SOURCE_ROOT; };
@@ -140,7 +146,13 @@
 		946278DF204AF8C600645B99 /* DateConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConverter.swift; sourceTree = "<group>"; };
 		946278E1204AF99F00645B99 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
 		946278E3204AFDD700645B99 /* CentralBank.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CentralBank.entitlements; sourceTree = "<group>"; };
-		94729CA8206D8A170026C45D /* RatesSortPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesSortPolicy.swift; sourceTree = "<group>"; };
+		94729CA8206D8A170026C45D /* RatesSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesSort.swift; sourceTree = "<group>"; };
+		94729CAD206FFC9D0026C45D /* СurreniesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СurreniesViewController.swift"; sourceTree = "<group>"; };
+		94729CAF206FFE700026C45D /* СurreniesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СurreniesState.swift"; sourceTree = "<group>"; };
+		94729CB1206FFEB40026C45D /* СurreniesViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СurreniesViewState.swift"; sourceTree = "<group>"; };
+		94729CB4207005AB0026C45D /* RatesResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesResult.swift; sourceTree = "<group>"; };
+		94729CB6207005DD0026C45D /* RatesError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesError.swift; sourceTree = "<group>"; };
+		94729CBA20700C5B0026C45D /* СurreniesSideEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СurreniesSideEffects.swift"; sourceTree = "<group>"; };
 		94A61AF6201CCBEC00299A4A /* UIColor+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extensions.swift"; sourceTree = "<group>"; };
 		94A61AF8201CD2E400299A4A /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
 		A160BB35A8ADD71AB4F5F92D /* Pods-CentralBankTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentralBankTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CentralBankTests/Pods-CentralBankTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -194,6 +206,7 @@
 			children = (
 				943E0B1A20136199000C62C1 /* Launch */,
 				943E0B0C201359AB000C62C1 /* Rates */,
+				94729CAC206FFC4F0026C45D /* EditRates */,
 				943E0B0920135975000C62C1 /* Navigation */,
 				943E0AF420135690000C62C1 /* TabBar */,
 			);
@@ -257,7 +270,6 @@
 				943E0B1020135A14000C62C1 /* RatesViewState.swift */,
 				943E0B1F20136938000C62C1 /* RatesViewController.swift */,
 				943E0B1220135A31000C62C1 /* RatesState.swift */,
-				9452577420137F7900684439 /* CurrencyDailyRate.swift */,
 				945257762013E32900684439 /* RatesSideEffects.swift */,
 			);
 			path = Rates;
@@ -295,7 +307,7 @@
 		943E0B1C2013653F000C62C1 /* SceneCoordinator */ = {
 			isa = PBXGroup;
 			children = (
-				943E0AFD20135795000C62C1 /* AlertActionSheet.swift */,
+				943E0AFD20135795000C62C1 /* Alert.swift */,
 				943E0AFC20135795000C62C1 /* Scene.swift */,
 				943E0B0020135795000C62C1 /* SceneAction.swift */,
 				943E0AFE20135795000C62C1 /* SceneCoordinator.swift */,
@@ -362,10 +374,10 @@
 		9452577C2016680000684439 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				94729CB32070059B0026C45D /* Models */,
 				94A61AFA201D090100299A4A /* Store */,
 				9452577D2016681300684439 /* CentralBankAPI */,
 				946278DD204AECAF00645B99 /* RatesService.swift */,
-				94729CA8206D8A170026C45D /* RatesSortPolicy.swift */,
 				946278DF204AF8C600645B99 /* DateConverter.swift */,
 				946278E1204AF99F00645B99 /* AppServices.swift */,
 			);
@@ -399,6 +411,28 @@
 				946278CB2038616900645B99 /* Rate.swift */,
 				946278D52039779500645B99 /* Managed.swift */,
 				946278D7203977BD00645B99 /* NSManagedObjectContext+Extensions.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		94729CAC206FFC4F0026C45D /* EditRates */ = {
+			isa = PBXGroup;
+			children = (
+				94729CAD206FFC9D0026C45D /* СurreniesViewController.swift */,
+				94729CB1206FFEB40026C45D /* СurreniesViewState.swift */,
+				94729CAF206FFE700026C45D /* СurreniesState.swift */,
+				94729CBA20700C5B0026C45D /* СurreniesSideEffects.swift */,
+			);
+			path = EditRates;
+			sourceTree = "<group>";
+		};
+		94729CB32070059B0026C45D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				94729CA8206D8A170026C45D /* RatesSort.swift */,
+				9452577420137F7900684439 /* CurrencyDailyRate.swift */,
+				94729CB4207005AB0026C45D /* RatesResult.swift */,
+				94729CB6207005DD0026C45D /* RatesError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -755,11 +789,14 @@
 				94A61AF9201CD2E400299A4A /* UIView+extensions.swift in Sources */,
 				946278E2204AF99F00645B99 /* AppServices.swift in Sources */,
 				943E0AF9201356A0000C62C1 /* TabBarController.swift in Sources */,
-				943E0B0220135795000C62C1 /* AlertActionSheet.swift in Sources */,
+				94729CB5207005AB0026C45D /* RatesResult.swift in Sources */,
+				94729CB7207005DD0026C45D /* RatesError.swift in Sources */,
+				943E0B0220135795000C62C1 /* Alert.swift in Sources */,
 				943E0AE0201354D0000C62C1 /* AppSideEffects.swift in Sources */,
 				943E0B1120135A14000C62C1 /* RatesViewState.swift in Sources */,
 				9452577520137F7900684439 /* CurrencyDailyRate.swift in Sources */,
 				943E0B0320135795000C62C1 /* SceneCoordinator.swift in Sources */,
+				94729CB2206FFEB40026C45D /* СurreniesViewState.swift in Sources */,
 				946278D02038790000645B99 /* RatesStore.swift in Sources */,
 				943E0B2020136938000C62C1 /* RatesViewController.swift in Sources */,
 				946278D8203977BD00645B99 /* NSManagedObjectContext+Extensions.swift in Sources */,
@@ -784,9 +821,12 @@
 				9451DE8220134B3600F69318 /* AppDelegate.swift in Sources */,
 				943E0B1E2013681A000C62C1 /* RatesTableSection.swift in Sources */,
 				943E0AF8201356A0000C62C1 /* TabItem.swift in Sources */,
-				94729CA9206D8A170026C45D /* RatesSortPolicy.swift in Sources */,
+				94729CA9206D8A170026C45D /* RatesSort.swift in Sources */,
 				946278C92038609200645B99 /* Currency.swift in Sources */,
 				943E0AE4201354D0000C62C1 /* State.swift in Sources */,
+				94729CAE206FFC9D0026C45D /* СurreniesViewController.swift in Sources */,
+				94729CB0206FFE700026C45D /* СurreniesState.swift in Sources */,
+				94729CBB20700C5B0026C45D /* СurreniesSideEffects.swift in Sources */,
 				9452578220166E4B00684439 /* CentralBankEndpoint.swift in Sources */,
 				945257772013E32900684439 /* RatesSideEffects.swift in Sources */,
 			);

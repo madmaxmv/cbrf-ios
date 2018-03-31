@@ -28,7 +28,7 @@ protocol SceneCoordinator {
 
     /// Show an alert or actionSheet.
     @discardableResult
-    func show(alert: AlertActionSheet, animated: Bool) -> Observable<String?>
+    func show(alert: Alert, animated: Bool) -> Observable<String?>
 }
 
 extension SceneCoordinator {
@@ -163,17 +163,14 @@ class SceneCoordinatorImpl: SceneCoordinator {
 
     /// Show an alert or actionSheet.
     @discardableResult
-    func show(alert: AlertActionSheet, animated: Bool) -> Observable<String?> {
+    func show(alert: Alert, animated: Bool) -> Observable<String?> {
         switch alert {
-        case let .alert(data: data, textField: textField):
+        case let .alert(data: data):
             return Single
                 .create { [unowned self]  single in
                     let alertController = UIAlertController(title: data.title,
                                                             message: data.message,
                                                             preferredStyle: .alert)
-                    if textField != nil {
-                        alertController.addTextField(configurationHandler: textField)
-                    }
                     data.actions
                         .map { action in
                             return UIAlertAction(title: action.title, style: action.style) {

@@ -9,6 +9,8 @@ protocol RatesStore {
     func save(rates: [RateAPIModel], on date: Date)
     
     func getRates(on date: Date, completion: @escaping (([RateAPIModel]) -> Void))
+    
+    func currenies(completion: @escaping (([Currency]) -> Void))
 }
 
 extension LocalStore: RatesStore {
@@ -43,7 +45,7 @@ extension LocalStore: RatesStore {
         readContext.perform { context in
             let allCurrenies = Currency.fetch(in: context)
                 .filter { $0.isIncluded }
-
+            
             let rates: [RateAPIModel] = allCurrenies.flatMap { currency in
                 guard let rate = Rate.findOrFetch(in: context, matching: Rate.predicate(currency: currency,
                                                                                         on: date))
@@ -51,13 +53,19 @@ extension LocalStore: RatesStore {
                         return nil
                 }
                 return RateAPIModel(id: currency.currencyId,
-                                         code: currency.currencyCode,
-                                         characterCode: currency.characterCode,
-                                         nominal: Int(currency.nominal),
-                                         name: currency.name,
-                                         value: rate.value)
+                                    code: currency.currencyCode,
+                                    characterCode: currency.characterCode,
+                                    nominal: Int(currency.nominal),
+                                    name: currency.name,
+                                    value: rate.value)
             }
             completion(rates)
+        }
+    }
+
+    func currenies(completion: @escaping (([Currency]) -> Void)) {
+        readContext.perform { context in
+            completion(Currency.fetch(in: context))
         }
     }
 }

@@ -12,6 +12,12 @@ class RatesViewController: UIViewController, UITableViewDelegate, DataDrivenView
     
     @IBOutlet weak var tableView: UITableView!
 
+    lazy var editItem: UIBarButtonItem = {
+        let item = UIBarButtonItem(title: "Edit", style: .plain, target: nil, action: nil)
+        item.tintColor = .mainText
+        return item
+    }()
+    
     lazy var refreshControl: UIRefreshControl = {
         let control = UIRefreshControl()
         control.tintColor = .activity
@@ -25,11 +31,16 @@ class RatesViewController: UIViewController, UITableViewDelegate, DataDrivenView
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.rightBarButtonItem = editItem
+        
         tableView.separatorStyle = .none
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.backgroundColor = .background
+        
         tableView.showsVerticalScrollIndicator = false
         tableView.showsHorizontalScrollIndicator = false
         tableView.estimatedRowHeight = 72
+        tableView.rowHeight = UITableViewAutomaticDimension
+
         tableView.register(RateCell.self)
         tableView.addSubview(refreshControl)
 
@@ -37,7 +48,7 @@ class RatesViewController: UIViewController, UITableViewDelegate, DataDrivenView
             { _, tableView, indexPath, item in
                 switch item {
                 case .rate(let state):
-                    let cell: RateCell = tableView.dequeueReusableCell(for: indexPath)
+                    let cell: RateCell = tableView.dequeueCell(for: indexPath)
                     cell.setup(with: state)
                     return cell
                 }
@@ -74,6 +85,10 @@ class RatesViewController: UIViewController, UITableViewDelegate, DataDrivenView
             .map { .rates(.refreshRates) }
             .bind(to: stateStore.eventBus)
             .disposed(by: bag)
-
+        
+        editItem.rx.tap
+            .map { .rates(.openEditMode) }
+            .bind(to: stateStore.eventBus)
+            .disposed(by: bag)
     }
 }

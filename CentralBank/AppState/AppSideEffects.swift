@@ -25,6 +25,7 @@ struct AppSideEffects {
         _services = services
         
         _rates = RatesSideEffectsImpl(services: _services,
+                                      coordinator: coordinator,
                                       backgroundScheduler: backgroundScheduler)
     }
 }
