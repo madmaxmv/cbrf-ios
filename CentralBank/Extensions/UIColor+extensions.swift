@@ -25,4 +25,19 @@ extension UIColor {
     static var separator: UIColor {
         return UIColor(red: 224/255, green: 218/255, blue: 207/255, alpha: 1.0)
     }
+    
+    
+    static var activity: UIColor {
+        return UIColor(red: 197/255, green: 197/255, blue: 197/255, alpha: 1.0)
+    }
+    
+    /// Красный цвет в приложении.
+    static var red: UIColor {
+        return UIColor(red: 152/255, green: 1/255, blue: 8/255, alpha: 1.0)
+    }
+    
+    /// Зеленый цвет в приложении.
+    static var green: UIColor {
+        return UIColor(red: 1/255, green: 152/255, blue: 8/255, alpha: 1.0)
+    }
 }

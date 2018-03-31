@@ -35,9 +35,12 @@ struct RatesService {
         _dateConverter = dateConverter
     }
     
-    func rates(on date: Date) -> Observable<RatesResult> {
+    func rates(on date: Date,
+               sortedUsing policy: RatesSort.Policy = .standard) -> Observable<RatesResult> {
+
         let yesterday = _dateConverter.date(removedTimeOffsetFor: date.addingTimeInterval(-24 * 60 * 60))
         let today = _dateConverter.date(removedTimeOffsetFor: date)
+        let sortMethod = RatesSort.sort(for: policy)
 
         return Observable
             .combineLatest(dailyRates(on: yesterday), dailyRates(on: today)) { yesterdayRates, todayRates in
@@ -49,7 +52,7 @@ struct RatesService {
                         return CurrencyDailyRate(apiModel: todayRate,
                                                  difference: todayRate.value - yesterdayRate.value)
                     }
-                return RatesResult.success(rates: _rates)
+                return RatesResult.success(rates: sortMethod(_rates))
             }.catchError { error in
                 guard let ratesError = error as? RatesError else {
                     return .error(error)
@@ -58,9 +61,8 @@ struct RatesService {
                     .map { rates in
                         return rates.map { CurrencyDailyRate(apiModel: $0)}
                     }
-                    .map {
-                        return RatesResult.today(rates: $0, error: ratesError)
-                }
+                    .map { sortMethod($0) }
+                    .map { RatesResult.today(rates: $0, error: ratesError) }
         }
     }
     

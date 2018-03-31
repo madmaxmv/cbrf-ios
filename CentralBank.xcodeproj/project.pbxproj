@@ -56,6 +56,7 @@
 		946278DE204AECAF00645B99 /* RatesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278DD204AECAF00645B99 /* RatesService.swift */; };
 		946278E0204AF8C600645B99 /* DateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278DF204AF8C600645B99 /* DateConverter.swift */; };
 		946278E2204AF99F00645B99 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278E1204AF99F00645B99 /* AppServices.swift */; };
+		94729CA9206D8A170026C45D /* RatesSortPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CA8206D8A170026C45D /* RatesSortPolicy.swift */; };
 		94A61AF7201CCBEC00299A4A /* UIColor+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A61AF6201CCBEC00299A4A /* UIColor+extensions.swift */; };
 		94A61AF9201CD2E400299A4A /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A61AF8201CD2E400299A4A /* UIView+extensions.swift */; };
 		F4876BD9EE5513337B352902 /* Pods_CentralBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00791B83A1CCCAF9799577FA /* Pods_CentralBankUITests.framework */; };
@@ -139,6 +140,7 @@
 		946278DF204AF8C600645B99 /* DateConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConverter.swift; sourceTree = "<group>"; };
 		946278E1204AF99F00645B99 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
 		946278E3204AFDD700645B99 /* CentralBank.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CentralBank.entitlements; sourceTree = "<group>"; };
+		94729CA8206D8A170026C45D /* RatesSortPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesSortPolicy.swift; sourceTree = "<group>"; };
 		94A61AF6201CCBEC00299A4A /* UIColor+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extensions.swift"; sourceTree = "<group>"; };
 		94A61AF8201CD2E400299A4A /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
 		A160BB35A8ADD71AB4F5F92D /* Pods-CentralBankTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentralBankTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CentralBankTests/Pods-CentralBankTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				94A61AFA201D090100299A4A /* Store */,
 				9452577D2016681300684439 /* CentralBankAPI */,
 				946278DD204AECAF00645B99 /* RatesService.swift */,
+				94729CA8206D8A170026C45D /* RatesSortPolicy.swift */,
 				946278DF204AF8C600645B99 /* DateConverter.swift */,
 				946278E1204AF99F00645B99 /* AppServices.swift */,
 			);
@@ -781,6 +784,7 @@
 				9451DE8220134B3600F69318 /* AppDelegate.swift in Sources */,
 				943E0B1E2013681A000C62C1 /* RatesTableSection.swift in Sources */,
 				943E0AF8201356A0000C62C1 /* TabItem.swift in Sources */,
+				94729CA9206D8A170026C45D /* RatesSortPolicy.swift in Sources */,
 				946278C92038609200645B99 /* Currency.swift in Sources */,
 				943E0AE4201354D0000C62C1 /* State.swift in Sources */,
 				9452578220166E4B00684439 /* CentralBankEndpoint.swift in Sources */,

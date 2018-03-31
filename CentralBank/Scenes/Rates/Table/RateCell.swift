@@ -29,6 +29,7 @@ class RateCell: UITableViewCell {
         detailsLabel.text = state.details
         valueLabel.text = state.value
         differenceLabel.text = state.difference
+        differenceLabel.textColor = state.differenceColor
     }
 }
 
@@ -38,7 +39,9 @@ extension RateCell {
         let characterCode: String
         let details: String
         let value: String
+        
         let difference: String?
+        let differenceColor: UIColor
         
         let model: CurrencyDailyRate
         
@@ -51,11 +54,14 @@ extension RateCell {
             
             switch model.difference {
             case .some(let diff) where diff > 0:
-                self.difference = String(format: "%.5f", diff)
+                difference = String(format: "%.5f", diff)
+                differenceColor = .green
             case .some(let diff) where diff < 0:
                 difference = String(format: "%.5f", diff)
+                differenceColor = .red
             default:
-                self.difference = nil
+                difference = nil
+                differenceColor = .clear
             }
         }
     }

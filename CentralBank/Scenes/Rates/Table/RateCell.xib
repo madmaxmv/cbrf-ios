@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🇺🇸" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8J-ni-JvO">
-                        <rect key="frame" x="8" y="7.5" width="32" height="29"/>
+                        <rect key="frame" x="8" y="6.5" width="32" height="29"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                         <nil key="textColor"/>
@@ -60,6 +60,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="VdS-Ga-mAq" firstAttribute="height" secondItem="ade-zX-ex5" secondAttribute="height" id="6V6-j8-mll"/>
                     <constraint firstItem="hAP-1H-Znf" firstAttribute="centerY" secondItem="D3L-Q6-FwD" secondAttribute="centerY" id="6kV-Ws-0j6"/>

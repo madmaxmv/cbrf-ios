@@ -27,6 +27,16 @@ extension CurrencyDailyRate {
     }
 }
 
+extension CurrencyDailyRate: Comparable {
+    static func <(lhs: CurrencyDailyRate, rhs: CurrencyDailyRate) -> Bool {
+        return lhs.characterCode < rhs.characterCode
+    }
+    
+    static func ==(lhs: CurrencyDailyRate, rhs: CurrencyDailyRate) -> Bool {
+        return lhs.code == rhs.code
+    }
+}
+
 enum Flag: String {
     case AUD
     case AZN
