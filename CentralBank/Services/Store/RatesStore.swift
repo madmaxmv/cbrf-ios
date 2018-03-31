@@ -10,7 +10,7 @@ protocol RatesStore {
     
     func getRates(on date: Date, completion: @escaping (([RateAPIModel]) -> Void))
     
-    func currenies(completion: @escaping (([Currency]) -> Void))
+    func currencies(completion: @escaping (([Currency]) -> Void))
 }
 
 extension LocalStore: RatesStore {
@@ -63,7 +63,7 @@ extension LocalStore: RatesStore {
         }
     }
 
-    func currenies(completion: @escaping (([Currency]) -> Void)) {
+    func currencies(completion: @escaping (([Currency]) -> Void)) {
         readContext.perform { context in
             completion(Currency.fetch(in: context))
         }

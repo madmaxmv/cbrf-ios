@@ -5,20 +5,20 @@
 import RxSwift
 import RxFeedback
 
-protocol СurreniesSideEffects {
+protocol CurrenciesSideEffects {
     /// Получение списка валют.
-    var loadCurrenies: () -> Observable<SideEffects.State.Event> { get }
+    var loadCurrencies: () -> Observable<SideEffects.State.Event> { get }
 }
 
-extension СurreniesSideEffects {
+extension CurrenciesSideEffects {
     var effects: [SideEffects.ScheduledEffect] {
         return [
-            react(query: { $0.rates.edit?.queryLoadCurrenies }, effects: loadCurrenies)
+            react(query: { $0.rates.edit?.queryLoadCurrencies }, effects: loadCurrencies)
         ]
     }
 }
 
-struct СurreniesSideEffectsImpl: СurreniesSideEffects {
+struct CurrenciesSideEffectsImpl: CurrenciesSideEffects {
     
     private let _services: AppServices
     private let _coordinator: SceneCoordinator
@@ -28,11 +28,11 @@ struct СurreniesSideEffectsImpl: СurreniesSideEffects {
         _coordinator = coordinator
     }
     
-    var loadCurrenies: () -> Observable<SideEffects.State.Event> {
+    var loadCurrencies: () -> Observable<SideEffects.State.Event> {
         return {
             self._services.ratesService
-                .currenies()
-                .map { .rates(.edit(.currenies($0))) }
+                .currencies()
+                .map { .rates(.edit(.currencies($0))) }
         }
     }
 }

@@ -9,7 +9,6 @@ import StoreKit
 enum Scene {
     /// Таб-бар приложения.
     case tabBar
-    
     /// Сцена для редактирования списка валют.
     case editRates
 }
@@ -18,14 +17,18 @@ enum Scene {
 extension Scene {
 
     var viewController: UIViewController {
-        let appStateStore = ((UIApplication.shared.delegate as? AppDelegate)?.appStateStore)!
+        let stateStore = ((UIApplication.shared.delegate as? AppDelegate)?.appStateStore)!
         switch self {
         case .tabBar:
             var tabBarController = TabBarController()
-            tabBarController.bind(with: appStateStore)
+            tabBarController.bind(with: stateStore)
             return tabBarController
         case .editRates:
-            return UIViewController()
+            var vc = СurreniesViewController()
+            var nc = NavigationController(rootViewController: vc)
+            nc.bind(with: stateStore)
+            vc.bind(with: stateStore)
+            return nc
         }
     }
 }

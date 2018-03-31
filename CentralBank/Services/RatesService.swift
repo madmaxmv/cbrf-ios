@@ -53,10 +53,10 @@ struct RatesService {
         }
     }
 
-    func currenies() -> Observable<[Currency]> {
+    func currencies() -> Observable<[Currency]> {
         return Observable<[Currency]>
             .create { observer in
-                self._store?.currenies { currenies in
+                self._store?.currencies { currenies in
                     observer.on(.next(currenies))
                     observer.on(.completed)
                 }

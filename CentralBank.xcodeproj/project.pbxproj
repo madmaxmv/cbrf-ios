@@ -58,11 +58,11 @@
 		946278E2204AF99F00645B99 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278E1204AF99F00645B99 /* AppServices.swift */; };
 		94729CA9206D8A170026C45D /* RatesSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CA8206D8A170026C45D /* RatesSort.swift */; };
 		94729CAE206FFC9D0026C45D /* СurreniesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CAD206FFC9D0026C45D /* СurreniesViewController.swift */; };
-		94729CB0206FFE700026C45D /* СurreniesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CAF206FFE700026C45D /* СurreniesState.swift */; };
-		94729CB2206FFEB40026C45D /* СurreniesViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CB1206FFEB40026C45D /* СurreniesViewState.swift */; };
+		94729CB0206FFE700026C45D /* CurrenciesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CAF206FFE700026C45D /* CurrenciesState.swift */; };
+		94729CB2206FFEB40026C45D /* CurrenciesViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CB1206FFEB40026C45D /* CurrenciesViewState.swift */; };
 		94729CB5207005AB0026C45D /* RatesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CB4207005AB0026C45D /* RatesResult.swift */; };
 		94729CB7207005DD0026C45D /* RatesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CB6207005DD0026C45D /* RatesError.swift */; };
-		94729CBB20700C5B0026C45D /* СurreniesSideEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CBA20700C5B0026C45D /* СurreniesSideEffects.swift */; };
+		94729CBB20700C5B0026C45D /* CurrenciesSideEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CBA20700C5B0026C45D /* CurrenciesSideEffects.swift */; };
 		94A61AF7201CCBEC00299A4A /* UIColor+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A61AF6201CCBEC00299A4A /* UIColor+extensions.swift */; };
 		94A61AF9201CD2E400299A4A /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A61AF8201CD2E400299A4A /* UIView+extensions.swift */; };
 		F4876BD9EE5513337B352902 /* Pods_CentralBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00791B83A1CCCAF9799577FA /* Pods_CentralBankUITests.framework */; };
@@ -148,11 +148,11 @@
 		946278E3204AFDD700645B99 /* CentralBank.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CentralBank.entitlements; sourceTree = "<group>"; };
 		94729CA8206D8A170026C45D /* RatesSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesSort.swift; sourceTree = "<group>"; };
 		94729CAD206FFC9D0026C45D /* СurreniesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СurreniesViewController.swift"; sourceTree = "<group>"; };
-		94729CAF206FFE700026C45D /* СurreniesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СurreniesState.swift"; sourceTree = "<group>"; };
-		94729CB1206FFEB40026C45D /* СurreniesViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СurreniesViewState.swift"; sourceTree = "<group>"; };
+		94729CAF206FFE700026C45D /* CurrenciesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesState.swift; sourceTree = "<group>"; };
+		94729CB1206FFEB40026C45D /* CurrenciesViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesViewState.swift; sourceTree = "<group>"; };
 		94729CB4207005AB0026C45D /* RatesResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesResult.swift; sourceTree = "<group>"; };
 		94729CB6207005DD0026C45D /* RatesError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesError.swift; sourceTree = "<group>"; };
-		94729CBA20700C5B0026C45D /* СurreniesSideEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СurreniesSideEffects.swift"; sourceTree = "<group>"; };
+		94729CBA20700C5B0026C45D /* CurrenciesSideEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesSideEffects.swift; sourceTree = "<group>"; };
 		94A61AF6201CCBEC00299A4A /* UIColor+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extensions.swift"; sourceTree = "<group>"; };
 		94A61AF8201CD2E400299A4A /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
 		A160BB35A8ADD71AB4F5F92D /* Pods-CentralBankTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentralBankTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CentralBankTests/Pods-CentralBankTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -418,10 +418,11 @@
 		94729CAC206FFC4F0026C45D /* EditRates */ = {
 			isa = PBXGroup;
 			children = (
+				94F95077207028AA00265779 /* Table */,
 				94729CAD206FFC9D0026C45D /* СurreniesViewController.swift */,
-				94729CB1206FFEB40026C45D /* СurreniesViewState.swift */,
-				94729CAF206FFE700026C45D /* СurreniesState.swift */,
-				94729CBA20700C5B0026C45D /* СurreniesSideEffects.swift */,
+				94729CB1206FFEB40026C45D /* CurrenciesViewState.swift */,
+				94729CAF206FFE700026C45D /* CurrenciesState.swift */,
+				94729CBA20700C5B0026C45D /* CurrenciesSideEffects.swift */,
 			);
 			path = EditRates;
 			sourceTree = "<group>";
@@ -446,6 +447,13 @@
 				946278CF2038790000645B99 /* RatesStore.swift */,
 			);
 			path = Store;
+			sourceTree = "<group>";
+		};
+		94F95077207028AA00265779 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Table;
 			sourceTree = "<group>";
 		};
 		D42370E128EC47C8B2A71665 /* Frameworks */ = {
@@ -796,7 +804,7 @@
 				943E0B1120135A14000C62C1 /* RatesViewState.swift in Sources */,
 				9452577520137F7900684439 /* CurrencyDailyRate.swift in Sources */,
 				943E0B0320135795000C62C1 /* SceneCoordinator.swift in Sources */,
-				94729CB2206FFEB40026C45D /* СurreniesViewState.swift in Sources */,
+				94729CB2206FFEB40026C45D /* CurrenciesViewState.swift in Sources */,
 				946278D02038790000645B99 /* RatesStore.swift in Sources */,
 				943E0B2020136938000C62C1 /* RatesViewController.swift in Sources */,
 				946278D8203977BD00645B99 /* NSManagedObjectContext+Extensions.swift in Sources */,
@@ -825,8 +833,8 @@
 				946278C92038609200645B99 /* Currency.swift in Sources */,
 				943E0AE4201354D0000C62C1 /* State.swift in Sources */,
 				94729CAE206FFC9D0026C45D /* СurreniesViewController.swift in Sources */,
-				94729CB0206FFE700026C45D /* СurreniesState.swift in Sources */,
-				94729CBB20700C5B0026C45D /* СurreniesSideEffects.swift in Sources */,
+				94729CB0206FFE700026C45D /* CurrenciesState.swift in Sources */,
+				94729CBB20700C5B0026C45D /* CurrenciesSideEffects.swift in Sources */,
 				9452578220166E4B00684439 /* CentralBankEndpoint.swift in Sources */,
 				945257772013E32900684439 /* RatesSideEffects.swift in Sources */,
 			);
