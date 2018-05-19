@@ -85,7 +85,7 @@ class RatesViewController: UIViewController, UITableViewDelegate, DataDrivenView
             .map { .rates(.refreshRates) }
             .bind(to: stateStore.eventBus)
             .disposed(by: bag)
-        
+
         editItem.rx.tap
             .map { .rates(.openEditMode) }
             .bind(to: stateStore.eventBus)

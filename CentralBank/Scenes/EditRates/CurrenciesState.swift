@@ -12,7 +12,6 @@ final class CurrenciesState: State {
     var shouldLoadCurrencies = true
     /// Список валют.
     var currencies: [Currency] = []
-
 }
 
 extension CurrenciesState {
@@ -28,6 +27,7 @@ extension CurrenciesState {
         case .currencies(let currencies):
             shouldLoadCurrencies = false
             self.currencies = currencies
+            viewState.set(currencies: currencies)
         case .saveChanges: break
         }
     }

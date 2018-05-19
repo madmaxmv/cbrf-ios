@@ -44,9 +44,12 @@ extension RatesState {
         case .refreshRates:
             viewState.isLoading = true
             ratesResult = nil
+            
         case .openEditMode: editModeAction = .open
-        case .editModeOpened,
-             .editModeClosed: editModeAction = nil
+            edit = CurrenciesState()
+        case .editModeOpened: editModeAction = nil
+        case .editModeClosed: editModeAction = nil
+            edit = nil
         case .edit(let editEvent): edit?.reduce(event: editEvent)
         case .cancelEditing,
              .editingDone: editModeAction = .close

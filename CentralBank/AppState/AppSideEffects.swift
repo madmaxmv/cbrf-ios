@@ -14,6 +14,7 @@ struct AppSideEffects {
     private let _services: AppServices
     
     private let _rates: RatesSideEffects
+    private let _currencies: CurrenciesSideEffects
 
     init(coordinator: SceneCoordinator,
          services: AppServices,
@@ -27,6 +28,9 @@ struct AppSideEffects {
         _rates = RatesSideEffectsImpl(services: _services,
                                       coordinator: coordinator,
                                       backgroundScheduler: backgroundScheduler)
+
+        _currencies = CurrenciesSideEffectsImpl(services: _services,
+                                                coordinator: coordinator)
     }
 }
 
@@ -38,6 +42,7 @@ extension AppSideEffects: SideEffects {
     var effects: [ScheduledEffect] {
         var effects: [ScheduledEffect] = []
         effects.append(contentsOf: _rates.effects)
+        effects.append(contentsOf: _currencies.effects)
         return effects
     }
 }

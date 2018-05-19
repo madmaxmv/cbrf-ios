@@ -65,6 +65,8 @@
 		94729CBB20700C5B0026C45D /* CurrenciesSideEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CBA20700C5B0026C45D /* CurrenciesSideEffects.swift */; };
 		94A61AF7201CCBEC00299A4A /* UIColor+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A61AF6201CCBEC00299A4A /* UIColor+extensions.swift */; };
 		94A61AF9201CD2E400299A4A /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A61AF8201CD2E400299A4A /* UIView+extensions.swift */; };
+		94F9507B2070E25700265779 /* СurrenyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9507A2070E25700265779 /* СurrenyCell.swift */; };
+		94F9507D20839E7700265779 /* СurrenciesTableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9507C20839E7700265779 /* СurrenciesTableSection.swift */; };
 		F4876BD9EE5513337B352902 /* Pods_CentralBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00791B83A1CCCAF9799577FA /* Pods_CentralBankUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -155,6 +157,8 @@
 		94729CBA20700C5B0026C45D /* CurrenciesSideEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesSideEffects.swift; sourceTree = "<group>"; };
 		94A61AF6201CCBEC00299A4A /* UIColor+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extensions.swift"; sourceTree = "<group>"; };
 		94A61AF8201CD2E400299A4A /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
+		94F9507A2070E25700265779 /* СurrenyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СurrenyCell.swift"; sourceTree = "<group>"; };
+		94F9507C20839E7700265779 /* СurrenciesTableSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "СurrenciesTableSection.swift"; sourceTree = "<group>"; };
 		A160BB35A8ADD71AB4F5F92D /* Pods-CentralBankTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentralBankTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CentralBankTests/Pods-CentralBankTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B9EA4B42959A20B5370C069A /* Pods-CentralBankUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentralBankUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CentralBankUITests/Pods-CentralBankUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF51C8FE7B4876D00C87E705 /* Pods-CentralBankUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentralBankUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CentralBankUITests/Pods-CentralBankUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -452,6 +456,8 @@
 		94F95077207028AA00265779 /* Table */ = {
 			isa = PBXGroup;
 			children = (
+				94F9507C20839E7700265779 /* СurrenciesTableSection.swift */,
+				94F9507A2070E25700265779 /* СurrenyCell.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -820,6 +826,7 @@
 				945257842016823900684439 /* XMLDecoder.swift in Sources */,
 				946278DE204AECAF00645B99 /* RatesService.swift in Sources */,
 				9452577F2016683E00684439 /* CentralBankAPI.swift in Sources */,
+				94F9507B2070E25700265779 /* СurrenyCell.swift in Sources */,
 				946278CE2038728400645B99 /* LocalStore.swift in Sources */,
 				943E0B0520135795000C62C1 /* SceneAction.swift in Sources */,
 				943E0B0420135795000C62C1 /* SceneTransitionType.swift in Sources */,
@@ -831,6 +838,7 @@
 				943E0AF8201356A0000C62C1 /* TabItem.swift in Sources */,
 				94729CA9206D8A170026C45D /* RatesSort.swift in Sources */,
 				946278C92038609200645B99 /* Currency.swift in Sources */,
+				94F9507D20839E7700265779 /* СurrenciesTableSection.swift in Sources */,
 				943E0AE4201354D0000C62C1 /* State.swift in Sources */,
 				94729CAE206FFC9D0026C45D /* СurreniesViewController.swift in Sources */,
 				94729CB0206FFE700026C45D /* CurrenciesState.swift in Sources */,

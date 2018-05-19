@@ -10,11 +10,15 @@ import RxDataSources
 import RxOptional
 
 class СurreniesViewController: UIViewController, UITableViewDelegate, DataDrivenView {
+    typealias DataSource = RxTableViewSectionedAnimatedDataSource<СurrenciesTableSection>
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
+        tableView.separatorStyle = .none
+        tableView.estimatedRowHeight = 46
         tableView.rowHeight = UITableViewAutomaticDimension
-        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.register(class: CurrencyCell.self)
         return tableView
     }()
     
@@ -34,7 +38,7 @@ class СurreniesViewController: UIViewController, UITableViewDelegate, DataDrive
         return item
     }()
     
-    var dataSource: RxTableViewSectionedAnimatedDataSource<RatesTableSection>!
+    var dataSource: DataSource!
     var state: Driver<CurrenciesViewState>!
     let bag = DisposeBag()
     
@@ -46,11 +50,31 @@ class СurreniesViewController: UIViewController, UITableViewDelegate, DataDrive
         
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor)
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ])
+        
+        dataSource = DataSource(configureCell: { _, tableView, indexPath, item in
+            switch item {
+            case .currency(let state):
+                let cell: CurrencyCell = tableView.dequeueCell(for: indexPath)
+                cell.setup(with: state)
+                return cell
+            }
+        }, canMoveRowAtIndexPath: { _, _ in true } )
+        
+        dataSource.titleForHeaderInSection = { sections, index in
+            switch sections.sectionModels[index] {
+            case .included: return "Добавленные"
+            case .excluded: return "Доступные"
+            }
+        }
+
+        tableView.rx
+            .setDelegate(self)
+            .disposed(by: bag)
     }
     
     func subscribe(to stateStore: AppStateStore) {
@@ -71,6 +95,12 @@ class СurreniesViewController: UIViewController, UITableViewDelegate, DataDrive
         doneItem.rx.tap
             .map { .rates(.edit(.saveChanges)) }
             .bind(to: stateStore.eventBus)
+            .disposed(by: bag)
+        
+        // UI
+        state.map { $0.dataSource }
+            .distinctUntilChanged { $0 == $1 }
+            .drive(tableView.rx.items(dataSource: dataSource))
             .disposed(by: bag)
     }
 }
