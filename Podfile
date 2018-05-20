@@ -4,8 +4,9 @@ platform :ios, '9.0'
 target 'CentralBank' do
   use_frameworks!
 
+  pod 'ReSwift'
+
   # Rx
-  
   pod 'RxSwift',       '~> 4.0'
   pod 'RxCocoa',       '~> 4.0'
   pod 'RxOptional',    '~> 3.3'
