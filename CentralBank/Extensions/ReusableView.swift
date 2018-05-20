@@ -1,8 +1,4 @@
 //
-//  ReusableView.swift
-//  CentralBank
-//
-//  Created by Максим on 21/01/2018.
 //  Copyright © 2018 Matyushenko Maxim. All rights reserved.
 //
 
@@ -32,7 +28,11 @@ extension UITableView {
                  forCellReuseIdentifier: Cell.reusableIdentifier)
     }
     
-    func dequeueReusableCell<Cell: UITableViewCell>(for indexPath: IndexPath) -> Cell {
+    func register<Cell: UITableViewCell>(class: Cell.Type){
+        register(`class`, forCellReuseIdentifier: Cell.reusableIdentifier)
+    }
+    
+    func dequeueCell<Cell: UITableViewCell>(for indexPath: IndexPath) -> Cell {
         guard let cell = dequeueReusableCell(withIdentifier: Cell.reusableIdentifier, for: indexPath) as? Cell else {
             fatalError("Could not dequeue cell with \(Cell.reusableIdentifier)")
         }

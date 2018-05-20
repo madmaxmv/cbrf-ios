@@ -26,7 +26,7 @@ extension UIColor {
         return UIColor(red: 224/255, green: 218/255, blue: 207/255, alpha: 1.0)
     }
     
-    
+    /// Цвет спинеров приложения.
     static var activity: UIColor {
         return UIColor(red: 197/255, green: 197/255, blue: 197/255, alpha: 1.0)
     }
@@ -39,5 +39,10 @@ extension UIColor {
     /// Зеленый цвет в приложении.
     static var green: UIColor {
         return UIColor(red: 1/255, green: 152/255, blue: 8/255, alpha: 1.0)
+    }
+    
+    /// Цвет фона приложения.
+    static var background: UIColor {
+        return UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1.0)
     }
 }

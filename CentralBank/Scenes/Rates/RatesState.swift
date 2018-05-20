@@ -10,12 +10,20 @@ final class RatesState: State {
 
     /// Все курсы валют.
     var ratesResult: RatesResult? = nil
+    /// Событие открытия/закрытия сцены с редактированием списка валют.
+    var editModeAction: SceneAction? = nil
+    /// Стейт экрана изменения списка валют.
+    var edit: CurrenciesState? = nil
 }
 
 extension RatesState {
     enum Event {
         case ratesResult(RatesResult)
         case refreshRates
+        case openEditMode
+        case editModeOpened, editModeClosed
+        case edit(CurrenciesState.Event)
+        case cancelEditing, editingDone
     }
 }
 
@@ -36,14 +44,30 @@ extension RatesState {
         case .refreshRates:
             viewState.isLoading = true
             ratesResult = nil
+            
+        case .openEditMode: editModeAction = .open
+            edit = CurrenciesState()
+        case .editModeOpened: editModeAction = nil
+        case .editModeClosed: editModeAction = nil
+            edit = nil
+        case .edit(let editEvent): edit?.reduce(event: editEvent)
+        case .cancelEditing,
+             .editingDone: editModeAction = .close
         }
     }
 }
 
-
 extension RatesState {
     var queryAcquireRates: Void? {
         return (ratesResult == nil) ? () : nil
+    }
+
+    var queryOpenEditMode: Void? {
+        return (editModeAction == .open) ? () : nil
+    }
+
+    var queryCloseEditMode: Void? {
+        return (editModeAction == .close) ? () : nil
     }
 }
 
