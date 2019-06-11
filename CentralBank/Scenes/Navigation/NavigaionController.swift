@@ -3,20 +3,17 @@
 //
 
 import UIKit
+import ReSwift
 import RxSwift
 import RxCocoa
 
 /// UINavigationController, который умеет обновлять у координатора currentViewController
 /// устанавливая туда контроллер, который отображен в его стеке.
 /// Например при переходе по кнопке назад либо свайпе назад.
-class NavigationController: UINavigationController, DataDrivenView {
-
-    var state: Driver<Void>!
+class NavigationController: UINavigationController {
     private let bag = DisposeBag()
 
-    func subscribe(to stateStore: AppStateStore) {
-
-        // Output
+    override func viewDidLoad() {
         rx.didShow
             .asDriver()
             .drive(onNext: { controller, _ in

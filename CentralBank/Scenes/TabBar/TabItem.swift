@@ -20,20 +20,19 @@ enum TabItem {
 extension TabItem {
 
     func viewController() -> UIViewController {
-        let appStateStore = ((UIApplication.shared.delegate as? AppDelegate)?.appStateStore)!
+//        let appStateStore = ((UIApplication.shared.delegate as? AppDelegate)?.appStateStore)!
 
         switch self {
         case let .exchangeRates(_, title, icon, selectedIcon):
             var vc = RatesViewController(nibName: "Rates", bundle: nil)
             vc.tabBarItem = UITabBarItem(title: title, image: icon, selectedImage: selectedIcon)
-            var nc = NavigationController(rootViewController: vc)
+            let nc = NavigationController(rootViewController: vc)
 
             // enable slide-back action when navigation bar hidden.
             nc.interactivePopGestureRecognizer?.isEnabled = true
             nc.interactivePopGestureRecognizer?.delegate = nc
 
-            nc.bind(with: appStateStore)
-            vc.bind(with: appStateStore)
+//            vc.bind(with: appStateStore)
             return nc
         }
     }

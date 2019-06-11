@@ -3,13 +3,17 @@
 //
 
 import UIKit
-import RxSwift
+import ReSwift
+
+let stateStore = Store<AppState>(
+    reducer: AppState.reduce,
+    state: AppState.initial
+)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var appStateStore: AppStateStore!
     var coordinator: SceneCoordinator!
 
     func application(_ application: UIApplication,
@@ -19,12 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         coordinator = SceneCoordinatorImpl(window: window!)
         let services = Services(groupIdentifier: "group.ru.madmaxmv.centralbank")
         
-        let sideEffects = AppSideEffects(coordinator: coordinator,
-                                         services: services,
-                                         backgroundScheduler: ConcurrentDispatchQueueScheduler(qos: .userInitiated))
+//        let sideEffects = AppSideEffects(coordinator: coordinator,
+//                                         services: services,
+//                                         backgroundScheduler: ConcurrentDispatchQueueScheduler(qos: .userInitiated))
         
-        appStateStore = AppStateStore(sideEffects: sideEffects)
-        appStateStore.run()
+//        appStateStore = AppStateStore(sideEffects: sideEffects)
+//        appStateStore.run()
         
         coordinator.transition(to: .tabBar, type: .root)
 
