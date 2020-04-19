@@ -1,2 +1,2 @@
-# ios-wearehere
+# rates-up
 Side project application.
