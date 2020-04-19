@@ -5,11 +5,11 @@
 import Foundation
 import Moya
 
-enum CentralBankEndpoint {
+enum RatesUpEndpoint {
     case rates(Date)
 }
 
-extension CentralBankEndpoint: TargetType {
+extension RatesUpEndpoint: TargetType {
     var baseURL: URL {
         return URL(string: "http://www.cbr.ru/scripts/")!
     }
@@ -28,7 +28,7 @@ extension CentralBankEndpoint: TargetType {
     var sampleData: Data {
         switch self {
         case .rates(let date):
-            let dateParameter = CentralBankEndpoint.dateFormatter.string(from: date)
+            let dateParameter = RatesUpEndpoint.dateFormatter.string(from: date)
             return "{\"date_req\": \(dateParameter)}".utf8Encoded
         }
     }
@@ -36,7 +36,7 @@ extension CentralBankEndpoint: TargetType {
     var task: Task {
         switch self {
         case .rates(let date):
-            return .requestParameters(parameters: ["date_req": CentralBankEndpoint.dateFormatter.string(from: date)],
+            return .requestParameters(parameters: ["date_req": RatesUpEndpoint.dateFormatter.string(from: date)],
                                       encoding: URLEncoding.queryString)
         }
     }

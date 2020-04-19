@@ -1,7 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '9.0'
 
-target 'CentralBank' do
+target 'RatesUp' do
   use_frameworks!
 
   pod 'ReSwift'
@@ -21,12 +21,12 @@ target 'CentralBank' do
   # XML parsing
   pod 'SWXMLHash'
 
-  target 'CentralBankTests' do
+  target 'RatesUpTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-  target 'CentralBankUITests' do
+  target 'RatesUpUITests' do
     inherit! :search_paths
     # Pods for testing
   end

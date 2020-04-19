@@ -11,7 +11,6 @@ PODS:
     - Moya/Core
     - RxSwift (~> 4.0)
   - Result (4.1.0)
-  - ReSwift (5.0.0)
   - RxCocoa (4.5.0):
     - RxSwift (>= 4.4.2, ~> 4.4)
   - RxDataSources (3.1.0):
@@ -34,7 +33,6 @@ DEPENDENCIES:
   - Action
   - Moya/Core
   - Moya/RxSwift
-  - ReSwift
   - RxCocoa
   - RxDataSources
   - RxFeedback
@@ -50,7 +48,6 @@ SPEC REPOS:
     - Differentiator
     - Moya
     - Result
-    - ReSwift
     - RxCocoa
     - RxDataSources
     - RxFeedback
@@ -65,7 +62,6 @@ SPEC CHECKSUMS:
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
-  ReSwift: 628f1a9b3ee52e3b3ca2a644435472fd77afafe1
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
   RxFeedback: 49bb931caf6d05e315d5b5366c0991ad1474ea36
@@ -74,6 +70,6 @@ SPEC CHECKSUMS:
   RxViewController: e93e7c233d5b5b62c32231d69726d55f54081bc6
   SWXMLHash: 9cc0c2e4807926c74377724aa8722ee5707a0485
 
-PODFILE CHECKSUM: ec509fd78a89946e2b0e77f40bcc0d5507744b17
+PODFILE CHECKSUM: 6a556e4798008a7c45d5837fac891b4bfa216796
 
 COCOAPODS: 1.9.1
