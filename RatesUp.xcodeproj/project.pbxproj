@@ -34,8 +34,6 @@
 		9451DE8220134B3600F69318 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9451DE8120134B3600F69318 /* AppDelegate.swift */; };
 		9451DE8920134B3600F69318 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9451DE8820134B3600F69318 /* Assets.xcassets */; };
 		9451DE8C20134B3600F69318 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9451DE8A20134B3600F69318 /* LaunchScreen.storyboard */; };
-		9451DE9720134B3700F69318 /* CentralBankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9451DE9620134B3700F69318 /* CentralBankTests.swift */; };
-		9451DEA220134B3700F69318 /* CentralBankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9451DEA120134B3700F69318 /* CentralBankUITests.swift */; };
 		9452577120136A8000684439 /* RateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452577020136A8000684439 /* RateCell.swift */; };
 		9452577320137D7400684439 /* RateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9452577220137D7400684439 /* RateCell.xib */; };
 		9452577520137F7900684439 /* CurrencyDailyRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452577420137F7900684439 /* CurrencyDailyRate.swift */; };
@@ -116,16 +114,14 @@
 		943E0B1820136039000C62C1 /* Rates.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Rates.xib; sourceTree = "<group>"; };
 		943E0B1D2013681A000C62C1 /* RatesTableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesTableSection.swift; sourceTree = "<group>"; };
 		943E0B1F20136938000C62C1 /* RatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatesViewController.swift; sourceTree = "<group>"; };
-		9451DE7E20134B3600F69318 /* CentralBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CentralBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9451DE7E20134B3600F69318 /* RatesUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RatesUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9451DE8120134B3600F69318 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9451DE8820134B3600F69318 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9451DE8B20134B3600F69318 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9451DE8D20134B3600F69318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9451DE9220134B3700F69318 /* CentralBankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CentralBankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9451DE9620134B3700F69318 /* CentralBankTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralBankTests.swift; sourceTree = "<group>"; };
+		9451DE9220134B3700F69318 /* RatesUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RatesUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9451DE9820134B3700F69318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9451DE9D20134B3700F69318 /* CentralBankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CentralBankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9451DEA120134B3700F69318 /* CentralBankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralBankUITests.swift; sourceTree = "<group>"; };
+		9451DE9D20134B3700F69318 /* RatesUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RatesUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9451DEA320134B3700F69318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9452577020136A8000684439 /* RateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCell.swift; sourceTree = "<group>"; };
 		9452577220137D7400684439 /* RateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateCell.xib; sourceTree = "<group>"; };
@@ -147,7 +143,7 @@
 		946278DD204AECAF00645B99 /* RatesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesService.swift; sourceTree = "<group>"; };
 		946278DF204AF8C600645B99 /* DateConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConverter.swift; sourceTree = "<group>"; };
 		946278E1204AF99F00645B99 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
-		946278E3204AFDD700645B99 /* CentralBank.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CentralBank.entitlements; sourceTree = "<group>"; };
+		946278E3204AFDD700645B99 /* RatesUp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RatesUp.entitlements; sourceTree = "<group>"; };
 		94729CA8206D8A170026C45D /* RatesSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesSort.swift; sourceTree = "<group>"; };
 		94729CAD206FFC9D0026C45D /* СurreniesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СurreniesViewController.swift"; sourceTree = "<group>"; };
 		94729CAF206FFE700026C45D /* CurrenciesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesState.swift; sourceTree = "<group>"; };
@@ -323,9 +319,9 @@
 		9451DE7520134B3600F69318 = {
 			isa = PBXGroup;
 			children = (
-				9451DE8020134B3600F69318 /* CentralBank */,
-				9451DE9520134B3700F69318 /* CentralBankTests */,
-				9451DEA020134B3700F69318 /* CentralBankUITests */,
+				9451DE8020134B3600F69318 /* RatesUp */,
+				9451DE9520134B3700F69318 /* RatesUpTests */,
+				9451DEA020134B3700F69318 /* RatesUpUITests */,
 				9451DE7F20134B3600F69318 /* Products */,
 				02220217AC1EBEDFD2854A32 /* Pods */,
 				D42370E128EC47C8B2A71665 /* Frameworks */,
@@ -335,17 +331,17 @@
 		9451DE7F20134B3600F69318 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9451DE7E20134B3600F69318 /* CentralBank.app */,
-				9451DE9220134B3700F69318 /* CentralBankTests.xctest */,
-				9451DE9D20134B3700F69318 /* CentralBankUITests.xctest */,
+				9451DE7E20134B3600F69318 /* RatesUp.app */,
+				9451DE9220134B3700F69318 /* RatesUpTests.xctest */,
+				9451DE9D20134B3700F69318 /* RatesUpUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9451DE8020134B3600F69318 /* CentralBank */ = {
+		9451DE8020134B3600F69318 /* RatesUp */ = {
 			isa = PBXGroup;
 			children = (
-				946278E3204AFDD700645B99 /* CentralBank.entitlements */,
+				946278E3204AFDD700645B99 /* RatesUp.entitlements */,
 				943E0AD820135457000C62C1 /* AppState */,
 				943E0B1720135DBE000C62C1 /* Extensions */,
 				943E0AFB20135723000C62C1 /* Resources */,
@@ -354,25 +350,23 @@
 				9452577C2016680000684439 /* Services */,
 				9451DE8120134B3600F69318 /* AppDelegate.swift */,
 			);
-			path = CentralBank;
+			path = RatesUp;
 			sourceTree = "<group>";
 		};
-		9451DE9520134B3700F69318 /* CentralBankTests */ = {
+		9451DE9520134B3700F69318 /* RatesUpTests */ = {
 			isa = PBXGroup;
 			children = (
-				9451DE9620134B3700F69318 /* CentralBankTests.swift */,
 				9451DE9820134B3700F69318 /* Info.plist */,
 			);
-			path = CentralBankTests;
+			path = RatesUpTests;
 			sourceTree = "<group>";
 		};
-		9451DEA020134B3700F69318 /* CentralBankUITests */ = {
+		9451DEA020134B3700F69318 /* RatesUpUITests */ = {
 			isa = PBXGroup;
 			children = (
-				9451DEA120134B3700F69318 /* CentralBankUITests.swift */,
 				9451DEA320134B3700F69318 /* Info.plist */,
 			);
-			path = CentralBankUITests;
+			path = RatesUpUITests;
 			sourceTree = "<group>";
 		};
 		9452577C2016680000684439 /* Services */ = {
@@ -475,9 +469,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9451DE7D20134B3600F69318 /* CentralBank */ = {
+		9451DE7D20134B3600F69318 /* RatesUp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9451DEA620134B3700F69318 /* Build configuration list for PBXNativeTarget "CentralBank" */;
+			buildConfigurationList = 9451DEA620134B3700F69318 /* Build configuration list for PBXNativeTarget "RatesUp" */;
 			buildPhases = (
 				66A7739C285BCEA97AEA3E61 /* [CP] Check Pods Manifest.lock */,
 				9451DE7A20134B3600F69318 /* Sources */,
@@ -489,14 +483,14 @@
 			);
 			dependencies = (
 			);
-			name = CentralBank;
+			name = RatesUp;
 			productName = CentralBank;
-			productReference = 9451DE7E20134B3600F69318 /* CentralBank.app */;
+			productReference = 9451DE7E20134B3600F69318 /* RatesUp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9451DE9120134B3700F69318 /* CentralBankTests */ = {
+		9451DE9120134B3700F69318 /* RatesUpTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9451DEA920134B3700F69318 /* Build configuration list for PBXNativeTarget "CentralBankTests" */;
+			buildConfigurationList = 9451DEA920134B3700F69318 /* Build configuration list for PBXNativeTarget "RatesUpTests" */;
 			buildPhases = (
 				189523F75931D0D0980FF2AA /* [CP] Check Pods Manifest.lock */,
 				9451DE8E20134B3700F69318 /* Sources */,
@@ -508,14 +502,14 @@
 			dependencies = (
 				9451DE9420134B3700F69318 /* PBXTargetDependency */,
 			);
-			name = CentralBankTests;
+			name = RatesUpTests;
 			productName = CentralBankTests;
-			productReference = 9451DE9220134B3700F69318 /* CentralBankTests.xctest */;
+			productReference = 9451DE9220134B3700F69318 /* RatesUpTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9451DE9C20134B3700F69318 /* CentralBankUITests */ = {
+		9451DE9C20134B3700F69318 /* RatesUpUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9451DEAC20134B3700F69318 /* Build configuration list for PBXNativeTarget "CentralBankUITests" */;
+			buildConfigurationList = 9451DEAC20134B3700F69318 /* Build configuration list for PBXNativeTarget "RatesUpUITests" */;
 			buildPhases = (
 				C8B28F945A822C48AA427095 /* [CP] Check Pods Manifest.lock */,
 				9451DE9920134B3700F69318 /* Sources */,
@@ -527,9 +521,9 @@
 			dependencies = (
 				9451DE9F20134B3700F69318 /* PBXTargetDependency */,
 			);
-			name = CentralBankUITests;
+			name = RatesUpUITests;
 			productName = CentralBankUITests;
-			productReference = 9451DE9D20134B3700F69318 /* CentralBankUITests.xctest */;
+			productReference = 9451DE9D20134B3700F69318 /* RatesUpUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -566,7 +560,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9451DE7920134B3600F69318 /* Build configuration list for PBXProject "CentralBank" */;
+			buildConfigurationList = 9451DE7920134B3600F69318 /* Build configuration list for PBXProject "RatesUp" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -579,9 +573,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9451DE7D20134B3600F69318 /* CentralBank */,
-				9451DE9120134B3700F69318 /* CentralBankTests */,
-				9451DE9C20134B3700F69318 /* CentralBankUITests */,
+				9451DE7D20134B3600F69318 /* RatesUp */,
+				9451DE9120134B3700F69318 /* RatesUpTests */,
+				9451DE9C20134B3700F69318 /* RatesUpUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -775,7 +769,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9451DE9720134B3700F69318 /* CentralBankTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -783,7 +776,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9451DEA220134B3700F69318 /* CentralBankUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -792,12 +784,12 @@
 /* Begin PBXTargetDependency section */
 		9451DE9420134B3700F69318 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9451DE7D20134B3600F69318 /* CentralBank */;
+			target = 9451DE7D20134B3600F69318 /* RatesUp */;
 			targetProxy = 9451DE9320134B3700F69318 /* PBXContainerItemProxy */;
 		};
 		9451DE9F20134B3700F69318 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9451DE7D20134B3600F69318 /* CentralBank */;
+			target = 9451DE7D20134B3600F69318 /* RatesUp */;
 			targetProxy = 9451DE9E20134B3700F69318 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -930,14 +922,14 @@
 			baseConfigurationReference = 1C8B7EA92C16D2D29DD7EE21 /* Pods-CentralBank.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = CentralBank/CentralBank.entitlements;
+				CODE_SIGN_ENTITLEMENTS = RatesUp/RatesUp.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 6L2SX9VHNH;
-				INFOPLIST_FILE = CentralBank/Resources/Info.plist;
+				INFOPLIST_FILE = RatesUp/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.madmaxmv.centralbank;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.madmaxmv.ratesup;
+				PRODUCT_NAME = RatesUp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -949,14 +941,14 @@
 			baseConfigurationReference = 23FA04999E22765E68B901F9 /* Pods-CentralBank.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = CentralBank/CentralBank.entitlements;
+				CODE_SIGN_ENTITLEMENTS = RatesUp/RatesUp.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = CentralBank/Resources/Info.plist;
+				INFOPLIST_FILE = RatesUp/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.madmaxmv.centralbank;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.madmaxmv.ratesup;
+				PRODUCT_NAME = RatesUp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -971,13 +963,13 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HQ576M92UA;
-				INFOPLIST_FILE = CentralBankTests/Info.plist;
+				INFOPLIST_FILE = RatesUpTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = matmax.CentralBankTests;
+				PRODUCT_BUNDLE_IDENTIFIER = matmax.RatesUpTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CentralBank.app/CentralBank";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RatesUp.app/RatesUp";
 			};
 			name = Debug;
 		};
@@ -989,13 +981,13 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HQ576M92UA;
-				INFOPLIST_FILE = CentralBankTests/Info.plist;
+				INFOPLIST_FILE = RatesUpTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = matmax.CentralBankTests;
+				PRODUCT_BUNDLE_IDENTIFIER = matmax.RatesUpTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CentralBank.app/CentralBank";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RatesUp.app/RatesUp";
 			};
 			name = Release;
 		};
@@ -1006,13 +998,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HQ576M92UA;
-				INFOPLIST_FILE = CentralBankUITests/Info.plist;
+				INFOPLIST_FILE = RatesUpUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = matmax.CentralBankUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = matmax.RatesUpUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = CentralBank;
+				TEST_TARGET_NAME = RatesUp;
 			};
 			name = Debug;
 		};
@@ -1023,20 +1015,20 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HQ576M92UA;
-				INFOPLIST_FILE = CentralBankUITests/Info.plist;
+				INFOPLIST_FILE = RatesUpUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = matmax.CentralBankUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = matmax.RatesUpUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = CentralBank;
+				TEST_TARGET_NAME = RatesUp;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9451DE7920134B3600F69318 /* Build configuration list for PBXProject "CentralBank" */ = {
+		9451DE7920134B3600F69318 /* Build configuration list for PBXProject "RatesUp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9451DEA420134B3700F69318 /* Debug */,
@@ -1045,7 +1037,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9451DEA620134B3700F69318 /* Build configuration list for PBXNativeTarget "CentralBank" */ = {
+		9451DEA620134B3700F69318 /* Build configuration list for PBXNativeTarget "RatesUp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9451DEA720134B3700F69318 /* Debug */,
@@ -1054,7 +1046,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9451DEA920134B3700F69318 /* Build configuration list for PBXNativeTarget "CentralBankTests" */ = {
+		9451DEA920134B3700F69318 /* Build configuration list for PBXNativeTarget "RatesUpTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9451DEAA20134B3700F69318 /* Debug */,
@@ -1063,7 +1055,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9451DEAC20134B3700F69318 /* Build configuration list for PBXNativeTarget "CentralBankUITests" */ = {
+		9451DEAC20134B3700F69318 /* Build configuration list for PBXNativeTarget "RatesUpUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9451DEAD20134B3700F69318 /* Debug */,

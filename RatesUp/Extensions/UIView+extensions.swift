@@ -1,6 +1,6 @@
 //
 //  UIView+extensions.swift
-//  CentralBank
+//  RatesUp
 //
 //  Created by Максим on 27/01/2018.
 //  Copyright © 2018 Matyushenko Maxim. All rights reserved.
