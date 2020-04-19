@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16CA0357129A5946A1CC54BD /* Pods_CentralBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922C14567C38826D44CB7C24 /* Pods_CentralBankTests.framework */; };
-		7387C9C6F27D10284C815C2C /* Pods_CentralBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F864CDDE86FC491BEA61CAF /* Pods_CentralBank.framework */; };
+		190F5683A56EEF156C005C55 /* Pods_RatesUpTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B97E57017EBDBCB5FEA25A8B /* Pods_RatesUpTests.framework */; };
+		54B97B6C5BCC8C873655920D /* Pods_RatesUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFF578B52A120A3D989892C /* Pods_RatesUp.framework */; };
 		943E0ADF201354D0000C62C1 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0AD9201354CF000C62C1 /* AppState.swift */; };
 		943E0AE0201354D0000C62C1 /* AppSideEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0ADA201354CF000C62C1 /* AppSideEffects.swift */; };
 		943E0AE1201354D0000C62C1 /* DataDrivenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0ADB201354D0000C62C1 /* DataDrivenView.swift */; };
@@ -42,7 +42,7 @@
 		9452577F2016683E00684439 /* CentralBankAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452577E2016683E00684439 /* CentralBankAPI.swift */; };
 		9452578220166E4B00684439 /* CentralBankEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452578120166E4B00684439 /* CentralBankEndpoint.swift */; };
 		945257842016823900684439 /* XMLDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945257832016823900684439 /* XMLDecoder.swift */; };
-		946278C720385EBD00645B99 /* CentralBankStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 946278C520385EBD00645B99 /* CentralBankStore.xcdatamodeld */; };
+		946278C720385EBD00645B99 /* RatesStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 946278C520385EBD00645B99 /* RatesStore.xcdatamodeld */; };
 		946278C92038609200645B99 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278C82038609200645B99 /* Currency.swift */; };
 		946278CC2038616900645B99 /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278CB2038616900645B99 /* Rate.swift */; };
 		946278CE2038728400645B99 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278CD2038728400645B99 /* LocalStore.swift */; };
@@ -65,7 +65,7 @@
 		94A61AF9201CD2E400299A4A /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A61AF8201CD2E400299A4A /* UIView+extensions.swift */; };
 		94F9507B2070E25700265779 /* СurrenyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9507A2070E25700265779 /* СurrenyCell.swift */; };
 		94F9507D20839E7700265779 /* СurrenciesTableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9507C20839E7700265779 /* СurrenciesTableSection.swift */; };
-		F4876BD9EE5513337B352902 /* Pods_CentralBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00791B83A1CCCAF9799577FA /* Pods_CentralBankUITests.framework */; };
+		BD150FB8C95BEEFDF203364A /* Pods_RatesUpUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF5004FF732049395913BAF /* Pods_RatesUpUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,12 +86,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00791B83A1CCCAF9799577FA /* Pods_CentralBankUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CentralBankUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C8B7EA92C16D2D29DD7EE21 /* Pods-CentralBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentralBank.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CentralBank/Pods-CentralBank.debug.xcconfig"; sourceTree = "<group>"; };
-		23FA04999E22765E68B901F9 /* Pods-CentralBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentralBank.release.xcconfig"; path = "Pods/Target Support Files/Pods-CentralBank/Pods-CentralBank.release.xcconfig"; sourceTree = "<group>"; };
-		4F864CDDE86FC491BEA61CAF /* Pods_CentralBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CentralBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		856E0B0C6477CB28D15A8B88 /* Pods-CentralBankTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentralBankTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CentralBankTests/Pods-CentralBankTests.release.xcconfig"; sourceTree = "<group>"; };
-		922C14567C38826D44CB7C24 /* Pods_CentralBankTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CentralBankTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CEAADAEEE71F65E9343D591 /* Pods-RatesUpTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RatesUpTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RatesUpTests/Pods-RatesUpTests.release.xcconfig"; sourceTree = "<group>"; };
+		1C8B7EA92C16D2D29DD7EE21 /* Pods-CentralBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentralBank.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RatesUp/Pods-CentralBank.debug.xcconfig"; sourceTree = "<group>"; };
+		23FA04999E22765E68B901F9 /* Pods-CentralBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentralBank.release.xcconfig"; path = "Pods/Target Support Files/Pods-RatesUp/Pods-CentralBank.release.xcconfig"; sourceTree = "<group>"; };
+		7729BD9CDE5C174A079B1E0A /* Pods-RatesUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RatesUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RatesUp/Pods-RatesUp.release.xcconfig"; sourceTree = "<group>"; };
+		856E0B0C6477CB28D15A8B88 /* Pods-RatesUpTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RatesUpTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RatesUpTests/Pods-RatesUpTests.release.xcconfig"; sourceTree = "<group>"; };
+		8C6AC83A88422EF61EBF4AE7 /* Pods-RatesUpUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RatesUpUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RatesUpUITests/Pods-RatesUpUITests.release.xcconfig"; sourceTree = "<group>"; };
 		943E0AD9201354CF000C62C1 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		943E0ADA201354CF000C62C1 /* AppSideEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSideEffects.swift; sourceTree = "<group>"; };
 		943E0ADB201354D0000C62C1 /* DataDrivenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDrivenView.swift; sourceTree = "<group>"; };
@@ -101,11 +101,11 @@
 		943E0AF52013569F000C62C1 /* TabItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		943E0AF6201356A0000C62C1 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		943E0AF7201356A0000C62C1 /* TabBarViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewState.swift; sourceTree = "<group>"; };
-		943E0AFC20135795000C62C1 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Scene.swift; path = CentralBank/SceneCoordinator/Scene.swift; sourceTree = SOURCE_ROOT; };
-		943E0AFD20135795000C62C1 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alert.swift; path = CentralBank/SceneCoordinator/Alert.swift; sourceTree = SOURCE_ROOT; };
-		943E0AFE20135795000C62C1 /* SceneCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneCoordinator.swift; path = CentralBank/SceneCoordinator/SceneCoordinator.swift; sourceTree = SOURCE_ROOT; };
-		943E0AFF20135795000C62C1 /* SceneTransitionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneTransitionType.swift; path = CentralBank/SceneCoordinator/SceneTransitionType.swift; sourceTree = SOURCE_ROOT; };
-		943E0B0020135795000C62C1 /* SceneAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneAction.swift; path = CentralBank/SceneCoordinator/SceneAction.swift; sourceTree = SOURCE_ROOT; };
+		943E0AFC20135795000C62C1 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Scene.swift; path = RatesUp/SceneCoordinator/Scene.swift; sourceTree = SOURCE_ROOT; };
+		943E0AFD20135795000C62C1 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alert.swift; path = RatesUp/SceneCoordinator/Alert.swift; sourceTree = SOURCE_ROOT; };
+		943E0AFE20135795000C62C1 /* SceneCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneCoordinator.swift; path = RatesUp/SceneCoordinator/SceneCoordinator.swift; sourceTree = SOURCE_ROOT; };
+		943E0AFF20135795000C62C1 /* SceneTransitionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneTransitionType.swift; path = RatesUp/SceneCoordinator/SceneTransitionType.swift; sourceTree = SOURCE_ROOT; };
+		943E0B0020135795000C62C1 /* SceneAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneAction.swift; path = RatesUp/SceneCoordinator/SceneAction.swift; sourceTree = SOURCE_ROOT; };
 		943E0B0720135876000C62C1 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		943E0B0A20135980000C62C1 /* NavigaionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigaionController.swift; sourceTree = "<group>"; };
 		943E0B1020135A14000C62C1 /* RatesViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesViewState.swift; sourceTree = "<group>"; };
@@ -155,9 +155,15 @@
 		94A61AF8201CD2E400299A4A /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
 		94F9507A2070E25700265779 /* СurrenyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СurrenyCell.swift"; sourceTree = "<group>"; };
 		94F9507C20839E7700265779 /* СurrenciesTableSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "СurrenciesTableSection.swift"; sourceTree = "<group>"; };
-		A160BB35A8ADD71AB4F5F92D /* Pods-CentralBankTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentralBankTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CentralBankTests/Pods-CentralBankTests.debug.xcconfig"; sourceTree = "<group>"; };
-		B9EA4B42959A20B5370C069A /* Pods-CentralBankUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentralBankUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CentralBankUITests/Pods-CentralBankUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		DF51C8FE7B4876D00C87E705 /* Pods-CentralBankUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentralBankUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CentralBankUITests/Pods-CentralBankUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A160BB35A8ADD71AB4F5F92D /* Pods-RatesUpTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RatesUpTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RatesUpTests/Pods-RatesUpTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B97E57017EBDBCB5FEA25A8B /* Pods_RatesUpTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RatesUpTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9EA4B42959A20B5370C069A /* Pods-RatesUpUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RatesUpUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RatesUpUITests/Pods-RatesUpUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C97ABEE9E17BE7701F1A6A07 /* Pods-RatesUpTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RatesUpTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RatesUpTests/Pods-RatesUpTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D6680A50933C6F2CF41855E9 /* Pods-RatesUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RatesUp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RatesUp/Pods-RatesUp.debug.xcconfig"; sourceTree = "<group>"; };
+		DEFF578B52A120A3D989892C /* Pods_RatesUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RatesUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF51C8FE7B4876D00C87E705 /* Pods-RatesUpUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RatesUpUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RatesUpUITests/Pods-RatesUpUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EEF5004FF732049395913BAF /* Pods_RatesUpUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RatesUpUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1FFAF3EF4CED39C86515495 /* Pods-RatesUpUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RatesUpUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RatesUpUITests/Pods-RatesUpUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,7 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7387C9C6F27D10284C815C2C /* Pods_CentralBank.framework in Frameworks */,
+				54B97B6C5BCC8C873655920D /* Pods_RatesUp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16CA0357129A5946A1CC54BD /* Pods_CentralBankTests.framework in Frameworks */,
+				190F5683A56EEF156C005C55 /* Pods_RatesUpTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,7 +187,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4876BD9EE5513337B352902 /* Pods_CentralBankUITests.framework in Frameworks */,
+				BD150FB8C95BEEFDF203364A /* Pods_RatesUpUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,10 +199,16 @@
 			children = (
 				1C8B7EA92C16D2D29DD7EE21 /* Pods-CentralBank.debug.xcconfig */,
 				23FA04999E22765E68B901F9 /* Pods-CentralBank.release.xcconfig */,
-				A160BB35A8ADD71AB4F5F92D /* Pods-CentralBankTests.debug.xcconfig */,
-				856E0B0C6477CB28D15A8B88 /* Pods-CentralBankTests.release.xcconfig */,
-				B9EA4B42959A20B5370C069A /* Pods-CentralBankUITests.debug.xcconfig */,
-				DF51C8FE7B4876D00C87E705 /* Pods-CentralBankUITests.release.xcconfig */,
+				A160BB35A8ADD71AB4F5F92D /* Pods-RatesUpTests.debug.xcconfig */,
+				856E0B0C6477CB28D15A8B88 /* Pods-RatesUpTests.release.xcconfig */,
+				B9EA4B42959A20B5370C069A /* Pods-RatesUpUITests.debug.xcconfig */,
+				DF51C8FE7B4876D00C87E705 /* Pods-RatesUpUITests.release.xcconfig */,
+				D6680A50933C6F2CF41855E9 /* Pods-RatesUp.debug.xcconfig */,
+				7729BD9CDE5C174A079B1E0A /* Pods-RatesUp.release.xcconfig */,
+				C97ABEE9E17BE7701F1A6A07 /* Pods-RatesUpTests.debug.xcconfig */,
+				0CEAADAEEE71F65E9343D591 /* Pods-RatesUpTests.release.xcconfig */,
+				F1FFAF3EF4CED39C86515495 /* Pods-RatesUpUITests.debug.xcconfig */,
+				8C6AC83A88422EF61EBF4AE7 /* Pods-RatesUpUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -440,7 +452,7 @@
 			isa = PBXGroup;
 			children = (
 				946278CA203860BE00645B99 /* Models */,
-				946278C520385EBD00645B99 /* CentralBankStore.xcdatamodeld */,
+				946278C520385EBD00645B99 /* RatesStore.xcdatamodeld */,
 				946278CD2038728400645B99 /* LocalStore.swift */,
 				946278CF2038790000645B99 /* RatesStore.swift */,
 			);
@@ -459,9 +471,9 @@
 		D42370E128EC47C8B2A71665 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4F864CDDE86FC491BEA61CAF /* Pods_CentralBank.framework */,
-				922C14567C38826D44CB7C24 /* Pods_CentralBankTests.framework */,
-				00791B83A1CCCAF9799577FA /* Pods_CentralBankUITests.framework */,
+				DEFF578B52A120A3D989892C /* Pods_RatesUp.framework */,
+				B97E57017EBDBCB5FEA25A8B /* Pods_RatesUpTests.framework */,
+				EEF5004FF732049395913BAF /* Pods_RatesUpUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -503,7 +515,7 @@
 				9451DE9420134B3700F69318 /* PBXTargetDependency */,
 			);
 			name = RatesUpTests;
-			productName = CentralBankTests;
+			productName = RatesUpTests;
 			productReference = 9451DE9220134B3700F69318 /* RatesUpTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -522,7 +534,7 @@
 				9451DE9F20134B3700F69318 /* PBXTargetDependency */,
 			);
 			name = RatesUpUITests;
-			productName = CentralBankUITests;
+			productName = RatesUpUITests;
 			productReference = 9451DE9D20134B3700F69318 /* RatesUpUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
@@ -620,7 +632,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CentralBankTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-RatesUpTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -638,7 +650,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CentralBank-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-RatesUp-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -651,7 +663,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CentralBank/Pods-CentralBank-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-RatesUp/Pods-RatesUp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
@@ -682,7 +694,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CentralBank/Pods-CentralBank-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RatesUp/Pods-RatesUp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C8B28F945A822C48AA427095 /* [CP] Check Pods Manifest.lock */ = {
@@ -696,7 +708,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CentralBankUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-RatesUpUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -748,7 +760,7 @@
 				943E0B0520135795000C62C1 /* SceneAction.swift in Sources */,
 				943E0B0420135795000C62C1 /* SceneTransitionType.swift in Sources */,
 				943E0AE2201354D0000C62C1 /* AppStateStore.swift in Sources */,
-				946278C720385EBD00645B99 /* CentralBankStore.xcdatamodeld in Sources */,
+				946278C720385EBD00645B99 /* RatesStore.xcdatamodeld in Sources */,
 				943E0B0120135795000C62C1 /* Scene.swift in Sources */,
 				9451DE8220134B3600F69318 /* AppDelegate.swift in Sources */,
 				943E0B1E2013681A000C62C1 /* RatesTableSection.swift in Sources */,
@@ -919,7 +931,7 @@
 		};
 		9451DEA720134B3700F69318 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C8B7EA92C16D2D29DD7EE21 /* Pods-CentralBank.debug.xcconfig */;
+			baseConfigurationReference = D6680A50933C6F2CF41855E9 /* Pods-RatesUp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RatesUp/RatesUp.entitlements;
@@ -938,12 +950,12 @@
 		};
 		9451DEA820134B3700F69318 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23FA04999E22765E68B901F9 /* Pods-CentralBank.release.xcconfig */;
+			baseConfigurationReference = 7729BD9CDE5C174A079B1E0A /* Pods-RatesUp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RatesUp/RatesUp.entitlements;
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = HQ576M92UA;
 				INFOPLIST_FILE = RatesUp/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -957,7 +969,7 @@
 		};
 		9451DEAA20134B3700F69318 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A160BB35A8ADD71AB4F5F92D /* Pods-CentralBankTests.debug.xcconfig */;
+			baseConfigurationReference = C97ABEE9E17BE7701F1A6A07 /* Pods-RatesUpTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -975,7 +987,7 @@
 		};
 		9451DEAB20134B3700F69318 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 856E0B0C6477CB28D15A8B88 /* Pods-CentralBankTests.release.xcconfig */;
+			baseConfigurationReference = 0CEAADAEEE71F65E9343D591 /* Pods-RatesUpTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -993,7 +1005,7 @@
 		};
 		9451DEAD20134B3700F69318 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B9EA4B42959A20B5370C069A /* Pods-CentralBankUITests.debug.xcconfig */;
+			baseConfigurationReference = F1FFAF3EF4CED39C86515495 /* Pods-RatesUpUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1010,7 +1022,7 @@
 		};
 		9451DEAE20134B3700F69318 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF51C8FE7B4876D00C87E705 /* Pods-CentralBankUITests.release.xcconfig */;
+			baseConfigurationReference = 8C6AC83A88422EF61EBF4AE7 /* Pods-RatesUpUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1067,13 +1079,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		946278C520385EBD00645B99 /* CentralBankStore.xcdatamodeld */ = {
+		946278C520385EBD00645B99 /* RatesStore.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				946278C620385EBD00645B99 /* CentralBankStore.xcdatamodel */,
 			);
 			currentVersion = 946278C620385EBD00645B99 /* CentralBankStore.xcdatamodel */;
-			path = CentralBankStore.xcdatamodeld;
+			path = RatesStore.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

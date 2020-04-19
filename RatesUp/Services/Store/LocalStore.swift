@@ -40,8 +40,8 @@ class LocalStore {
     }()
 
     private enum Name {
-        static let model = "RatesUpStore"
-        static let store = "RatesUpStore.sqlite"
+        static let model = "RatesStore"
+        static let store = "RatesStore.sqlite"
     }
 
     /// The managed object model for the application. This property is not optional.
