@@ -25,12 +25,12 @@ struct AppSideEffects {
         
         _services = services
         
-        _rates = RatesSideEffectsImpl(services: _services,
-                                      coordinator: coordinator,
-                                      backgroundScheduler: backgroundScheduler)
+        _rates = RatesSideEffects(services: _services,
+                                  coordinator: coordinator,
+                                  backgroundScheduler: backgroundScheduler)
 
-        _currencies = CurrenciesSideEffectsImpl(services: _services,
-                                                coordinator: coordinator)
+        _currencies = CurrenciesSideEffects(services: _services,
+                                            coordinator: coordinator)
     }
 }
 

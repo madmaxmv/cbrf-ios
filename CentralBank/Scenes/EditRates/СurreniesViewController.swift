@@ -16,7 +16,7 @@ class СurreniesViewController: UIViewController, UITableViewDelegate, DataDrive
         let tableView = UITableView()
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = 46
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(class: CurrencyCell.self)
         return tableView

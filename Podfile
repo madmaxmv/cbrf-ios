@@ -6,19 +6,19 @@ target 'CentralBank' do
 
   # Rx
   
-  pod 'RxSwift',       '~> 4.0'
-  pod 'RxCocoa',       '~> 4.0'
-  pod 'RxOptional',    '~> 3.3'
-  pod 'RxDataSources', '~> 3.0'
-  pod 'Action',        '~> 3.1'
-  pod 'RxFeedback',    '~> 1.0'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxOptional'
+  pod 'RxDataSources'
+  pod 'Action'
+  pod 'RxFeedback'
   pod 'RxViewController'
 
   # Network
-  pod 'Moya', '~> 10.0', :subspecs => ['Core', 'RxSwift']
+  pod 'Moya', :subspecs => ['Core', 'RxSwift']
 
   # XML parsing
-  pod 'SWXMLHash', '~> 4.0.0'
+  pod 'SWXMLHash'
 
   target 'CentralBankTests' do
     inherit! :search_paths

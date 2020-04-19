@@ -34,7 +34,7 @@ extension CurrenciesState {
 }
 
 extension CurrenciesState {
-    var queryLoadCurrencies: Void? {
-        return shouldLoadCurrencies ? () : nil
+    var queryLoadCurrencies: Bool? {
+        return shouldLoadCurrencies ? true : nil
     }
 }
