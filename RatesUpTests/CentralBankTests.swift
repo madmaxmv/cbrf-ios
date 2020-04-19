@@ -1,15 +1,15 @@
 //
-//  CentralBankTests.swift
-//  CentralBankTests
+//  RatesUpTests.swift
+//  RatesUpTests
 //
 //  Created by Максим on 20/01/2018.
 //  Copyright © 2018 Matyushenko Maxim. All rights reserved.
 //
 
 import XCTest
-@testable import CentralBank
+@testable import RatesUp
 
-class CentralBankTests: XCTestCase {
+class RatesUpTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

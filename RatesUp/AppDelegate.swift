@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         coordinator = SceneCoordinatorImpl(window: window!)
-        let services = Services(groupIdentifier: "group.ru.madmaxmv.centralbank")
+        let services = Services(groupIdentifier: "group.ru.madmaxmv.ratesup")
         
         let sideEffects = AppSideEffects(coordinator: coordinator,
                                          services: services,

@@ -8,13 +8,13 @@ import RxSwift
 
 struct RatesService {
     /// Сервис для доступа к удаленным даным.
-    private let _remote: CentralBankService
+    private let _remote: RatesUpService
     /// Локальное хранилище данных.
     private let _store: RatesStore?
     /// Конвертер для преобразования даты.
     private let _dateConverter: DateConverter
     
-    init(remote: CentralBankService,
+    init(remote: RatesUpService,
          store: RatesStore?,
          dateConverter: DateConverter) {
         _remote = remote
