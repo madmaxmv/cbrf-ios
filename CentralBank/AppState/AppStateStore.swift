@@ -27,7 +27,7 @@ struct AppStateStore {
         stateBus = Observable.system(initialState: AppState.initial,
                                      reduce: AppState.reduce,
                                      scheduler: scheduler,
-                                     scheduledFeedback: feedBacks)
+                                     feedback: feedBacks)
             .assertError()
             .asDriver(onErrorDriveWith: .never())
     }

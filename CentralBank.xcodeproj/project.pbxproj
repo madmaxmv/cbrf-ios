@@ -657,7 +657,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-CentralBank/Pods-CentralBank-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-CentralBank/Pods-CentralBank-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
@@ -688,7 +688,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CentralBank/Pods-CentralBank-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CentralBank/Pods-CentralBank-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C8B28F945A822C48AA427095 /* [CP] Check Pods Manifest.lock */ = {
