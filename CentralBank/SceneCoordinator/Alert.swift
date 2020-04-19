@@ -13,7 +13,7 @@ enum Alert {
 
     struct Action {
         let title: String
-        let style: UIAlertActionStyle
+        let style: UIAlertAction.Style
         let handler: ((UIAlertAction) -> Void)?
     }
 

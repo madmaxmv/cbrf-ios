@@ -58,16 +58,16 @@ extension RatesState {
 }
 
 extension RatesState {
-    var queryAcquireRates: Void? {
-        return (ratesResult == nil) ? () : nil
+    var queryAcquireRates: Bool? {
+        return (ratesResult == nil) ? true : nil
     }
 
-    var queryOpenEditMode: Void? {
-        return (editModeAction == .open) ? () : nil
+    var queryOpenEditMode: Bool? {
+        return (editModeAction == .open) ? true : nil
     }
 
-    var queryCloseEditMode: Void? {
-        return (editModeAction == .close) ? () : nil
+    var queryCloseEditMode: Bool? {
+        return (editModeAction == .close) ? true : nil
     }
 }
 

@@ -39,7 +39,7 @@ class RatesViewController: UIViewController, UITableViewDelegate, DataDrivenView
         tableView.showsVerticalScrollIndicator = false
         tableView.showsHorizontalScrollIndicator = false
         tableView.estimatedRowHeight = 72
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
 
         tableView.register(RateCell.self)
         tableView.addSubview(refreshControl)

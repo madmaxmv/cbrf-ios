@@ -19,12 +19,12 @@ struct RatesSort {
     static func standartSort(rates: [CurrencyDailyRate]) -> [CurrencyDailyRate] {
         var allRates = rates
         var sortedRates: [CurrencyDailyRate] = []
-        if let usdIndex = allRates.index(where: { $0.characterCode == "USD" }) {
+        if let usdIndex = allRates.firstIndex(where: { $0.characterCode == "USD" }) {
             sortedRates.append(allRates[usdIndex])
             allRates.remove(at: usdIndex)
         }
 
-        if let eurIndex = allRates.index(where: { $0.characterCode == "EUR" }) {
+        if let eurIndex = allRates.firstIndex(where: { $0.characterCode == "EUR" }) {
             sortedRates.append(allRates[eurIndex])
             allRates.remove(at: eurIndex)
         }
