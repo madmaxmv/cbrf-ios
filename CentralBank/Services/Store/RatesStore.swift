@@ -46,7 +46,7 @@ extension LocalStore: RatesStore {
             let allCurrenies = Currency.fetch(in: context)
                 .filter { $0.isIncluded }
             
-            let rates: [RateAPIModel] = allCurrenies.flatMap { currency in
+            let rates: [RateAPIModel] = allCurrenies.compactMap { currency in
                 guard let rate = Rate.findOrFetch(in: context, matching: Rate.predicate(currency: currency,
                                                                                         on: date))
                     else {

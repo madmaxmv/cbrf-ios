@@ -32,7 +32,7 @@ struct RatesService {
         return Observable
             .combineLatest(dailyRates(on: yesterday), dailyRates(on: today)) { yesterdayRates, todayRates in
                 let _rates: [CurrencyDailyRate] = zip(yesterdayRates, todayRates)
-                    .flatMap { yesterdayRate, todayRate in
+                    .compactMap { yesterdayRate, todayRate in
                         guard yesterdayRate.code == todayRate.code else {
                             return nil
                         }
