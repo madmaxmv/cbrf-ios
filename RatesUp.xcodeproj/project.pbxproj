@@ -3,18 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		190F5683A56EEF156C005C55 /* Pods_RatesUpTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B97E57017EBDBCB5FEA25A8B /* Pods_RatesUpTests.framework */; };
 		54B97B6C5BCC8C873655920D /* Pods_RatesUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFF578B52A120A3D989892C /* Pods_RatesUp.framework */; };
+		940265A7244F98D3005D53C0 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940265A6244F98D3005D53C0 /* Store.swift */; };
+		940265A9244F9A83005D53C0 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940265A8244F9A83005D53C0 /* AppReducer.swift */; };
+		940265AB2450C041005D53C0 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940265AA2450C041005D53C0 /* Effect.swift */; };
 		943E0ADF201354D0000C62C1 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0AD9201354CF000C62C1 /* AppState.swift */; };
 		943E0AE0201354D0000C62C1 /* AppSideEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0ADA201354CF000C62C1 /* AppSideEffects.swift */; };
 		943E0AE1201354D0000C62C1 /* DataDrivenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0ADB201354D0000C62C1 /* DataDrivenView.swift */; };
-		943E0AE2201354D0000C62C1 /* AppStateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0ADC201354D0000C62C1 /* AppStateStore.swift */; };
-		943E0AE3201354D0000C62C1 /* SideEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0ADD201354D0000C62C1 /* SideEffects.swift */; };
-		943E0AE4201354D0000C62C1 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0ADE201354D0000C62C1 /* State.swift */; };
+		943E0AE2201354D0000C62C1 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0ADC201354D0000C62C1 /* AppStore.swift */; };
 		943E0AF8201356A0000C62C1 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0AF52013569F000C62C1 /* TabItem.swift */; };
 		943E0AF9201356A0000C62C1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0AF6201356A0000C62C1 /* TabBarController.swift */; };
 		943E0AFA201356A0000C62C1 /* TabBarViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0AF7201356A0000C62C1 /* TabBarViewState.swift */; };
@@ -28,7 +29,6 @@
 		943E0B1120135A14000C62C1 /* RatesViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0B1020135A14000C62C1 /* RatesViewState.swift */; };
 		943E0B1320135A31000C62C1 /* RatesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0B1220135A31000C62C1 /* RatesState.swift */; };
 		943E0B1620135DB2000C62C1 /* ObservableType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0B1520135DB1000C62C1 /* ObservableType+Extensions.swift */; };
-		943E0B1920136039000C62C1 /* Rates.xib in Resources */ = {isa = PBXBuildFile; fileRef = 943E0B1820136039000C62C1 /* Rates.xib */; };
 		943E0B1E2013681A000C62C1 /* RatesTableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0B1D2013681A000C62C1 /* RatesTableSection.swift */; };
 		943E0B2020136938000C62C1 /* RatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0B1F20136938000C62C1 /* RatesViewController.swift */; };
 		9451DE8220134B3600F69318 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9451DE8120134B3600F69318 /* AppDelegate.swift */; };
@@ -92,12 +92,13 @@
 		7729BD9CDE5C174A079B1E0A /* Pods-RatesUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RatesUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RatesUp/Pods-RatesUp.release.xcconfig"; sourceTree = "<group>"; };
 		856E0B0C6477CB28D15A8B88 /* Pods-RatesUpTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RatesUpTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RatesUpTests/Pods-RatesUpTests.release.xcconfig"; sourceTree = "<group>"; };
 		8C6AC83A88422EF61EBF4AE7 /* Pods-RatesUpUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RatesUpUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RatesUpUITests/Pods-RatesUpUITests.release.xcconfig"; sourceTree = "<group>"; };
+		940265A6244F98D3005D53C0 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		940265A8244F9A83005D53C0 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		940265AA2450C041005D53C0 /* Effect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
 		943E0AD9201354CF000C62C1 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		943E0ADA201354CF000C62C1 /* AppSideEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSideEffects.swift; sourceTree = "<group>"; };
 		943E0ADB201354D0000C62C1 /* DataDrivenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDrivenView.swift; sourceTree = "<group>"; };
-		943E0ADC201354D0000C62C1 /* AppStateStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStateStore.swift; sourceTree = "<group>"; };
-		943E0ADD201354D0000C62C1 /* SideEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideEffects.swift; sourceTree = "<group>"; };
-		943E0ADE201354D0000C62C1 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		943E0ADC201354D0000C62C1 /* AppStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
 		943E0AF52013569F000C62C1 /* TabItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		943E0AF6201356A0000C62C1 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		943E0AF7201356A0000C62C1 /* TabBarViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewState.swift; sourceTree = "<group>"; };
@@ -111,7 +112,6 @@
 		943E0B1020135A14000C62C1 /* RatesViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesViewState.swift; sourceTree = "<group>"; };
 		943E0B1220135A31000C62C1 /* RatesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesState.swift; sourceTree = "<group>"; };
 		943E0B1520135DB1000C62C1 /* ObservableType+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extensions.swift"; sourceTree = "<group>"; };
-		943E0B1820136039000C62C1 /* Rates.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Rates.xib; sourceTree = "<group>"; };
 		943E0B1D2013681A000C62C1 /* RatesTableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesTableSection.swift; sourceTree = "<group>"; };
 		943E0B1F20136938000C62C1 /* RatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatesViewController.swift; sourceTree = "<group>"; };
 		9451DE7E20134B3600F69318 /* RatesUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RatesUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,6 +213,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		940265A5244F98BC005D53C0 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				940265A6244F98D3005D53C0 /* Store.swift */,
+				940265AA2450C041005D53C0 /* Effect.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		943E0AD72013544B000C62C1 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,11 +237,10 @@
 		943E0AD820135457000C62C1 /* AppState */ = {
 			isa = PBXGroup;
 			children = (
-				943E0ADA201354CF000C62C1 /* AppSideEffects.swift */,
+				943E0ADC201354D0000C62C1 /* AppStore.swift */,
 				943E0AD9201354CF000C62C1 /* AppState.swift */,
-				943E0ADC201354D0000C62C1 /* AppStateStore.swift */,
-				943E0ADD201354D0000C62C1 /* SideEffects.swift */,
-				943E0ADE201354D0000C62C1 /* State.swift */,
+				940265A8244F9A83005D53C0 /* AppReducer.swift */,
+				943E0ADA201354CF000C62C1 /* AppSideEffects.swift */,
 				943E0ADB201354D0000C62C1 /* DataDrivenView.swift */,
 			);
 			path = AppState;
@@ -278,7 +286,6 @@
 			isa = PBXGroup;
 			children = (
 				943E0B0F201359F8000C62C1 /* Table */,
-				943E0B1820136039000C62C1 /* Rates.xib */,
 				943E0B1020135A14000C62C1 /* RatesViewState.swift */,
 				943E0B1F20136938000C62C1 /* RatesViewController.swift */,
 				943E0B1220135A31000C62C1 /* RatesState.swift */,
@@ -355,6 +362,7 @@
 			children = (
 				946278E3204AFDD700645B99 /* RatesUp.entitlements */,
 				943E0AD820135457000C62C1 /* AppState */,
+				940265A5244F98BC005D53C0 /* Core */,
 				943E0B1720135DBE000C62C1 /* Extensions */,
 				943E0AFB20135723000C62C1 /* Resources */,
 				943E0B1C2013653F000C62C1 /* SceneCoordinator */,
@@ -496,6 +504,8 @@
 			dependencies = (
 			);
 			name = RatesUp;
+			packageProductDependencies = (
+			);
 			productName = CentralBank;
 			productReference = 9451DE7E20134B3600F69318 /* RatesUp.app */;
 			productType = "com.apple.product-type.application";
@@ -581,6 +591,8 @@
 				Base,
 			);
 			mainGroup = 9451DE7520134B3600F69318;
+			packageReferences = (
+			);
 			productRefGroup = 9451DE7F20134B3600F69318 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -597,7 +609,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				943E0B1920136039000C62C1 /* Rates.xib in Resources */,
 				9452577320137D7400684439 /* RateCell.xib in Resources */,
 				9451DE8C20134B3600F69318 /* LaunchScreen.storyboard in Resources */,
 				9451DE8920134B3600F69318 /* Assets.xcassets in Resources */,
@@ -662,37 +673,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RatesUp/Pods-RatesUp-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
-				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
-				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
-				"${BUILT_PRODUCTS_DIR}/RxFeedback/RxFeedback.framework",
-				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxViewController/RxViewController.framework",
-				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RatesUp/Pods-RatesUp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Action.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxFeedback.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxViewController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RatesUp/Pods-RatesUp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -728,6 +714,7 @@
 				9452577120136A8000684439 /* RateCell.swift in Sources */,
 				94A61AF7201CCBEC00299A4A /* UIColor+extensions.swift in Sources */,
 				946278CC2038616900645B99 /* Rate.swift in Sources */,
+				940265A7244F98D3005D53C0 /* Store.swift in Sources */,
 				943E0ADF201354D0000C62C1 /* AppState.swift in Sources */,
 				946278D62039779500645B99 /* Managed.swift in Sources */,
 				943E0AFA201356A0000C62C1 /* TabBarViewState.swift in Sources */,
@@ -752,7 +739,8 @@
 				943E0B1620135DB2000C62C1 /* ObservableType+Extensions.swift in Sources */,
 				943E0B0820135876000C62C1 /* Assets.swift in Sources */,
 				946278DC204AD31400645B99 /* DailyRatesData.swift in Sources */,
-				943E0AE3201354D0000C62C1 /* SideEffects.swift in Sources */,
+				940265A9244F9A83005D53C0 /* AppReducer.swift in Sources */,
+				940265AB2450C041005D53C0 /* Effect.swift in Sources */,
 				943E0AE1201354D0000C62C1 /* DataDrivenView.swift in Sources */,
 				945257842016823900684439 /* XMLDecoder.swift in Sources */,
 				946278DE204AECAF00645B99 /* RatesService.swift in Sources */,
@@ -761,7 +749,7 @@
 				946278CE2038728400645B99 /* LocalStore.swift in Sources */,
 				943E0B0520135795000C62C1 /* SceneAction.swift in Sources */,
 				943E0B0420135795000C62C1 /* SceneTransitionType.swift in Sources */,
-				943E0AE2201354D0000C62C1 /* AppStateStore.swift in Sources */,
+				943E0AE2201354D0000C62C1 /* AppStore.swift in Sources */,
 				946278C720385EBD00645B99 /* RatesStore.xcdatamodeld in Sources */,
 				943E0B0120135795000C62C1 /* Scene.swift in Sources */,
 				9451DE8220134B3600F69318 /* AppDelegate.swift in Sources */,
@@ -770,7 +758,6 @@
 				94729CA9206D8A170026C45D /* RatesSort.swift in Sources */,
 				946278C92038609200645B99 /* Currency.swift in Sources */,
 				94F9507D20839E7700265779 /* СurrenciesTableSection.swift in Sources */,
-				943E0AE4201354D0000C62C1 /* State.swift in Sources */,
 				94729CAE206FFC9D0026C45D /* СurreniesViewController.swift in Sources */,
 				94729CB0206FFE700026C45D /* CurrenciesState.swift in Sources */,
 				94729CBB20700C5B0026C45D /* CurrenciesSideEffects.swift in Sources */,
@@ -926,7 +913,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -941,7 +929,10 @@
 				DEVELOPMENT_TEAM = 6L2SX9VHNH;
 				INFOPLIST_FILE = RatesUp/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.madmaxmv.ratesup;
 				PRODUCT_NAME = RatesUp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -960,7 +951,10 @@
 				DEVELOPMENT_TEAM = HQ576M92UA;
 				INFOPLIST_FILE = RatesUp/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.madmaxmv.ratesup;
 				PRODUCT_NAME = RatesUp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -978,7 +972,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HQ576M92UA;
 				INFOPLIST_FILE = RatesUpTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = matmax.RatesUpTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -996,7 +994,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HQ576M92UA;
 				INFOPLIST_FILE = RatesUpTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = matmax.RatesUpTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1013,7 +1015,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HQ576M92UA;
 				INFOPLIST_FILE = RatesUpUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = matmax.RatesUpUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1030,7 +1036,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HQ576M92UA;
 				INFOPLIST_FILE = RatesUpUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = matmax.RatesUpUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

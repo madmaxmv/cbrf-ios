@@ -3,12 +3,11 @@
 //
 
 import UIKit
-import ReSwift
 import RxSwift
 import RxCocoa
 
 /// Tab Bar Controller основного меню.
-class TabBarController: UITabBarController, StoreSubscriber {
+class TabBarController: UITabBarController {
 
     var state = PublishSubject<TabBarViewState>()
 

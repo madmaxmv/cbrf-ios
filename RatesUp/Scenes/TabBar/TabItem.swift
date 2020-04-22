@@ -19,12 +19,10 @@ enum TabItem {
 
 extension TabItem {
 
-    func viewController() -> UIViewController {
-//        let appStateStore = ((UIApplication.shared.delegate as? AppDelegate)?.appStateStore)!
-
+    func viewController(store: AppStore) -> UIViewController {
         switch self {
         case let .exchangeRates(_, title, icon, selectedIcon):
-            var vc = RatesViewController(nibName: "Rates", bundle: nil)
+            let vc = RatesViewController(store: store)
             vc.tabBarItem = UITabBarItem(title: title, image: icon, selectedImage: selectedIcon)
             let nc = NavigationController(rootViewController: vc)
 
@@ -32,7 +30,6 @@ extension TabItem {
             nc.interactivePopGestureRecognizer?.isEnabled = true
             nc.interactivePopGestureRecognizer?.delegate = nc
 
-//            vc.bind(with: appStateStore)
             return nc
         }
     }

@@ -3,12 +3,6 @@
 //
 
 import UIKit
-import ReSwift
-
-let stateStore = Store<AppState>(
-    reducer: AppState.reduce,
-    state: AppState.initial
-)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

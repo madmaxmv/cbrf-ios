@@ -3,8 +3,8 @@
 //
 
 import RxSwift
-import RxCocoa
-import RxFeedback
+
+typealias AppSideEffect = (AppState) -> Observable<AppState.Event>
 
 struct AppSideEffects {
 
@@ -35,12 +35,9 @@ struct AppSideEffects {
 }
 
 // MARK: - SideEffects
-extension AppSideEffects: SideEffects {
-    typealias State = AppState
-    typealias ScheduledEffect = (ObservableSchedulerContext<State>) -> Observable<State.Event>
-
-    var effects: [ScheduledEffect] {
-        var effects: [ScheduledEffect] = []
+extension AppSideEffects {
+    var effects: [AppSideEffect] {
+        var effects: [AppSideEffect] = []
         effects.append(contentsOf: _rates.effects)
         effects.append(contentsOf: _currencies.effects)
         return effects

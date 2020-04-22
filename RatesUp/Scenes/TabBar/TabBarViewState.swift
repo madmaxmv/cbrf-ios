@@ -5,8 +5,6 @@
 import RxSwift
 
 struct TabBarViewState {
-
-    /// Список доступных табов.
     var tabs: [TabItem] = []
 
     static var initial: TabBarViewState {

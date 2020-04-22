@@ -4,15 +4,11 @@ platform :ios, '9.0'
 target 'RatesUp' do
   use_frameworks!
 
-  pod 'ReSwift'
-
   # Rx
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RxOptional'
   pod 'RxDataSources'
-  pod 'Action'
-  pod 'RxFeedback'
   pod 'RxViewController'
 
   # Network

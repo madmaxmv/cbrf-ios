@@ -4,15 +4,11 @@
 
 import Foundation
 
-final class RatesState: State {
-    /// ViewState экрана с курсом валют.
+struct RatesState {
     var viewState: RatesViewState = .initial
 
-    /// Все курсы валют.
     var ratesResult: RatesResult? = nil
-    /// Событие открытия/закрытия сцены с редактированием списка валют.
     var editModeAction: SceneAction? = nil
-    /// Стейт экрана изменения списка валют.
     var edit: CurrenciesState? = nil
 }
 
@@ -28,24 +24,25 @@ extension RatesState {
 }
 
 extension RatesState {
-    func reduce(event: RatesState.Event) {
+    mutating func reduce(event: RatesState.Event) {
         switch event {
         case .ratesResult(let result):
             ratesResult = result
             
-            switch result {
-            case .success(let rates),
-                 .today(let rates, _),
-                 .yesterday(let rates, _):
-                viewState.isLoading = false
-                viewState.content = RatesTableSection.makeContent(for: rates)
-            default: break
-            }
+//            switch result {
+//            case .success(let rates),
+//                 .today(let rates, _),
+//                 .yesterday(let rates, _):
+//                viewState.isLoading = false
+//                viewState.content = RatesTableSection.makeContent(for: rates)
+//            default: break
+//            }
         case .refreshRates:
-            viewState.isLoading = true
+//            viewState.isLoading = true
             ratesResult = nil
             
-        case .openEditMode: editModeAction = .open
+        case .openEditMode:
+            editModeAction = .open
             edit = CurrenciesState()
         case .editModeOpened: editModeAction = nil
         case .editModeClosed: editModeAction = nil

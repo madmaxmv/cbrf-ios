@@ -3,7 +3,6 @@
 //
 
 import UIKit
-import ReSwift
 import RxSwift
 import RxCocoa
 

@@ -4,7 +4,7 @@
 
 import Foundation
 
-final class CurrenciesState: State {
+final class CurrenciesState {
     /// ViewState экрана с курсом валют.
     var viewState: CurrenciesViewState = .initial
 

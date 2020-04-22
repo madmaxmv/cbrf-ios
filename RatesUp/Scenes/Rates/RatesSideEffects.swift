@@ -3,17 +3,6 @@
 //
 
 import RxSwift
-import RxFeedback
-
-extension RatesSideEffects {
-    var effects: [SideEffects.ScheduledEffect] {
-        return [
-            react(request: { $0.rates.queryAcquireRates }, effects: acquireRates),
-            react(request: { $0.rates.queryOpenEditMode }, effects: openEditMode),
-            react(request: { $0.rates.queryCloseEditMode }, effects: closeEditMode)
-        ]
-    }
-}
 
 struct RatesSideEffects {
     
@@ -29,8 +18,16 @@ struct RatesSideEffects {
         _coordinator = coordinator
         _backgroundScheduler = backgroundScheduler
     }
-    
-    var acquireRates: (Bool) -> Observable<SideEffects.State.Event> {
+
+    var effects: [AppSideEffect] {
+        return [
+//            react(request: { $0.rates.queryAcquireRates }, effects: acquireRates),
+//            react(request: { $0.rates.queryOpenEditMode }, effects: openEditMode),
+//            react(request: { $0.rates.queryCloseEditMode }, effects: closeEditMode)
+        ]
+    }
+
+    var acquireRates: (Bool) -> Observable<AppState.Event> {
         return { _ in
             self._services.ratesService
                 .rates(on: Date())
@@ -39,14 +36,14 @@ struct RatesSideEffects {
         }
     }
     
-    var openEditMode: (Bool) -> Observable<SideEffects.State.Event> {
+    var openEditMode: (Bool) -> Observable<AppState.Event> {
         return { _ in self._coordinator
             .transition(to: .editRates, type: .modal(animated: true))
             .map { .rates(.editModeOpened) }
         }
     }
     
-    var closeEditMode: (Bool) -> Observable<SideEffects.State.Event> {
+    var closeEditMode: (Bool) -> Observable<AppState.Event> {
         return { _ in
             self._coordinator.pop(animated: true)
                 .map { .rates(.editModeClosed) }
