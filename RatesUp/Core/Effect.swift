@@ -2,13 +2,15 @@
 //  Copyright © 2020 Matyushenko Maxim. All rights reserved.
 //
 
-struct Effect<Event> {
-    var effect: () -> Promise<Event>
-    init(effect: @escaping () -> Promise<Event>) {
+struct Effect<Event, Environment> {
+    var effect: (Environment) -> Promise<Event>
+    init(effect: @escaping (Environment) -> Promise<Event>) {
         self.effect = effect
     }
 
-    func run() -> Promise<Event> { effect() }
+    func run(in environment: Environment) -> Promise<Event> {
+        effect(environment)
+    }
 }
 
 import RxSwift
