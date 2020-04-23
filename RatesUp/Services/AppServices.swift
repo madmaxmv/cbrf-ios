@@ -34,14 +34,14 @@ class Services: AppServices {
         }
     }()
     
-    lazy var dateConverter: DateConverter = {
-        return .gregorian
-    }()
+    lazy var dateConverter: DateConverter = { .gregorian }()
     
     lazy var ratesService: RatesService = {
-        return RatesService(remote: remote,
-                            store: store,
-                            dateConverter: dateConverter)
+        RatesService(
+            remote: remote,
+            store: store,
+            dateConverter: dateConverter
+        )
     }()
 
     required init(groupIdentifier: String) {

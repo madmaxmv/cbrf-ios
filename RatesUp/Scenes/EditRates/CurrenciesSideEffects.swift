@@ -6,11 +6,9 @@ import RxSwift
 
 struct CurrenciesSideEffects {
     private let _services: AppServices
-    private let _coordinator: SceneCoordinator
     
-    init(services: AppServices, coordinator: SceneCoordinator) {
+    init(services: AppServices) {
         _services = services
-        _coordinator = coordinator
     }
     
     var effects: [AppSideEffect] {

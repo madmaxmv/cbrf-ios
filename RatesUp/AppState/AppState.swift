@@ -3,7 +3,7 @@
 //
 
 struct AppState {
-    var tabBarState = TabBarViewState.initial
+    var tabs: [Tab] = [.exchangeRates]
     var rates = RatesState()
 }
 

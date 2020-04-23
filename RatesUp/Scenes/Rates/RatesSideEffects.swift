@@ -5,17 +5,13 @@
 import RxSwift
 
 struct RatesSideEffects {
-    
     private let _services: AppServices
-    private let _coordinator: SceneCoordinator
     private let _backgroundScheduler: SchedulerType
     
     
     init(services: AppServices,
-         coordinator: SceneCoordinator,
          backgroundScheduler: SchedulerType) {
         _services = services
-        _coordinator = coordinator
         _backgroundScheduler = backgroundScheduler
     }
 
@@ -36,18 +32,18 @@ struct RatesSideEffects {
         }
     }
     
-    var openEditMode: (Bool) -> Observable<AppState.Event> {
-        return { _ in self._coordinator
-            .transition(to: .editRates, type: .modal(animated: true))
-            .map { .rates(.editModeOpened) }
-        }
-    }
-    
-    var closeEditMode: (Bool) -> Observable<AppState.Event> {
-        return { _ in
-            self._coordinator.pop(animated: true)
-                .map { .rates(.editModeClosed) }
-        }
-    }
+//    var openEditMode: (Bool) -> Observable<AppState.Event> {
+//        return { _ in self._coordinator
+//            .transition(to: .editRates, type: .modal(animated: true))
+//            .map { .rates(.editModeOpened) }
+//        }
+//    }
+//    
+//    var closeEditMode: (Bool) -> Observable<AppState.Event> {
+//        return { _ in
+//            self._coordinator.pop(animated: true)
+//                .map { .rates(.editModeClosed) }
+//        }
+//    }
 }
 

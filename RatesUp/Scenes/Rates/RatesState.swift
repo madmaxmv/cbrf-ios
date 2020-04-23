@@ -2,18 +2,17 @@
 //  Copyright © 2018 Matyushenko Maxim. All rights reserved.
 //
 
-import Foundation
-
 struct RatesState {
     var viewState: RatesViewState = .initial
 
     var ratesResult: RatesResult? = nil
-    var editModeAction: SceneAction? = nil
+    // var editModeAction: SceneAction? = nil
     var edit: CurrenciesState? = nil
 }
 
 extension RatesState {
     enum Event {
+        case initial
         case ratesResult(RatesResult)
         case refreshRates
         case openEditMode
@@ -26,6 +25,7 @@ extension RatesState {
 extension RatesState {
     mutating func reduce(event: RatesState.Event) {
         switch event {
+        case .initial: break 
         case .ratesResult(let result):
             ratesResult = result
             
@@ -42,29 +42,29 @@ extension RatesState {
             ratesResult = nil
             
         case .openEditMode:
-            editModeAction = .open
+            // editModeAction = .open
             edit = CurrenciesState()
-        case .editModeOpened: editModeAction = nil
-        case .editModeClosed: editModeAction = nil
+        case .editModeOpened: break // editModeAction = nil
+        case .editModeClosed: // editModeAction = nil
             edit = nil
         case .edit(let editEvent): edit?.reduce(event: editEvent)
         case .cancelEditing,
-             .editingDone: editModeAction = .close
+             .editingDone: break // editModeAction = .close
         }
     }
 }
 
-extension RatesState {
-    var queryAcquireRates: Bool? {
-        return (ratesResult == nil) ? true : nil
-    }
-
-    var queryOpenEditMode: Bool? {
-        return (editModeAction == .open) ? true : nil
-    }
-
-    var queryCloseEditMode: Bool? {
-        return (editModeAction == .close) ? true : nil
-    }
-}
-
+//extension RatesState {
+//    var queryAcquireRates: Bool? {
+//        return (ratesResult == nil) ? true : nil
+//    }
+//
+//    var queryOpenEditMode: Bool? {
+//        return (editModeAction == .open) ? true : nil
+//    }
+//
+//    var queryCloseEditMode: Bool? {
+//        return (editModeAction == .close) ? true : nil
+//    }
+//}
+//

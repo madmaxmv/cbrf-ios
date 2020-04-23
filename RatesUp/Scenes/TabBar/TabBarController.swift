@@ -6,32 +6,41 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-/// Tab Bar Controller основного меню.
+enum Tab {
+    case exchangeRates
+}
+
 class TabBarController: UITabBarController {
-
-    var state = PublishSubject<TabBarViewState>()
-
     private let bag = DisposeBag()
 
-    func newState(state: TabBarViewState) {
-        self.state.on(.next(state))
-    
-        // UI
-        self.state
-            .map { $0.tabs.map { tab in tab.viewController() } }
-            .bind(onNext: { [weak self] (controllers) in
-                self?.viewControllers = controllers
+    init(store: AppStore) {
+        super.init(nibName: nil, bundle: nil)
+
+        store.state.map { $0.tabs }
+            .distinctUntilChanged()
+            .map { tabsCreator(store: store, tabs: $0) }
+            .bind(onNext: { [weak self] controllers in
+                 self?.viewControllers = controllers
             })
             .disposed(by: bag)
-        
-        // Output Events
-        rx.didSelect
-            .asDriver()
-            .drive(onNext: {
-                (UIApplication.shared.delegate as? AppDelegate)?
-                    .coordinator
-                    .setCurrentViewController(to: $0)
-            })
-            .disposed(by: bag)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+private func tabsCreator(store: AppStore, tabs: [Tab]) -> [UIViewController] {
+    return tabs.map {
+        switch $0 {
+        case .exchangeRates:
+            let vc = RatesViewController(store: store)
+            vc.tabBarItem = UITabBarItem(
+                title: NSLocalizedString("Rates", comment: "Курсы"),
+                image: UIImage(),
+                selectedImage: UIImage()
+            )
+            return UINavigationController(rootViewController: vc)
+        }
     }
 }
