@@ -2,12 +2,12 @@
 //  Copyright © 2018 Matyushenko Maxim. All rights reserved.
 //
 
-struct RatesState {
-    var viewState: RatesViewState = .initial
+import Foundation
 
+struct RatesState: Equatable {
     var ratesResult: RatesResult? = nil
     // var editModeAction: SceneAction? = nil
-    var edit: CurrenciesState? = nil
+    // var edit: CurrenciesState? = nil
 }
 
 extension RatesState {
@@ -23,12 +23,23 @@ extension RatesState {
 }
 
 extension RatesState {
-    mutating func reduce(event: RatesState.Event) {
+    static let reducer: Reducer<RatesState, AppState.Event, AppEnvironment> = { state, event in
         switch event {
-        case .initial: break 
-        case .ratesResult(let result):
-            ratesResult = result
-            
+        case .rates(.initial):
+            return [fetchRatesEffect]
+        case .rates(.ratesResult(let result)):
+            state.ratesResult = result
+        default: break
+        }
+
+        return []
+    }
+    
+//    mutating func reduce(event: RatesState.Event) {
+//        switch event {
+//        case .initial: break
+//
+//
 //            switch result {
 //            case .success(let rates),
 //                 .today(let rates, _),
@@ -37,21 +48,21 @@ extension RatesState {
 //                viewState.content = RatesTableSection.makeContent(for: rates)
 //            default: break
 //            }
-        case .refreshRates:
+//        case .refreshRates:
 //            viewState.isLoading = true
-            ratesResult = nil
-            
-        case .openEditMode:
-            // editModeAction = .open
-            edit = CurrenciesState()
-        case .editModeOpened: break // editModeAction = nil
-        case .editModeClosed: // editModeAction = nil
-            edit = nil
-        case .edit(let editEvent): edit?.reduce(event: editEvent)
-        case .cancelEditing,
-             .editingDone: break // editModeAction = .close
-        }
-    }
+//            ratesResult = nil
+//
+//        case .openEditMode: break;
+//            // editModeAction = .open
+//            // edit = CurrenciesState()
+//        case .editModeOpened: break // editModeAction = nil
+//        case .editModeClosed: break // editModeAction = nil
+//            // edit = nil
+//        case .edit(let editEvent): break //edit?.reduce(event: editEvent)
+//        case .cancelEditing,
+//             .editingDone: break // editModeAction = .close
+//        }
+//    }
 }
 
 //extension RatesState {
@@ -68,3 +79,9 @@ extension RatesState {
 //    }
 //}
 //
+
+private extension RatesState {
+    static let fetchRatesEffect = Effect<AppState.Event, AppEnvironment> { env in
+        env.fetchRates(Date()).map { .rates(.ratesResult($0)) }
+    }
+}

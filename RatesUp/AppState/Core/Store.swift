@@ -4,16 +4,17 @@
 
 import RxSwift
 
+typealias Reducer<State, Event, Environment>
+    = (inout State, Event) -> [Effect<Event, Environment>]
+
 final class Store<State, Event, Environment> {
-    typealias Reducer = (inout State, Event) -> [Effect<Event, Environment>]
-    
     var state: BehaviorSubject<State>
-    private let reducer: Reducer
+    private let reducer: Reducer<State, Event, Environment>
     private let environment: Environment
     private let bag = DisposeBag()
 
     init(initial: State,
-         reducer: @escaping Reducer,
+         reducer: @escaping Reducer<State, Event, Environment>,
          environment: Environment) {
         self.state = BehaviorSubject(
             value: initial
@@ -39,12 +40,12 @@ final class Store<State, Event, Environment> {
     }
 }
 
-func combine<State, Action, Environment>(
-    _ reducers: Store<State, Action, Environment>.Reducer...
-) -> Store<State, Action, Environment>.Reducer {
-    return { state, action in
+func combine<State, Event, Environment>(
+    _ reducers: Reducer<State, Event, Environment>...
+) -> Reducer<State, Event, Environment> {
+    return { state, event in
         reducers.reduce(into: []) { result, reducer in
-            result.append(contentsOf: reducer(&state, action))
+            result.append(contentsOf: reducer(&state, event))
         }
     }
 }

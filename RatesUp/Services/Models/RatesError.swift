@@ -4,7 +4,7 @@
 
 import Foundation
 
-enum RatesError: Error {
+enum RatesError: Equatable, Error {
     case emptyStore
     case storeUnavailable
     case responseFailed

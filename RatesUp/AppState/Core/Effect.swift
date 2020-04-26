@@ -20,6 +20,18 @@ struct Promise<Event>: ObservableType {
     let observable: Observable<E>
 
     func subscribe<O>(_ observer: O) -> Disposable where O : ObserverType, Self.E == O.E {
-        return observable.subscribe()
+        return observable.subscribe(observer)
+    }
+}
+
+extension Promise {
+    func map<R>(_ transform: @escaping (Event) throws -> R) -> Promise<R> {
+        return observable.map(transform).asPromise()
+    }
+}
+
+extension Observable {
+    func asPromise() -> Promise<Element> {
+        Promise(observable: self)
     }
 }

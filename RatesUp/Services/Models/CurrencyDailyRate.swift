@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct CurrencyDailyRate {
+struct CurrencyDailyRate: Equatable {
     let flag: Flag
     let code: Int
     let characterCode: String

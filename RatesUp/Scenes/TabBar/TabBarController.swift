@@ -11,9 +11,11 @@ enum Tab {
 }
 
 class TabBarController: UITabBarController {
+    private let store: AppStore
     private let bag = DisposeBag()
 
     init(store: AppStore) {
+        self.store = store
         super.init(nibName: nil, bundle: nil)
 
         store.state.map { $0.tabs }

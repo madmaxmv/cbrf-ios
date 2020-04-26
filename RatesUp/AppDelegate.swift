@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let stateStore = AppStore(
             initial: AppState.initial,
             reducer: AppState.reducer,
-            environment: AppEnvironment()
+            environment: AppEnvironment(services: services)
         )
 
 //        let sideEffects = AppSideEffects(coordinator: coordinator,
@@ -31,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = TabBarController(
             store: stateStore
         )
+
+        stateStore.send(.rates(.initial))
 
         return true
     }
