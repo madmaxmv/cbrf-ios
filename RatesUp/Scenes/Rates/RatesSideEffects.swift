@@ -38,7 +38,7 @@ struct RatesSideEffects {
 //            .map { .rates(.editModeOpened) }
 //        }
 //    }
-//    
+//
 //    var closeEditMode: (Bool) -> Observable<AppState.Event> {
 //        return { _ in
 //            self._coordinator.pop(animated: true)

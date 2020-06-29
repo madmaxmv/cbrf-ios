@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct CurrenciesViewState {
+struct CurrenciesViewState: Equatable {
 
     /// Модель для отображения в теблице.
     var dataSource: [СurrenciesTableSection] = []
@@ -33,11 +33,5 @@ struct CurrenciesViewState {
     
     static var initial: CurrenciesViewState {
         return CurrenciesViewState()
-    }
-}
-
-extension CurrenciesViewState: Equatable {
-    static func ==(lhs: CurrenciesViewState, rhs: CurrenciesViewState) -> Bool {
-        return lhs.dataSource == rhs.dataSource
     }
 }

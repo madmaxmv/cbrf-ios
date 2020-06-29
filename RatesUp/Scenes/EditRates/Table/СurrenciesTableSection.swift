@@ -4,11 +4,11 @@
 
 import RxDataSources
 
-enum СurrenciesTableSection {
+enum СurrenciesTableSection: Equatable {
     case included(items: [Item])
     case excluded(items: [Item])
     
-    enum Item {
+    enum Item: Equatable {
         case currency(CurrencyCell.State)
     }
 }
@@ -40,31 +40,12 @@ extension СurrenciesTableSection: AnimatableSectionModelType {
     }
 }
 
-extension СurrenciesTableSection: Equatable {
-    static func == (lhs: СurrenciesTableSection, rhs: СurrenciesTableSection) -> Bool {
-        switch (lhs, rhs) {
-        case let (.included(lhs), .included(rhs)),
-             let (.excluded(lhs), .excluded(rhs)):
-            return lhs == rhs
-        default:
-            return false
-        }
-    }
-}
-
-extension СurrenciesTableSection.Item: IdentifiableType, Equatable {
+extension СurrenciesTableSection.Item: IdentifiableType {
     
     var identity: Int {
         switch self {
         case .currency(let state):
             return state.characterCode.hashValue
-        }
-    }
-    
-    static func == (lhs: СurrenciesTableSection.Item, rhs: СurrenciesTableSection.Item) -> Bool {
-        switch (lhs, rhs) {
-        case let (.currency(lhs), .currency(rhs)):
-            return lhs == rhs
         }
     }
 }
