@@ -2,8 +2,6 @@
 //  Copyright © 2018 Matyushenko Maxim. All rights reserved.
 //
 
-import Foundation
-import Result
 import RxSwift
 
 struct RatesService {

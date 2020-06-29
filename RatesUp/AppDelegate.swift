@@ -3,30 +3,36 @@
 //
 
 import UIKit
-import RxSwift
+
+typealias AppStore = Store<AppState, AppState.Event, AppEnvironment>
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
-    var appStateStore: AppStateStore!
-    var coordinator: SceneCoordinator!
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        coordinator = SceneCoordinatorImpl(window: window!)
         let services = Services(groupIdentifier: "group.ru.madmaxmv.ratesup")
+
+        let stateStore = AppStore(
+            initial: AppState.initial,
+            reducer: AppState.reducer,
+            environment: AppEnvironment(services: services)
+        )
+
+//        let sideEffects = AppSideEffects(coordinator: coordinator,
+//                                         services: services,
+//                                         backgroundScheduler: ConcurrentDispatchQueueScheduler(qos: .userInitiated))
         
-        let sideEffects = AppSideEffects(coordinator: coordinator,
-                                         services: services,
-                                         backgroundScheduler: ConcurrentDispatchQueueScheduler(qos: .userInitiated))
-        
-        appStateStore = AppStateStore(sideEffects: sideEffects)
-        appStateStore.run()
-        
-        coordinator.transition(to: .tabBar, type: .root)
+//        appStateStore = AppStateStore(sideEffects: sideEffects)
+//        appStateStore.run()
+
+        window?.rootViewController = TabBarController(
+            store: stateStore
+        )
+
+        stateStore.send(.rates(.initial))
 
         return true
     }

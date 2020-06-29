@@ -5,13 +5,10 @@ target 'RatesUp' do
   use_frameworks!
 
   # Rx
-  
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RxOptional'
   pod 'RxDataSources'
-  pod 'Action'
-  pod 'RxFeedback'
   pod 'RxViewController'
 
   # Network

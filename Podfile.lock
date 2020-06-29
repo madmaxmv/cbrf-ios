@@ -1,7 +1,4 @@
 PODS:
-  - Action (3.11.0):
-    - RxCocoa (~> 4.0)
-    - RxSwift (~> 4.0)
   - Alamofire (4.9.1)
   - Differentiator (3.1.0)
   - Moya/Core (13.0.1):
@@ -17,9 +14,6 @@ PODS:
     - Differentiator (~> 3.0)
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
-  - RxFeedback (2.0.0):
-    - RxCocoa (~> 4.4)
-    - RxSwift (~> 4.4)
   - RxOptional (3.6.2):
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
@@ -30,12 +24,10 @@ PODS:
   - SWXMLHash (5.0.1)
 
 DEPENDENCIES:
-  - Action
   - Moya/Core
   - Moya/RxSwift
   - RxCocoa
   - RxDataSources
-  - RxFeedback
   - RxOptional
   - RxSwift
   - RxViewController
@@ -43,33 +35,29 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - Action
     - Alamofire
     - Differentiator
     - Moya
     - Result
     - RxCocoa
     - RxDataSources
-    - RxFeedback
     - RxOptional
     - RxSwift
     - RxViewController
     - SWXMLHash
 
 SPEC CHECKSUMS:
-  Action: 689181e4c3f6566844178d8a7da6fef39a9597fc
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
-  RxFeedback: 49bb931caf6d05e315d5b5366c0991ad1474ea36
   RxOptional: 80426a0ddbd092573e4c482d8cc13302078c4d5e
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   RxViewController: e93e7c233d5b5b62c32231d69726d55f54081bc6
   SWXMLHash: 9cc0c2e4807926c74377724aa8722ee5707a0485
 
-PODFILE CHECKSUM: 6a556e4798008a7c45d5837fac891b4bfa216796
+PODFILE CHECKSUM: 594c0e2dcf729bf979d03bc924eef91a8e39d344
 
 COCOAPODS: 1.9.1

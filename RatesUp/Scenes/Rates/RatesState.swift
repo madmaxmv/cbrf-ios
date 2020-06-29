@@ -4,20 +4,13 @@
 
 import Foundation
 
-final class RatesState: State {
-    /// ViewState экрана с курсом валют.
-    var viewState: RatesViewState = .initial
-
-    /// Все курсы валют.
+struct RatesState: Equatable {
     var ratesResult: RatesResult? = nil
-    /// Событие открытия/закрытия сцены с редактированием списка валют.
-    var editModeAction: SceneAction? = nil
-    /// Стейт экрана изменения списка валют.
-    var edit: CurrenciesState? = nil
 }
 
 extension RatesState {
     enum Event {
+        case initial
         case ratesResult(RatesResult)
         case refreshRates
         case openEditMode
@@ -28,46 +21,21 @@ extension RatesState {
 }
 
 extension RatesState {
-    func reduce(event: RatesState.Event) {
+    static let reducer: Reducer<RatesState, AppState.Event, AppEnvironment> = { state, event in
         switch event {
-        case .ratesResult(let result):
-            ratesResult = result
-            
-            switch result {
-            case .success(let rates),
-                 .today(let rates, _),
-                 .yesterday(let rates, _):
-                viewState.isLoading = false
-                viewState.content = RatesTableSection.makeContent(for: rates)
-            default: break
-            }
-        case .refreshRates:
-            viewState.isLoading = true
-            ratesResult = nil
-            
-        case .openEditMode: editModeAction = .open
-            edit = CurrenciesState()
-        case .editModeOpened: editModeAction = nil
-        case .editModeClosed: editModeAction = nil
-            edit = nil
-        case .edit(let editEvent): edit?.reduce(event: editEvent)
-        case .cancelEditing,
-             .editingDone: editModeAction = .close
+        case .rates(.initial):
+            return [fetchRatesEffect]
+        case .rates(.ratesResult(let result)):
+            state.ratesResult = result
+        default: break
         }
+
+        return []
     }
 }
 
-extension RatesState {
-    var queryAcquireRates: Bool? {
-        return (ratesResult == nil) ? true : nil
-    }
-
-    var queryOpenEditMode: Bool? {
-        return (editModeAction == .open) ? true : nil
-    }
-
-    var queryCloseEditMode: Bool? {
-        return (editModeAction == .close) ? true : nil
+private extension RatesState {
+    static let fetchRatesEffect = Effect<AppState.Event, AppEnvironment> { env in
+        env.fetchRates(Date()).map { .rates(.ratesResult($0)) }
     }
 }
-

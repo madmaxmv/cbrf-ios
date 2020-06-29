@@ -47,21 +47,13 @@ class CurrencyCell: UITableViewCell {
 }
 
 extension CurrencyCell {
-    enum ActionType {
+    enum ActionType: Equatable {
         case delete, add
     }
 
-    struct State {
+    struct State: Equatable {
         let flag: String
         let characterCode: String
         let action: ActionType
-    }
-}
-
-extension CurrencyCell.State: Equatable {
-    static func == (lhs: CurrencyCell.State, rhs: CurrencyCell.State) -> Bool {
-        return lhs.flag == rhs.flag
-            && lhs.characterCode == rhs.characterCode
-            && lhs.action == rhs.action
     }
 }

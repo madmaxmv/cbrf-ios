@@ -1,8 +1,4 @@
 //
-//  RateCell.swift
-//  RatesUp
-//
-//  Created by Максим on 20/01/2018.
 //  Copyright © 2018 Matyushenko Maxim. All rights reserved.
 //
 
@@ -28,51 +24,34 @@ class RateCell: UITableViewCell {
         codeLabel.text = state.characterCode
         detailsLabel.text = state.details
         valueLabel.text = state.value
-        differenceLabel.text = state.difference
-        differenceLabel.textColor = state.differenceColor
-    }
-}
-
-extension RateCell {
-    struct State {
-        let flag: String
-        let characterCode: String
-        let details: String
-        let value: String
+        differenceLabel.text = state.difference?.title
         
-        let difference: String?
-        let differenceColor: UIColor
-        
-        let model: CurrencyDailyRate
-        
-        init(model: CurrencyDailyRate) {
-            self.model = model
-            flag = model.flag.emoji
-            characterCode = model.characterCode
-            details = "\(model.nominal) \(model.currencyName)"
-            value = String(model.value)
-            
-            switch model.difference {
-            case .some(let diff) where diff > 0:
-                difference = String(format: "%.5f", diff)
-                differenceColor = .green
-            case .some(let diff) where diff < 0:
-                difference = String(format: "%.5f", diff)
-                differenceColor = .red
-            default:
-                difference = nil
-                differenceColor = .clear
-            }
+        switch state.difference?.color {
+        case .red:
+            differenceLabel.textColor = .red
+        case .green:
+            differenceLabel.textColor = .green
+        case nil:
+            break
         }
     }
 }
 
-extension RateCell.State: Equatable {
-    public static func == (lhs: RateCell.State, rhs: RateCell.State) -> Bool {
-        return lhs.characterCode == rhs.characterCode
-            && lhs.details == rhs.details
-            && lhs.value == rhs.value
-            && lhs.difference == rhs.difference
+extension RateCell {
+    struct State: Equatable {
+        let flag: String
+        let characterCode: String
+        let details: String
+        let value: String
+        let difference: Difference?
+
+        struct Difference: Equatable {
+            let title: String
+            let color: Color
+
+            enum Color {
+                case red, green
+            }
+        }
     }
 }
-

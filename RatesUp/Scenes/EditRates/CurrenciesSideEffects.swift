@@ -3,24 +3,21 @@
 //
 
 import RxSwift
-import RxFeedback
 
 struct CurrenciesSideEffects {
     private let _services: AppServices
-    private let _coordinator: SceneCoordinator
     
-    init(services: AppServices, coordinator: SceneCoordinator) {
+    init(services: AppServices) {
         _services = services
-        _coordinator = coordinator
     }
     
-    var effects: [SideEffects.ScheduledEffect] {
+    var effects: [AppSideEffect] {
         return [
-            react(request: { $0.rates.edit?.queryLoadCurrencies }, effects: loadCurrencies)
+//            react(request: { $0.rates.edit?.queryLoadCurrencies }, effects: loadCurrencies)
         ]
     }
     
-    var loadCurrencies: (Bool) -> Observable<SideEffects.State.Event> {
+    var loadCurrencies: (Bool) -> Observable<AppState.Event> {
         return { _ in
             self._services.ratesService
                 .currencies()

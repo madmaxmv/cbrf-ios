@@ -6,36 +6,43 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-/// Tab Bar Controller основного меню.
-class TabBarController: UITabBarController, DataDrivenView {
+enum Tab {
+    case exchangeRates
+}
 
-    var state: Driver<TabBarViewState>!
-
+class TabBarController: UITabBarController {
+    private let store: AppStore
     private let bag = DisposeBag()
 
-    func subscribe(to stateStore: AppStateStore) {
+    init(store: AppStore) {
+        self.store = store
+        super.init(nibName: nil, bundle: nil)
 
-        // Input State
-        state = stateStore.stateBus
-            .map { $0.tabBarState }
+        store.state.map { $0.tabs }
             .distinctUntilChanged()
-
-        // UI
-        state
-            .map { $0.tabs.map { tab in tab.viewController() } }
-            .drive(onNext: { [weak self] (controllers) in
-                self?.viewControllers = controllers
+            .map { tabsCreator(store: store, tabs: $0) }
+            .bind(onNext: { [weak self] controllers in
+                 self?.viewControllers = controllers
             })
             .disposed(by: bag)
+    }
 
-        // Output Events
-        rx.didSelect
-            .asDriver()
-            .drive(onNext: {
-                (UIApplication.shared.delegate as? AppDelegate)?
-                    .coordinator
-                    .setCurrentViewController(to: $0)
-            })
-            .disposed(by: bag)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+private func tabsCreator(store: AppStore, tabs: [Tab]) -> [UIViewController] {
+    return tabs.map {
+        switch $0 {
+        case .exchangeRates:
+            let vc = RatesViewController(store: store)
+            vc.tabBarItem = UITabBarItem(
+                title: NSLocalizedString("Rates", comment: "Курсы"),
+                image: UIImage(),
+                selectedImage: UIImage()
+            )
+            return UINavigationController(rootViewController: vc)
+        }
     }
 }

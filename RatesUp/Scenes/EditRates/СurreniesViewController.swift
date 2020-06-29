@@ -5,11 +5,10 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import RxFeedback
-import RxDataSources
 import RxOptional
+import RxDataSources
 
-class СurreniesViewController: UIViewController, UITableViewDelegate, DataDrivenView {
+class СurreniesViewController: UIViewController, UITableViewDelegate {
     typealias DataSource = RxTableViewSectionedAnimatedDataSource<СurrenciesTableSection>
     
     lazy var tableView: UITableView = {
@@ -77,30 +76,30 @@ class СurreniesViewController: UIViewController, UITableViewDelegate, DataDrive
             .disposed(by: bag)
     }
     
-    func subscribe(to stateStore: AppStateStore) {
-        
-        // State
-        state = stateStore
-            .stateBus
-            .map { $0.rates.edit?.viewState }
-            .filterNil()
-            .distinctUntilChanged()
-        
-        // Events
-        cancelItem.rx.tap
-            .map { .rates(.cancelEditing) }
-            .bind(to: stateStore.eventBus)
-            .disposed(by: bag)
-
-        doneItem.rx.tap
-            .map { .rates(.edit(.saveChanges)) }
-            .bind(to: stateStore.eventBus)
-            .disposed(by: bag)
-        
-        // UI
-        state.map { $0.dataSource }
-            .distinctUntilChanged { $0 == $1 }
-            .drive(tableView.rx.items(dataSource: dataSource))
-            .disposed(by: bag)
-    }
+//    func subscribe(to stateStore: AppStore) {
+//        
+//        // State
+//        state = stateStore
+//            .stateBus
+//            .map { $0.rates.edit?.viewState }
+//            .filterNil()
+//            .distinctUntilChanged()
+//        
+//        // Events
+//        cancelItem.rx.tap
+//            .map { .rates(.cancelEditing) }
+//            .bind(to: stateStore.eventBus)
+//            .disposed(by: bag)
+//
+//        doneItem.rx.tap
+//            .map { .rates(.edit(.saveChanges)) }
+//            .bind(to: stateStore.eventBus)
+//            .disposed(by: bag)
+//        
+//        // UI
+//        state.map { $0.dataSource }
+//            .distinctUntilChanged { $0 == $1 }
+//            .drive(tableView.rx.items(dataSource: dataSource))
+//            .disposed(by: bag)
+//    }
 }
