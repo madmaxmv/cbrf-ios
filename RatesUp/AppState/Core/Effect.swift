@@ -16,10 +16,12 @@ struct Effect<Event, Environment> {
 import RxSwift
 
 struct Promise<Event>: ObservableType {
-    public typealias E = Event
-    let observable: Observable<E>
+    public typealias Element = Event
+    let observable: Observable<Element>
 
-    func subscribe<O>(_ observer: O) -> Disposable where O : ObserverType, Self.E == O.E {
+    func subscribe<Observer: ObserverType>(
+        _ observer: Observer
+    ) -> Disposable where Observer.Element == Element {
         return observable.subscribe(observer)
     }
 }

@@ -1,26 +1,27 @@
 PODS:
-  - Alamofire (4.9.1)
-  - Differentiator (3.1.0)
-  - Moya/Core (13.0.1):
-    - Alamofire (~> 4.1)
-    - Result (~> 4.1)
-  - Moya/RxSwift (13.0.1):
+  - Alamofire (5.3.0)
+  - Differentiator (4.0.1)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/RxSwift (14.0.0):
     - Moya/Core
-    - RxSwift (~> 4.0)
-  - Result (4.1.0)
-  - RxCocoa (4.5.0):
-    - RxSwift (>= 4.4.2, ~> 4.4)
-  - RxDataSources (3.1.0):
-    - Differentiator (~> 3.0)
-    - RxCocoa (~> 4.0)
-    - RxSwift (~> 4.0)
-  - RxOptional (3.6.2):
-    - RxCocoa (~> 4.0)
-    - RxSwift (~> 4.0)
-  - RxSwift (4.5.0)
-  - RxViewController (0.4.1):
-    - RxCocoa (>= 4.0.0)
-    - RxSwift (>= 4.0.0)
+    - RxSwift (~> 5.0)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxDataSources (4.0.1):
+    - Differentiator (~> 4.0)
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxOptional (4.1.0):
+    - RxCocoa (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
+  - RxViewController (1.0.0):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
   - SWXMLHash (5.0.1)
 
 DEPENDENCIES:
@@ -38,26 +39,26 @@ SPEC REPOS:
     - Alamofire
     - Differentiator
     - Moya
-    - Result
     - RxCocoa
     - RxDataSources
     - RxOptional
+    - RxRelay
     - RxSwift
     - RxViewController
     - SWXMLHash
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
-  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
-  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
-  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
-  RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
-  RxOptional: 80426a0ddbd092573e4c482d8cc13302078c4d5e
-  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
-  RxViewController: e93e7c233d5b5b62c32231d69726d55f54081bc6
+  Alamofire: 2c792affbdc2f18016e08fdbcacd60aebe1ba593
+  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
+  RxOptional: b1fcd60856807a564c0215c2184b8d33e7826dc2
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  RxViewController: 7330a46e5c31cd680db169da4c9fc8676e975a81
   SWXMLHash: 9cc0c2e4807926c74377724aa8722ee5707a0485
 
-PODFILE CHECKSUM: 594c0e2dcf729bf979d03bc924eef91a8e39d344
+PODFILE CHECKSUM: 6d0b49b4b2918ae274f365707c6ab191a042d953
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.0.rc.1

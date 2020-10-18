@@ -29,8 +29,7 @@ final class Store<State, Event, Environment> {
             let effects = reducer(&current, event)
             effects.forEach { effect in
                 effect.run(in: environment).subscribe(
-                    onNext: { [weak self] event in self?.send(event) },
-                    onError: { assertionFailure($0.localizedDescription) }
+                    onNext: { [weak self] event in self?.send(event) }
                 ).disposed(by: bag)
             }
             state.onNext(current)
