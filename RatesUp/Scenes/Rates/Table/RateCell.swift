@@ -1,57 +1,48 @@
 //
-//  Copyright © 2018 Matyushenko Maxim. All rights reserved.
+//  Copyright © 2020 Matyushenko Maxim. All rights reserved.
 //
 
-import UIKit
+import SwiftUI
 
-class RateCell: UITableViewCell {
-    @IBOutlet weak var flagLabel: UILabel!
-    @IBOutlet weak var codeLabel: UILabel!
-    @IBOutlet weak var detailsLabel: UILabel!
-    
-    @IBOutlet weak var valueLabel: UILabel!
-    @IBOutlet weak var differenceLabel: UILabel!
+struct RateCell: View {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        codeLabel.textColor = .mainText
-        detailsLabel.textColor = .secondaryText
-        contentView.addSeparator()
-    }
-    
-    func setup(with state: State) {
-        flagLabel.text = state.flag
-        codeLabel.text = state.characterCode
-        detailsLabel.text = state.details
-        valueLabel.text = state.value
-        differenceLabel.text = state.difference?.title
-        
-        switch state.difference?.color {
-        case .red:
-            differenceLabel.textColor = .red
-        case .green:
-            differenceLabel.textColor = .green
-        case nil:
-            break
-        }
-    }
-}
-
-extension RateCell {
-    struct State: Equatable {
+    struct State: Equatable, Identifiable {
+        var id: String { characterCode + value }
         let flag: String
         let characterCode: String
         let details: String
         let value: String
-        let difference: Difference?
+    }
+    let state: State
 
-        struct Difference: Equatable {
-            let title: String
-            let color: Color
-
-            enum Color {
-                case red, green
+    var body: some View {
+        HStack {
+            Text(state.flag)
+                .font(.headline)
+                .padding(.bottom)
+            VStack(alignment: .leading) {
+                Text(state.characterCode)
+                    .font(.headline)
+                    .foregroundColor(Color.blue)
+                Text(state.details)
+                    .font(.subheadline)
+                    .foregroundColor(Color.gray)
             }
+            Spacer()
+            Text(state.value)
         }
+    }
+}
+
+struct RateCell_Previews: PreviewProvider {
+    static var previews: some View {
+        RateCell(
+            state: RateCell.State(
+                flag: "🇪🇺",
+                characterCode: "EUR",
+                details: "1 Euro",
+                value: "90"
+            )
+        )
     }
 }
