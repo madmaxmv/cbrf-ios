@@ -4,31 +4,17 @@
 
 import UIKit
 import SwiftUI
-import RxSwift
-import RxCocoa
-import RxOptional
+import Combine
 
-class RatesViewController: UIViewController, UITableViewDelegate {
+class RatesViewController: UIViewController {
 
-    private let ratesList = RatesList()
     private lazy var hosting = UIHostingController(rootView: ratesList)
+    private let ratesList = RatesList()
     
-    private let editItem = update(
-        UIBarButtonItem(title: "Edit", style: .plain, target: nil, action: nil)
-    ) {
-        $0.tintColor = .mainText
-    }
-    
-    private let refreshControl = update(UIRefreshControl()) {
-        $0.tintColor = .activity
-    }
+    private var subscriptions: Set<AnyCancellable> = []
 
-    private let bag = DisposeBag()
-    
     init(store: AppStore) {
         super.init(nibName: nil, bundle: nil)
-
-        navigationItem.rightBarButtonItem = editItem
 
         addChild(hosting)
         view.addSubview(hosting.view, constraints: [
@@ -47,37 +33,26 @@ class RatesViewController: UIViewController, UITableViewDelegate {
     }
     
     func subscribe(to store: AppStore) {
-        let ratesState = store.state.map(\.rates)
-            .distinctUntilChanged()
+        store.state
+            .map(\.rates)
+            .sink { [weak self] state in
+                self?.render(state: state)
+            }
+            .store(in: &subscriptions)
+    }
 
-        ratesState
-            .map { $0.isLoading }
-            .distinctUntilChanged()
-            .bind(to: refreshControl.rx.isRefreshing)
-            .disposed(by: bag)
-
-        ratesState
-            .map { $0.ratesResult?.rates }
-            .filterNil()
-            .distinctUntilChanged()
-            .bind(onNext: { [weak self] in self?.updateList(with: $0)} )
-            .disposed(by: bag)
-        
-        // Events
-        refreshControl.rx
-            .controlEvent(.valueChanged)
-            .map { .rates(.refreshRates) }
-            .bind(onNext: { store.send($0) })
-            .disposed(by: bag)
+    private func render(state: RatesState) {
+        switch state.ratesResult {
+        case .success(let rates):
+            updateList(with: rates)
+        default:
+            break
+        }
     }
 
     private func updateList(with rates: [CurrencyDailyRate]) {
         ratesList.updateList(with: rates)
     }
-}
-
-fileprivate extension RatesState {
-    var isLoading: Bool { ratesResult == nil }
 }
 
 extension UIView {

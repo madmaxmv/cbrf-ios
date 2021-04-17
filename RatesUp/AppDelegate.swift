@@ -12,8 +12,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        let services = Services(groupIdentifier: "group.ru.madmaxmv.ratesup")
+        let services = Services(
+            groupIdentifier: "group.ru.madmaxmv.ratesup"
+        )
 
         let stateStore = AppStore(
             initial: AppState.initial,
@@ -21,14 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             environment: AppEnvironment(services: services)
         )
 
-//        let sideEffects = AppSideEffects(coordinator: coordinator,
-//                                         services: services,
-//                                         backgroundScheduler: ConcurrentDispatchQueueScheduler(qos: .userInitiated))
-        
-//        appStateStore = AppStateStore(sideEffects: sideEffects)
-//        appStateStore.run()
-
-        window?.rootViewController = TabBarController(
+        window?.rootViewController = RatesViewController(
             store: stateStore
         )
 

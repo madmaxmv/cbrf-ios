@@ -11,13 +11,13 @@ enum RatesUpEndpoint {
 
 extension RatesUpEndpoint: TargetType {
     var baseURL: URL {
-        return URL(string: "http://www.cbr.ru/scripts/")!
+        return URL(string: "http://www.cbr.ru/scripts")!
     }
     
     var path: String {
         switch self {
         case .rates:
-            return "XML_daily.asp"
+            return "/XML_daily.asp"
         }
     }
     

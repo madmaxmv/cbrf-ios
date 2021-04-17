@@ -5,6 +5,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SwiftUI
 
 enum Tab {
     case exchangeRates
@@ -18,13 +19,13 @@ class TabBarController: UITabBarController {
         self.store = store
         super.init(nibName: nil, bundle: nil)
 
-        store.state.map { $0.tabs }
-            .distinctUntilChanged()
-            .map { tabsCreator(store: store, tabs: $0) }
-            .bind(onNext: { [weak self] controllers in
-                 self?.viewControllers = controllers
-            })
-            .disposed(by: bag)
+//        store.state.map { $0.tabs }
+//            .distinctUntilChanged()
+//            .map { tabsCreator(store: store, tabs: $0) }
+//            .bind(onNext: { [weak self] controllers in
+//                 self?.viewControllers = controllers
+//            })
+//            .disposed(by: bag)
     }
 
     required init?(coder: NSCoder) {
@@ -36,7 +37,8 @@ private func tabsCreator(store: AppStore, tabs: [Tab]) -> [UIViewController] {
     return tabs.map {
         switch $0 {
         case .exchangeRates:
-            let vc = RatesViewController(store: store)
+            let vc = UIHostingController(rootView: RatesList())
+//            let vc = RatesViewController(store: store)
             vc.tabBarItem = UITabBarItem(
                 title: NSLocalizedString("Rates", comment: "Курсы"),
                 image: UIImage(),
