@@ -3,16 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		190F5683A56EEF156C005C55 /* Pods_RatesUpTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B97E57017EBDBCB5FEA25A8B /* Pods_RatesUpTests.framework */; };
 		1D0FAE6A253CB4EB00E8AC71 /* RateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FAE69253CB4EB00E8AC71 /* RateCell.swift */; };
 		1DAAB03D25F4175300ECAE67 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAAB03C25F4175300ECAE67 /* Reducer.swift */; };
 		1DC43965262C526E00AE3AD2 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC43964262C526E00AE3AD2 /* ActivityIndicator.swift */; };
+		1DC43983262CD7F300AE3AD2 /* SWXMLHash in Frameworks */ = {isa = PBXBuildFile; productRef = 1DC43982262CD7F300AE3AD2 /* SWXMLHash */; };
 		1DE419E62554AD86000EC48D /* RatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE419E52554AD86000EC48D /* RatesView.swift */; };
-		54B97B6C5BCC8C873655920D /* Pods_RatesUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFF578B52A120A3D989892C /* Pods_RatesUp.framework */; };
 		940265A7244F98D3005D53C0 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940265A6244F98D3005D53C0 /* Store.swift */; };
 		940265A9244F9A83005D53C0 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940265A8244F9A83005D53C0 /* AppReducer.swift */; };
 		940265AB2450C041005D53C0 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940265AA2450C041005D53C0 /* Effect.swift */; };
@@ -45,7 +44,6 @@
 		94729CB5207005AB0026C45D /* RatesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CB4207005AB0026C45D /* RatesResult.swift */; };
 		94729CB7207005DD0026C45D /* RatesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CB6207005DD0026C45D /* RatesError.swift */; };
 		94A61AF7201CCBEC00299A4A /* UIColor+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A61AF6201CCBEC00299A4A /* UIColor+extensions.swift */; };
-		BD150FB8C95BEEFDF203364A /* Pods_RatesUpUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF5004FF732049395913BAF /* Pods_RatesUpUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,16 +64,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0CEAADAEEE71F65E9343D591 /* Pods-RatesUpTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RatesUpTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RatesUpTests/Pods-RatesUpTests.release.xcconfig"; sourceTree = "<group>"; };
-		1C8B7EA92C16D2D29DD7EE21 /* Pods-CentralBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentralBank.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RatesUp/Pods-CentralBank.debug.xcconfig"; sourceTree = "<group>"; };
 		1D0FAE69253CB4EB00E8AC71 /* RateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCell.swift; sourceTree = "<group>"; };
 		1DAAB03C25F4175300ECAE67 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
 		1DC43964262C526E00AE3AD2 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		1DE419E52554AD86000EC48D /* RatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesView.swift; sourceTree = "<group>"; };
-		23FA04999E22765E68B901F9 /* Pods-CentralBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CentralBank.release.xcconfig"; path = "Pods/Target Support Files/Pods-RatesUp/Pods-CentralBank.release.xcconfig"; sourceTree = "<group>"; };
-		7729BD9CDE5C174A079B1E0A /* Pods-RatesUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RatesUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RatesUp/Pods-RatesUp.release.xcconfig"; sourceTree = "<group>"; };
-		856E0B0C6477CB28D15A8B88 /* Pods-RatesUpTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RatesUpTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RatesUpTests/Pods-RatesUpTests.release.xcconfig"; sourceTree = "<group>"; };
-		8C6AC83A88422EF61EBF4AE7 /* Pods-RatesUpUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RatesUpUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RatesUpUITests/Pods-RatesUpUITests.release.xcconfig"; sourceTree = "<group>"; };
 		940265A6244F98D3005D53C0 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		940265A8244F9A83005D53C0 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		940265AA2450C041005D53C0 /* Effect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
@@ -115,15 +107,6 @@
 		94729CB4207005AB0026C45D /* RatesResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesResult.swift; sourceTree = "<group>"; };
 		94729CB6207005DD0026C45D /* RatesError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesError.swift; sourceTree = "<group>"; };
 		94A61AF6201CCBEC00299A4A /* UIColor+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extensions.swift"; sourceTree = "<group>"; };
-		A160BB35A8ADD71AB4F5F92D /* Pods-RatesUpTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RatesUpTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RatesUpTests/Pods-RatesUpTests.debug.xcconfig"; sourceTree = "<group>"; };
-		B97E57017EBDBCB5FEA25A8B /* Pods_RatesUpTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RatesUpTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B9EA4B42959A20B5370C069A /* Pods-RatesUpUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RatesUpUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RatesUpUITests/Pods-RatesUpUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		C97ABEE9E17BE7701F1A6A07 /* Pods-RatesUpTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RatesUpTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RatesUpTests/Pods-RatesUpTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D6680A50933C6F2CF41855E9 /* Pods-RatesUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RatesUp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RatesUp/Pods-RatesUp.debug.xcconfig"; sourceTree = "<group>"; };
-		DEFF578B52A120A3D989892C /* Pods_RatesUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RatesUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF51C8FE7B4876D00C87E705 /* Pods-RatesUpUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RatesUpUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RatesUpUITests/Pods-RatesUpUITests.release.xcconfig"; sourceTree = "<group>"; };
-		EEF5004FF732049395913BAF /* Pods_RatesUpUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RatesUpUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1FFAF3EF4CED39C86515495 /* Pods-RatesUpUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RatesUpUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RatesUpUITests/Pods-RatesUpUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54B97B6C5BCC8C873655920D /* Pods_RatesUp.framework in Frameworks */,
+				1DC43983262CD7F300AE3AD2 /* SWXMLHash in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +122,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				190F5683A56EEF156C005C55 /* Pods_RatesUpTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,38 +129,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD150FB8C95BEEFDF203364A /* Pods_RatesUpUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		02220217AC1EBEDFD2854A32 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1C8B7EA92C16D2D29DD7EE21 /* Pods-CentralBank.debug.xcconfig */,
-				23FA04999E22765E68B901F9 /* Pods-CentralBank.release.xcconfig */,
-				A160BB35A8ADD71AB4F5F92D /* Pods-RatesUpTests.debug.xcconfig */,
-				856E0B0C6477CB28D15A8B88 /* Pods-RatesUpTests.release.xcconfig */,
-				B9EA4B42959A20B5370C069A /* Pods-RatesUpUITests.debug.xcconfig */,
-				DF51C8FE7B4876D00C87E705 /* Pods-RatesUpUITests.release.xcconfig */,
-				D6680A50933C6F2CF41855E9 /* Pods-RatesUp.debug.xcconfig */,
-				7729BD9CDE5C174A079B1E0A /* Pods-RatesUp.release.xcconfig */,
-				C97ABEE9E17BE7701F1A6A07 /* Pods-RatesUpTests.debug.xcconfig */,
-				0CEAADAEEE71F65E9343D591 /* Pods-RatesUpTests.release.xcconfig */,
-				F1FFAF3EF4CED39C86515495 /* Pods-RatesUpUITests.debug.xcconfig */,
-				8C6AC83A88422EF61EBF4AE7 /* Pods-RatesUpUITests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		1DC43963262C525B00AE3AD2 /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				1DC43964262C526E00AE3AD2 /* ActivityIndicator.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		1DC43999262CDE0C00AE3AD2 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		940265A5244F98BC005D53C0 /* Core */ = {
@@ -280,8 +249,6 @@
 				9451DE9520134B3700F69318 /* RatesUpTests */,
 				9451DEA020134B3700F69318 /* RatesUpUITests */,
 				9451DE7F20134B3600F69318 /* Products */,
-				02220217AC1EBEDFD2854A32 /* Pods */,
-				D42370E128EC47C8B2A71665 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -329,6 +296,7 @@
 		9452577C2016680000684439 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				1DC43999262CDE0C00AE3AD2 /* API */,
 				94729CB32070059B0026C45D /* Models */,
 				94A61AFA201D090100299A4A /* Store */,
 				9452577D2016681300684439 /* CentralBankAPI */,
@@ -392,16 +360,6 @@
 			path = Store;
 			sourceTree = "<group>";
 		};
-		D42370E128EC47C8B2A71665 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DEFF578B52A120A3D989892C /* Pods_RatesUp.framework */,
-				B97E57017EBDBCB5FEA25A8B /* Pods_RatesUpTests.framework */,
-				EEF5004FF732049395913BAF /* Pods_RatesUpUITests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -409,17 +367,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9451DEA620134B3700F69318 /* Build configuration list for PBXNativeTarget "RatesUp" */;
 			buildPhases = (
-				66A7739C285BCEA97AEA3E61 /* [CP] Check Pods Manifest.lock */,
 				9451DE7A20134B3600F69318 /* Sources */,
 				9451DE7B20134B3600F69318 /* Frameworks */,
 				9451DE7C20134B3600F69318 /* Resources */,
-				67CA82D67C868AD32BF370BE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = RatesUp;
+			packageProductDependencies = (
+				1DC43982262CD7F300AE3AD2 /* SWXMLHash */,
+			);
 			productName = CentralBank;
 			productReference = 9451DE7E20134B3600F69318 /* RatesUp.app */;
 			productType = "com.apple.product-type.application";
@@ -428,7 +387,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9451DEA920134B3700F69318 /* Build configuration list for PBXNativeTarget "RatesUpTests" */;
 			buildPhases = (
-				189523F75931D0D0980FF2AA /* [CP] Check Pods Manifest.lock */,
 				9451DE8E20134B3700F69318 /* Sources */,
 				9451DE8F20134B3700F69318 /* Frameworks */,
 				9451DE9020134B3700F69318 /* Resources */,
@@ -447,7 +405,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9451DEAC20134B3700F69318 /* Build configuration list for PBXNativeTarget "RatesUpUITests" */;
 			buildPhases = (
-				C8B28F945A822C48AA427095 /* [CP] Check Pods Manifest.lock */,
 				9451DE9920134B3700F69318 /* Sources */,
 				9451DE9A20134B3700F69318 /* Frameworks */,
 				9451DE9B20134B3700F69318 /* Resources */,
@@ -505,6 +462,9 @@
 				Base,
 			);
 			mainGroup = 9451DE7520134B3600F69318;
+			packageReferences = (
+				1DC43981262CD7F300AE3AD2 /* XCRemoteSwiftPackageReference "SWXMLHash" */,
+			);
 			productRefGroup = 9451DE7F20134B3600F69318 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -541,99 +501,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		189523F75931D0D0980FF2AA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RatesUpTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		66A7739C285BCEA97AEA3E61 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RatesUp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		67CA82D67C868AD32BF370BE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RatesUp/Pods-RatesUp-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
-				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
-				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
-				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxViewController/RxViewController.framework",
-				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxViewController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RatesUp/Pods-RatesUp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C8B28F945A822C48AA427095 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RatesUpUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9451DE7A20134B3600F69318 /* Sources */ = {
@@ -826,21 +693,24 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		9451DEA720134B3700F69318 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D6680A50933C6F2CF41855E9 /* Pods-RatesUp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RatesUp/RatesUp.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 6L2SX9VHNH;
 				INFOPLIST_FILE = RatesUp/Resources/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.madmaxmv.ratesup;
 				PRODUCT_NAME = RatesUp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -851,14 +721,16 @@
 		};
 		9451DEA820134B3700F69318 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7729BD9CDE5C174A079B1E0A /* Pods-RatesUp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RatesUp/RatesUp.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = HQ576M92UA;
 				INFOPLIST_FILE = RatesUp/Resources/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.madmaxmv.ratesup;
 				PRODUCT_NAME = RatesUp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -869,14 +741,17 @@
 		};
 		9451DEAA20134B3700F69318 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C97ABEE9E17BE7701F1A6A07 /* Pods-RatesUpTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HQ576M92UA;
 				INFOPLIST_FILE = RatesUpTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = matmax.RatesUpTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -887,14 +762,17 @@
 		};
 		9451DEAB20134B3700F69318 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0CEAADAEEE71F65E9343D591 /* Pods-RatesUpTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HQ576M92UA;
 				INFOPLIST_FILE = RatesUpTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = matmax.RatesUpTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -905,13 +783,16 @@
 		};
 		9451DEAD20134B3700F69318 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F1FFAF3EF4CED39C86515495 /* Pods-RatesUpUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HQ576M92UA;
 				INFOPLIST_FILE = RatesUpUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = matmax.RatesUpUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -922,13 +803,16 @@
 		};
 		9451DEAE20134B3700F69318 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C6AC83A88422EF61EBF4AE7 /* Pods-RatesUpUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HQ576M92UA;
 				INFOPLIST_FILE = RatesUpUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = matmax.RatesUpUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -977,6 +861,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1DC43981262CD7F300AE3AD2 /* XCRemoteSwiftPackageReference "SWXMLHash" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/drmohundro/SWXMLHash.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1DC43982262CD7F300AE3AD2 /* SWXMLHash */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1DC43981262CD7F300AE3AD2 /* XCRemoteSwiftPackageReference "SWXMLHash" */;
+			productName = SWXMLHash;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		946278C520385EBD00645B99 /* RatesStore.xcdatamodeld */ = {
