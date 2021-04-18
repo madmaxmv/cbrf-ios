@@ -15,17 +15,16 @@ extension RatesState {
         case refreshRates
         case openEditMode
         case editModeOpened, editModeClosed
-        case edit(CurrenciesState.Event)
         case cancelEditing, editingDone
     }
 }
 
 extension RatesState {
-    static let reducer: Reducer<RatesState, AppState.Event, AppEnvironment> = { state, event in
+    static let reducer: Reducer<RatesState, Event, AppEnvironment> = { state, event in
         switch event {
-        case .rates(.initial):
+        case .initial:
             return [fetchRatesEffect]
-        case .rates(.ratesResult(let result)):
+        case .ratesResult(let result):
             state.ratesResult = result
         default: break
         }
@@ -35,7 +34,8 @@ extension RatesState {
 }
 
 private extension RatesState {
-    static let fetchRatesEffect = Effect<AppState.Event, AppEnvironment> { env in
-        env.fetchRates(Date()).map { .rates(.ratesResult($0)) }
+    static let fetchRatesEffect = Effect<Event, AppEnvironment> { env in
+        env.fetchRates(Date())
+            .map { .ratesResult($0) }
     }
 }

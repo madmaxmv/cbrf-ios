@@ -3,103 +3,76 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
-import RxOptional
-import RxDataSources
+import SwiftUI
+import Combine
 
-class RatesViewController: UIViewController, UITableViewDelegate {
-    private let tableView = update(UITableView()) {
-        $0.separatorStyle = .none
-        $0.backgroundColor = .background
-        $0.showsVerticalScrollIndicator = false
-        $0.showsHorizontalScrollIndicator = false
-        $0.estimatedRowHeight = 72
-        $0.rowHeight = UITableView.automaticDimension
+class RatesViewController: UIViewController {
 
-        $0.register(RateCell.self)
-    }
-
-    private let editItem = update(
-        UIBarButtonItem(title: "Edit", style: .plain, target: nil, action: nil)
-    ) {
-        $0.tintColor = .mainText
-    }
-    
-    private let refreshControl = update(UIRefreshControl()) {
-        $0.tintColor = .activity
-    }
-
-    private let dataSourceProvider = RatesSectionsProvider(
-        converter: RatesSection.converter
+    private let ratesView = RatesView()
+    private lazy var hosting = UIHostingController(
+        rootView: ratesView
     )
 
-    private let dataSource = RxTableViewSectionedAnimatedDataSource<RatesSection>(
-        configureCell: { _, tableView, indexPath, item in
-            switch item {
-            case .rate(_, let state):
-                let cell: RateCell = tableView.dequeueCell(for: indexPath)
-                cell.setup(with: state)
-                return cell
-            }
-    })
+    private var subscriptions: Set<AnyCancellable> = []
 
-    private let bag = DisposeBag()
-    
     init(store: AppStore) {
         super.init(nibName: nil, bundle: nil)
 
-        navigationItem.rightBarButtonItem = editItem
-        view.addSubview(tableView, constraints: [
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        addChild(hosting)
+        view.addSubview(hosting.view, constraints: [
+            hosting.view.topAnchor.constraint(equalTo: view.topAnchor),
+            hosting.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            hosting.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            hosting.view.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
-
-        tableView.addSubview(refreshControl)
+        hosting.didMove(toParent: self)
 
         subscribe(to: store)
-        dataSourceProvider.subscribe(to: store)
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        dataSourceProvider.sections
-            .bind(to: tableView.rx.items(dataSource: dataSource))
-            .disposed(by: bag)
-
-        tableView.rx
-            .setDelegate(self)
-            .disposed(by: bag)
-    }
     
     func subscribe(to store: AppStore) {
-        let ratesState = store.state.map(\.rates)
-            .distinctUntilChanged()
-
-        ratesState
-            .map { $0.isLoading }
-            .distinctUntilChanged()
-            .bind(to: refreshControl.rx.isRefreshing)
-            .disposed(by: bag)
-
-        // Events
-        refreshControl.rx
-            .controlEvent(.valueChanged)
-            .map { .rates(.refreshRates) }
-            .bind(onNext: { store.send($0) })
-            .disposed(by: bag)
+        store.state
+            .map(\.rates)
+            .sink { [weak self] state in
+                self?.render(state: state)
+            }
+            .store(in: &subscriptions)
     }
-}
 
-fileprivate extension RatesState {
-    var isLoading: Bool { ratesResult == nil }
+    private func render(state: RatesState) {
+        ratesView.render(state: mapState(state))
+    }
+
+    private func mapState(_ state: RatesState) -> RatesView.State {
+        switch state.ratesResult {
+        case nil:
+            return RatesView.State(
+                isLoading: true,
+                rates: []
+            )
+        case let .success(rates):
+            return RatesView.State(
+                isLoading: false,
+                rates: rates.map {
+                    RateCell.State(
+                        flag: $0.flag.emoji,
+                        characterCode: $0.characterCode,
+                        details: "\($0.nominal) \($0.currencyName)",
+                        value: String($0.value)
+                    )
+                }
+            )
+        default:
+            return RatesView.State(
+                isLoading: false,
+                rates: []
+            )
+        }
+    }
 }
 
 extension UIView {
