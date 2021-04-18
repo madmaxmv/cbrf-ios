@@ -2,49 +2,56 @@
 //  Copyright © 2018 Matyushenko Maxim. All rights reserved.
 //
 
-import UIKit
-import RxSwift
-import RxCocoa
 import SwiftUI
+import Combine
 
 enum Tab {
     case exchangeRates
 }
 
 class TabBarController: UITabBarController {
-    private let store: AppStore
-    private let bag = DisposeBag()
+
+    private var subscriptions: Set<AnyCancellable> = []
 
     init(store: AppStore) {
-        self.store = store
         super.init(nibName: nil, bundle: nil)
 
-//        store.state.map { $0.tabs }
-//            .distinctUntilChanged()
-//            .map { tabsCreator(store: store, tabs: $0) }
-//            .bind(onNext: { [weak self] controllers in
-//                 self?.viewControllers = controllers
-//            })
-//            .disposed(by: bag)
+        store.state.map(\.tabs)
+            .removeDuplicates()
+            .sink { [weak self] tabs in
+                self?.updateTabs(tabs, store: store)
+            }
+            .store(in: &subscriptions)
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
 
-private func tabsCreator(store: AppStore, tabs: [Tab]) -> [UIViewController] {
-    return tabs.map {
-        switch $0 {
-        case .exchangeRates:
-            let vc = UIHostingController(rootView: RatesList())
-//            let vc = RatesViewController(store: store)
-            vc.tabBarItem = UITabBarItem(
-                title: NSLocalizedString("Rates", comment: "Курсы"),
-                image: UIImage(),
-                selectedImage: UIImage()
+    func updateTabs(_ tabs: [Tab], store: AppStore) {
+        viewControllers = tabs.map { tab in
+            TabBarController.createViewController(
+                for: tab, store: store
             )
-            return UINavigationController(rootViewController: vc)
         }
+    }
+}
+private extension TabBarController {
+
+    private static func createViewController(
+        for tab: Tab, store: AppStore
+    ) -> UIViewController {
+            switch tab {
+            case .exchangeRates:
+                let vc = RatesViewController(
+                    store: store
+                )
+                vc.tabBarItem = UITabBarItem(
+                    title: NSLocalizedString("Rates", comment: "Курсы"),
+                    image: UIImage(),
+                    selectedImage: UIImage()
+                )
+                return vc
+            }
     }
 }

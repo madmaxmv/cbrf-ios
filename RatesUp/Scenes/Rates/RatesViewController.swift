@@ -8,9 +8,11 @@ import Combine
 
 class RatesViewController: UIViewController {
 
-    private lazy var hosting = UIHostingController(rootView: ratesList)
-    private let ratesList = RatesList()
-    
+    private let ratesView = RatesView()
+    private lazy var hosting = UIHostingController(
+        rootView: ratesView
+    )
+
     private var subscriptions: Set<AnyCancellable> = []
 
     init(store: AppStore) {
@@ -42,16 +44,34 @@ class RatesViewController: UIViewController {
     }
 
     private func render(state: RatesState) {
-        switch state.ratesResult {
-        case .success(let rates):
-            updateList(with: rates)
-        default:
-            break
-        }
+        ratesView.render(state: mapState(state))
     }
 
-    private func updateList(with rates: [CurrencyDailyRate]) {
-        ratesList.updateList(with: rates)
+    private func mapState(_ state: RatesState) -> RatesView.State {
+        switch state.ratesResult {
+        case nil:
+            return RatesView.State(
+                isLoading: true,
+                rates: []
+            )
+        case let .success(rates):
+            return RatesView.State(
+                isLoading: false,
+                rates: rates.map {
+                    RateCell.State(
+                        flag: $0.flag.emoji,
+                        characterCode: $0.characterCode,
+                        details: "\($0.nominal) \($0.currencyName)",
+                        value: String($0.value)
+                    )
+                }
+            )
+        default:
+            return RatesView.State(
+                isLoading: false,
+                rates: []
+            )
+        }
     }
 }
 

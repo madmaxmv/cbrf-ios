@@ -9,6 +9,7 @@ typealias AppStore = Store<AppState, AppState.Event, AppEnvironment>
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    var store: AppStore?
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -22,11 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             environment: AppEnvironment(services: services)
         )
 
-        window?.rootViewController = RatesViewController(
+        window?.rootViewController = TabBarController(
             store: stateStore
         )
 
         stateStore.send(.rates(.initial))
+        store = stateStore
 
         return true
     }

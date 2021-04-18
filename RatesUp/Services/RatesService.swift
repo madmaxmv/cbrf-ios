@@ -44,17 +44,23 @@ struct RatesService {
                         )
                     }
                 return RatesResult.success(rates: sortMethod(_rates))
-//            }.catch { error in
+//            }
+//            .catch { error in
+
 //                guard let ratesError = error as? RatesError else {
 //                    return Fail(error)
 //                }
-//                return Fail(error)
 //                return self.dailyRates(on: today)
 //                    .map { rates in
 //                        return rates.map { CurrencyDailyRate(apiModel: $0) }
 //                    }
 //                    .map { sortMethod($0) }
 //                    .map { RatesResult.today(rates: $0, error: ratesError) }
+            }
+            .catch { error -> AnyPublisher<RatesResult, Error> in
+                print(error)
+                return Fail(error: error)
+                    .eraseToAnyPublisher()
             }
             .eraseToAnyPublisher()
     }

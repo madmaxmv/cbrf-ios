@@ -16,21 +16,27 @@ struct RateCell: View {
     let state: State
 
     var body: some View {
-        HStack {
-            Text(state.flag)
-                .font(.headline)
-                .padding(.bottom)
-            VStack(alignment: .leading) {
-                Text(state.characterCode)
-                    .font(.headline)
-                    .foregroundColor(Color.blue)
-                Text(state.details)
-                    .font(.subheadline)
-                    .foregroundColor(Color.gray)
+        Group {
+            HStack {
+                Text(state.flag)
+                    .font(.title)
+                    .padding(.bottom)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(state.characterCode)
+                        .font(.headline)
+                        .foregroundColor(Color.blue)
+                    Text(state.details)
+                        .font(.subheadline)
+                        .foregroundColor(Color.gray)
+                }
+                Spacer()
+                Text(state.value)
             }
-            Spacer()
-            Text(state.value)
+            .padding(12)
+            .background(Color.white)
+            .cornerRadius(12)
         }
+        .padding([.leading, .trailing], 12)
     }
 }
 

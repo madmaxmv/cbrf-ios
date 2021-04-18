@@ -15,7 +15,6 @@ extension RatesState {
         case refreshRates
         case openEditMode
         case editModeOpened, editModeClosed
-        case edit(CurrenciesState.Event)
         case cancelEditing, editingDone
     }
 }
