@@ -2,8 +2,8 @@
 //  Copyright © 2018 Matyushenko Maxim. All rights reserved.
 //
 
-import Combine
 import Foundation
+import Combine
 
 struct RatesService {
     /// Сервис для доступа к удаленным данным.
