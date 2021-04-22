@@ -7,26 +7,34 @@
 //
 
 import Combine
+import Foundation
+import XMLParsing
 
-protocol RatesUpService {
+protocol RatesAPIService {
 
-    func rates(on date: Date) -> Future<DailyRatesData, Error>
+    func rates(on date: Date) -> AnyPublisher<RatesResponse, APIError>
 }
 
-struct APIService: RatesUpService {
-    
-    func rates(on date: Date) -> Future<DailyRatesData, Error> {
-        return Future { promise in
-            MoyaProvider<RatesUpEndpoint>().request(.rates(date)) { result in
-                switch result {
-                case .success(let response):
-                    let rates: DailyRatesData = XMLDecoder(data: response.data).decode()
-                    promise(.success(rates))
-                case .failure(let error):
-                    promise(.failure(error))
-                }
-            }
-        }
+final class CentralBankAPI: RatesAPIService {
+
+    private let apiService: APIService
+
+    init(apiService: APIService) {
+        self.apiService = apiService
     }
 }
 
+extension CentralBankAPI {
+
+    func rates(on date: Date) -> AnyPublisher<RatesResponse, APIError> {
+        apiService.publisher(
+            for: RatesRequest(date: date),
+            using: XMLDecoder()
+        )
+    }
+}
+
+// MARK: - XMLDecoder + TopLevelDecoder
+extension XMLDecoder: TopLevelDecoder {
+    public typealias Input = Data
+}

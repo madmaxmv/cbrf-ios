@@ -10,7 +10,13 @@
 		1D0FAE6A253CB4EB00E8AC71 /* RateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FAE69253CB4EB00E8AC71 /* RateCell.swift */; };
 		1DAAB03D25F4175300ECAE67 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAAB03C25F4175300ECAE67 /* Reducer.swift */; };
 		1DC43965262C526E00AE3AD2 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC43964262C526E00AE3AD2 /* ActivityIndicator.swift */; };
-		1DC43983262CD7F300AE3AD2 /* SWXMLHash in Frameworks */ = {isa = PBXBuildFile; productRef = 1DC43982262CD7F300AE3AD2 /* SWXMLHash */; };
+		1DC4399E262CF16F00AE3AD2 /* APISettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC4399D262CF16F00AE3AD2 /* APISettings.swift */; };
+		1DC439A3262CF6BF00AE3AD2 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC439A2262CF6BF00AE3AD2 /* APIService.swift */; };
+		1DC439A9262CF71E00AE3AD2 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC439A8262CF71E00AE3AD2 /* APIError.swift */; };
+		1DC439B1262CF74500AE3AD2 /* APIMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC439B0262CF74500AE3AD2 /* APIMethod.swift */; };
+		1DC439B6262CF75F00AE3AD2 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC439B5262CF75F00AE3AD2 /* APIRequest.swift */; };
+		1DD120892631E5EE006E7485 /* XMLParsing in Frameworks */ = {isa = PBXBuildFile; productRef = 1DD120882631E5EE006E7485 /* XMLParsing */; };
+		1DD1209F26320A5E006E7485 /* RateAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD1209E26320A5E006E7485 /* RateAPIModel.swift */; };
 		1DE419E62554AD86000EC48D /* RatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE419E52554AD86000EC48D /* RatesView.swift */; };
 		940265A7244F98D3005D53C0 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940265A6244F98D3005D53C0 /* Store.swift */; };
 		940265A9244F9A83005D53C0 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940265A8244F9A83005D53C0 /* AppReducer.swift */; };
@@ -26,8 +32,7 @@
 		9451DE8C20134B3600F69318 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9451DE8A20134B3600F69318 /* LaunchScreen.storyboard */; };
 		9452577520137F7900684439 /* CurrencyDailyRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452577420137F7900684439 /* CurrencyDailyRate.swift */; };
 		9452577F2016683E00684439 /* CentralBankAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452577E2016683E00684439 /* CentralBankAPI.swift */; };
-		9452578220166E4B00684439 /* CentralBankEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452578120166E4B00684439 /* CentralBankEndpoint.swift */; };
-		945257842016823900684439 /* XMLDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945257832016823900684439 /* XMLDecoder.swift */; };
+		9452578220166E4B00684439 /* RatesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452578120166E4B00684439 /* RatesRequest.swift */; };
 		946278C720385EBD00645B99 /* RatesStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 946278C520385EBD00645B99 /* RatesStore.xcdatamodeld */; };
 		946278C92038609200645B99 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278C82038609200645B99 /* Currency.swift */; };
 		946278CC2038616900645B99 /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278CB2038616900645B99 /* Rate.swift */; };
@@ -35,8 +40,7 @@
 		946278D02038790000645B99 /* RatesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278CF2038790000645B99 /* RatesStore.swift */; };
 		946278D62039779500645B99 /* Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278D52039779500645B99 /* Managed.swift */; };
 		946278D8203977BD00645B99 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278D7203977BD00645B99 /* NSManagedObjectContext+Extensions.swift */; };
-		946278DA204AD18D00645B99 /* RateAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278D9204AD18D00645B99 /* RateAPIModel.swift */; };
-		946278DC204AD31400645B99 /* DailyRatesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278DB204AD31400645B99 /* DailyRatesData.swift */; };
+		946278DC204AD31400645B99 /* RatesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278DB204AD31400645B99 /* RatesResponse.swift */; };
 		946278DE204AECAF00645B99 /* RatesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278DD204AECAF00645B99 /* RatesService.swift */; };
 		946278E0204AF8C600645B99 /* DateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278DF204AF8C600645B99 /* DateConverter.swift */; };
 		946278E2204AF99F00645B99 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278E1204AF99F00645B99 /* AppServices.swift */; };
@@ -67,6 +71,12 @@
 		1D0FAE69253CB4EB00E8AC71 /* RateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCell.swift; sourceTree = "<group>"; };
 		1DAAB03C25F4175300ECAE67 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
 		1DC43964262C526E00AE3AD2 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		1DC4399D262CF16F00AE3AD2 /* APISettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISettings.swift; sourceTree = "<group>"; };
+		1DC439A2262CF6BF00AE3AD2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		1DC439A8262CF71E00AE3AD2 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		1DC439B0262CF74500AE3AD2 /* APIMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMethod.swift; sourceTree = "<group>"; };
+		1DC439B5262CF75F00AE3AD2 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		1DD1209E26320A5E006E7485 /* RateAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateAPIModel.swift; sourceTree = "<group>"; };
 		1DE419E52554AD86000EC48D /* RatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesView.swift; sourceTree = "<group>"; };
 		940265A6244F98D3005D53C0 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		940265A8244F9A83005D53C0 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
@@ -88,8 +98,7 @@
 		9451DEA320134B3700F69318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9452577420137F7900684439 /* CurrencyDailyRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDailyRate.swift; sourceTree = "<group>"; };
 		9452577E2016683E00684439 /* CentralBankAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralBankAPI.swift; sourceTree = "<group>"; };
-		9452578120166E4B00684439 /* CentralBankEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralBankEndpoint.swift; sourceTree = "<group>"; };
-		945257832016823900684439 /* XMLDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLDecoder.swift; sourceTree = "<group>"; };
+		9452578120166E4B00684439 /* RatesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesRequest.swift; sourceTree = "<group>"; };
 		946278C620385EBD00645B99 /* CentralBankStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CentralBankStore.xcdatamodel; sourceTree = "<group>"; };
 		946278C82038609200645B99 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		946278CB2038616900645B99 /* Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
@@ -97,8 +106,7 @@
 		946278CF2038790000645B99 /* RatesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesStore.swift; sourceTree = "<group>"; };
 		946278D52039779500645B99 /* Managed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Managed.swift; sourceTree = "<group>"; };
 		946278D7203977BD00645B99 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
-		946278D9204AD18D00645B99 /* RateAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateAPIModel.swift; sourceTree = "<group>"; };
-		946278DB204AD31400645B99 /* DailyRatesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRatesData.swift; sourceTree = "<group>"; };
+		946278DB204AD31400645B99 /* RatesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesResponse.swift; sourceTree = "<group>"; };
 		946278DD204AECAF00645B99 /* RatesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesService.swift; sourceTree = "<group>"; };
 		946278DF204AF8C600645B99 /* DateConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConverter.swift; sourceTree = "<group>"; };
 		946278E1204AF99F00645B99 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
@@ -114,7 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DC43983262CD7F300AE3AD2 /* SWXMLHash in Frameworks */,
+				1DD120892631E5EE006E7485 /* XMLParsing in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,8 +154,21 @@
 		1DC43999262CDE0C00AE3AD2 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				1DC439A7262CF71000AE3AD2 /* Models */,
+				1DC4399D262CF16F00AE3AD2 /* APISettings.swift */,
+				1DC439A2262CF6BF00AE3AD2 /* APIService.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		1DC439A7262CF71000AE3AD2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1DC439A8262CF71E00AE3AD2 /* APIError.swift */,
+				1DC439B0262CF74500AE3AD2 /* APIMethod.swift */,
+				1DC439B5262CF75F00AE3AD2 /* APIRequest.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		940265A5244F98BC005D53C0 /* Core */ = {
@@ -310,10 +331,8 @@
 		9452577D2016681300684439 /* CentralBankAPI */ = {
 			isa = PBXGroup;
 			children = (
-				945257832016823900684439 /* XMLDecoder.swift */,
 				945257802016686A00684439 /* Rates */,
 				9452577E2016683E00684439 /* CentralBankAPI.swift */,
-				9452578120166E4B00684439 /* CentralBankEndpoint.swift */,
 			);
 			path = CentralBankAPI;
 			sourceTree = "<group>";
@@ -321,8 +340,9 @@
 		945257802016686A00684439 /* Rates */ = {
 			isa = PBXGroup;
 			children = (
-				946278DB204AD31400645B99 /* DailyRatesData.swift */,
-				946278D9204AD18D00645B99 /* RateAPIModel.swift */,
+				9452578120166E4B00684439 /* RatesRequest.swift */,
+				946278DB204AD31400645B99 /* RatesResponse.swift */,
+				1DD1209E26320A5E006E7485 /* RateAPIModel.swift */,
 			);
 			path = Rates;
 			sourceTree = "<group>";
@@ -377,7 +397,7 @@
 			);
 			name = RatesUp;
 			packageProductDependencies = (
-				1DC43982262CD7F300AE3AD2 /* SWXMLHash */,
+				1DD120882631E5EE006E7485 /* XMLParsing */,
 			);
 			productName = CentralBank;
 			productReference = 9451DE7E20134B3600F69318 /* RatesUp.app */;
@@ -463,7 +483,7 @@
 			);
 			mainGroup = 9451DE7520134B3600F69318;
 			packageReferences = (
-				1DC43981262CD7F300AE3AD2 /* XCRemoteSwiftPackageReference "SWXMLHash" */,
+				1DD120872631E5EE006E7485 /* XCRemoteSwiftPackageReference "XMLParsing" */,
 			);
 			productRefGroup = 9451DE7F20134B3600F69318 /* Products */;
 			projectDirPath = "";
@@ -511,6 +531,7 @@
 				1DAAB03D25F4175300ECAE67 /* Reducer.swift in Sources */,
 				946278CC2038616900645B99 /* Rate.swift in Sources */,
 				940265A7244F98D3005D53C0 /* Store.swift in Sources */,
+				1DD1209F26320A5E006E7485 /* RateAPIModel.swift in Sources */,
 				943E0ADF201354D0000C62C1 /* AppState.swift in Sources */,
 				946278D62039779500645B99 /* Managed.swift in Sources */,
 				946278E2204AF99F00645B99 /* AppServices.swift in Sources */,
@@ -518,21 +539,23 @@
 				94729CB5207005AB0026C45D /* RatesResult.swift in Sources */,
 				94729CB7207005DD0026C45D /* RatesError.swift in Sources */,
 				9452577520137F7900684439 /* CurrencyDailyRate.swift in Sources */,
+				1DC439A9262CF71E00AE3AD2 /* APIError.swift in Sources */,
 				940265AD2450C81D005D53C0 /* AppEnvironment.swift in Sources */,
 				946278D02038790000645B99 /* RatesStore.swift in Sources */,
 				943E0B2020136938000C62C1 /* RatesViewController.swift in Sources */,
 				946278D8203977BD00645B99 /* NSManagedObjectContext+Extensions.swift in Sources */,
 				946278E0204AF8C600645B99 /* DateConverter.swift in Sources */,
+				1DC439B1262CF74500AE3AD2 /* APIMethod.swift in Sources */,
 				943E0B1320135A31000C62C1 /* RatesState.swift in Sources */,
 				1DC43965262C526E00AE3AD2 /* ActivityIndicator.swift in Sources */,
-				946278DA204AD18D00645B99 /* RateAPIModel.swift in Sources */,
 				1D0FAE6A253CB4EB00E8AC71 /* RateCell.swift in Sources */,
 				1DE419E62554AD86000EC48D /* RatesView.swift in Sources */,
+				1DC4399E262CF16F00AE3AD2 /* APISettings.swift in Sources */,
 				943E0B0820135876000C62C1 /* Assets.swift in Sources */,
-				946278DC204AD31400645B99 /* DailyRatesData.swift in Sources */,
+				946278DC204AD31400645B99 /* RatesResponse.swift in Sources */,
 				940265A9244F9A83005D53C0 /* AppReducer.swift in Sources */,
 				940265AB2450C041005D53C0 /* Effect.swift in Sources */,
-				945257842016823900684439 /* XMLDecoder.swift in Sources */,
+				1DC439B6262CF75F00AE3AD2 /* APIRequest.swift in Sources */,
 				946278DE204AECAF00645B99 /* RatesService.swift in Sources */,
 				9452577F2016683E00684439 /* CentralBankAPI.swift in Sources */,
 				946278CE2038728400645B99 /* LocalStore.swift in Sources */,
@@ -540,7 +563,8 @@
 				9451DE8220134B3600F69318 /* AppDelegate.swift in Sources */,
 				94729CA9206D8A170026C45D /* RatesSort.swift in Sources */,
 				946278C92038609200645B99 /* Currency.swift in Sources */,
-				9452578220166E4B00684439 /* CentralBankEndpoint.swift in Sources */,
+				1DC439A3262CF6BF00AE3AD2 /* APIService.swift in Sources */,
+				9452578220166E4B00684439 /* RatesRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -863,21 +887,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1DC43981262CD7F300AE3AD2 /* XCRemoteSwiftPackageReference "SWXMLHash" */ = {
+		1DD120872631E5EE006E7485 /* XCRemoteSwiftPackageReference "XMLParsing" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/drmohundro/SWXMLHash.git";
+			repositoryURL = "https://github.com/ShawnMoore/XMLParsing.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.2;
+				minimumVersion = 0.0.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1DC43982262CD7F300AE3AD2 /* SWXMLHash */ = {
+		1DD120882631E5EE006E7485 /* XMLParsing */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1DC43981262CD7F300AE3AD2 /* XCRemoteSwiftPackageReference "SWXMLHash" */;
-			productName = SWXMLHash;
+			package = 1DD120872631E5EE006E7485 /* XCRemoteSwiftPackageReference "XMLParsing" */;
+			productName = XMLParsing;
 		};
 /* End XCSwiftPackageProductDependency section */
 

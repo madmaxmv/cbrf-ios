@@ -21,8 +21,10 @@ class Services: AppServices {
             ?? fileManager.urls(for: .documentDirectory, in: .userDomainMask).last!
     }
     
-    lazy var remote: RatesUpService = {
-        return APIService()
+    lazy var remote: RatesAPIService = {
+        CentralBankAPI(
+            apiService: APIServiceImpl(settings: .cbr)
+        )
     }()
     
     lazy var store: LocalStore? = {

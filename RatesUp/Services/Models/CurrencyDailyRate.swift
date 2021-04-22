@@ -6,7 +6,7 @@ import Foundation
 
 struct CurrencyDailyRate: Equatable {
     let flag: Flag
-    let code: Int
+    let code: String
     let characterCode: String
     let currencyName: String
     let nominal: Int
@@ -15,13 +15,13 @@ struct CurrencyDailyRate: Equatable {
 }
 
 extension CurrencyDailyRate {
-    init(apiModel: RateAPIModel, difference: Double? = nil) {
-        flag = Flag(rawValue: apiModel.characterCode) ?? .unknown
-        code = Int(apiModel.code) ?? 0
-        characterCode = apiModel.characterCode
-        currencyName = apiModel.name
-        nominal = apiModel.nominal
-        value = apiModel.value
+    init(model: CurrencyRate, difference: Double? = nil) {
+        flag = Flag(rawValue: model.characterCode) ?? .unknown
+        code = model.code
+        characterCode = model.characterCode
+        currencyName = model.name
+        nominal = model.nominal
+        value = model.value
 
         self.difference = difference
     }
