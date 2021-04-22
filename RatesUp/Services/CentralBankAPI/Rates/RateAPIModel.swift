@@ -1,32 +1,24 @@
 //
-//  Copyright © 2018 Matyushenko Maxim. All rights reserved.
+//  Copyright © 2021 Matyushenko Maxim. All rights reserved.
 //
 
 import Foundation
-import SWXMLHash
 
-struct RateAPIModel {
-    /// Уникальный идентификатор валюты.
-    let id: String
-    /// Численный код валюты.
-    let code: String
-    /// Символьное обозначение валюты. Например USD.
-    let characterCode: String
-    /// Номинал валюты.
-    let nominal: Int
-    /// Название валюты.
-    let name: String
-    /// Валютная ставка в рублях.
-    let value: Double
-}
+struct RateAPIModel: Decodable {
 
-extension RateAPIModel: XMLDecodable {
-    init(xml: XMLIndexer) {
-        id = xml.element!.attribute(by: "ID")!.text
-        code = xml["NumCode"].element!.text
-        characterCode = xml["CharCode"].element!.text
-        nominal = Int(xml["Nominal"].element!.text)!
-        name = xml["Name"].element!.text
-        value = Double(xml["Value"].element!.text.replacingOccurrences(of: ",", with: "."))!
+    enum CodingKeys: String, CodingKey {
+        case id = "ID"
+        case code = "NumCode"
+        case characterCode = "CharCode"
+        case nominal = "Nominal"
+        case name = "Name"
+        case value = "Value"
     }
+
+    let id: String
+    let code: String
+    let characterCode: String
+    let nominal: Int
+    let name: String
+    let value: String
 }
