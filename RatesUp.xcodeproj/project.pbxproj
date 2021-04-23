@@ -10,8 +10,8 @@
 		1D0FAE6A253CB4EB00E8AC71 /* RateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FAE69253CB4EB00E8AC71 /* RateCell.swift */; };
 		1DAAB03D25F4175300ECAE67 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAAB03C25F4175300ECAE67 /* Reducer.swift */; };
 		1DC43965262C526E00AE3AD2 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC43964262C526E00AE3AD2 /* ActivityIndicator.swift */; };
-		1DC4399E262CF16F00AE3AD2 /* APISettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC4399D262CF16F00AE3AD2 /* APISettings.swift */; };
-		1DC439A3262CF6BF00AE3AD2 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC439A2262CF6BF00AE3AD2 /* APIService.swift */; };
+		1DC4399E262CF16F00AE3AD2 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC4399D262CF16F00AE3AD2 /* APIConfiguration.swift */; };
+		1DC439A3262CF6BF00AE3AD2 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC439A2262CF6BF00AE3AD2 /* APIProvider.swift */; };
 		1DC439A9262CF71E00AE3AD2 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC439A8262CF71E00AE3AD2 /* APIError.swift */; };
 		1DC439B1262CF74500AE3AD2 /* APIMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC439B0262CF74500AE3AD2 /* APIMethod.swift */; };
 		1DC439B6262CF75F00AE3AD2 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC439B5262CF75F00AE3AD2 /* APIRequest.swift */; };
@@ -71,8 +71,8 @@
 		1D0FAE69253CB4EB00E8AC71 /* RateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCell.swift; sourceTree = "<group>"; };
 		1DAAB03C25F4175300ECAE67 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
 		1DC43964262C526E00AE3AD2 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
-		1DC4399D262CF16F00AE3AD2 /* APISettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISettings.swift; sourceTree = "<group>"; };
-		1DC439A2262CF6BF00AE3AD2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		1DC4399D262CF16F00AE3AD2 /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
+		1DC439A2262CF6BF00AE3AD2 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		1DC439A8262CF71E00AE3AD2 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		1DC439B0262CF74500AE3AD2 /* APIMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMethod.swift; sourceTree = "<group>"; };
 		1DC439B5262CF75F00AE3AD2 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
@@ -155,8 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				1DC439A7262CF71000AE3AD2 /* Models */,
-				1DC4399D262CF16F00AE3AD2 /* APISettings.swift */,
-				1DC439A2262CF6BF00AE3AD2 /* APIService.swift */,
+				1DC439A2262CF6BF00AE3AD2 /* APIProvider.swift */,
+				1DC4399D262CF16F00AE3AD2 /* APIConfiguration.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -550,7 +550,7 @@
 				1DC43965262C526E00AE3AD2 /* ActivityIndicator.swift in Sources */,
 				1D0FAE6A253CB4EB00E8AC71 /* RateCell.swift in Sources */,
 				1DE419E62554AD86000EC48D /* RatesView.swift in Sources */,
-				1DC4399E262CF16F00AE3AD2 /* APISettings.swift in Sources */,
+				1DC4399E262CF16F00AE3AD2 /* APIConfiguration.swift in Sources */,
 				943E0B0820135876000C62C1 /* Assets.swift in Sources */,
 				946278DC204AD31400645B99 /* RatesResponse.swift in Sources */,
 				940265A9244F9A83005D53C0 /* AppReducer.swift in Sources */,
@@ -563,7 +563,7 @@
 				9451DE8220134B3600F69318 /* AppDelegate.swift in Sources */,
 				94729CA9206D8A170026C45D /* RatesSort.swift in Sources */,
 				946278C92038609200645B99 /* Currency.swift in Sources */,
-				1DC439A3262CF6BF00AE3AD2 /* APIService.swift in Sources */,
+				1DC439A3262CF6BF00AE3AD2 /* APIProvider.swift in Sources */,
 				9452578220166E4B00684439 /* RatesRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

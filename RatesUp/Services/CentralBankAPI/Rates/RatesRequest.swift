@@ -4,7 +4,13 @@
 
 import Foundation
 
-struct RatesRequest: APIRequest {
+struct RatesRequest {
+
+    let date: Date
+}
+
+extension RatesRequest: APIRequest {
+
     typealias Response = RatesResponse
 
     static let dateFormatter: DateFormatter = {
@@ -13,9 +19,8 @@ struct RatesRequest: APIRequest {
         return formatter
     }()
 
-    let date: Date
-
     var endpoint: String { "/XML_daily.asp" }
+
     var method: APIMethod {
         .get {
             URLQueryItem(
@@ -24,16 +29,5 @@ struct RatesRequest: APIRequest {
                     .string(from: date)
             )
         }
-    }
-}
-
-// MARK: - Helpers
-private extension String {
-    var urlEscaped: String {
-        return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
-    }
-    
-    var utf8Encoded: Data {
-        return data(using: .utf8)!
     }
 }

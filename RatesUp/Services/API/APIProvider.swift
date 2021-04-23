@@ -5,56 +5,41 @@
 import Combine
 import Foundation
 
-protocol APIService {
+protocol APIProvider {
 
     func publisher<Request: APIRequest, Decoder: TopLevelDecoder>(
         for request: Request,
         using decoder: Decoder
     ) -> AnyPublisher<Request.Response, APIError> where
-        Request.Response: Decodable,
-        Decoder.Input == Data
+        Request.Response: Decodable, Decoder.Input == Data
 }
 
-final class APIServiceImpl {
+final class APIProviderImpl: APIProvider {
+    private let session: URLSession
+    private let configuration: APIConfiguration
 
-    private let settings: APISettings
-    private let urlSession: URLSession
-
-    init(
-        settings: APISettings,
-        urlSession: URLSession = .shared
-    ) {
-        self.settings = settings
-        self.urlSession = urlSession
+    init(session: URLSession, configuration: APIConfiguration) {
+        self.session = session
+        self.configuration = configuration
     }
-}
-
-// MARK: - APIService
-extension APIServiceImpl: APIService {
 
     func publisher<Request: APIRequest, Decoder: TopLevelDecoder>(
         for request: Request,
         using decoder: Decoder
     ) -> AnyPublisher<Request.Response, APIError> where
-        Request.Response: Decodable,
-        Decoder.Input == Data
+        Request.Response: Decodable, Decoder.Input == Data
     {
-        let urlRequest = makeURLRequest(for: request)
-
-        return urlSession
-            .dataTaskPublisher(for: urlRequest)
+        session.dataTaskPublisher(for: urlRequest(request))
             .mapError(APIError.networking)
             .map(\.data)
-            .decode(
-                type: Request.Response.self,
-                decoder: decoder
-            )
+            .decode(type: Request.Response.self, decoder: decoder)
             .mapError(APIError.decoding)
             .eraseToAnyPublisher()
     }
 
-    private func makeURLRequest<Request: APIRequest>(for apiRequest: Request) -> URLRequest {
-        let url = URL(string: settings.baseURL() + apiRequest.endpoint)!
+    private func urlRequest<Request: APIRequest>(_ apiRequest: Request) -> URLRequest {
+        let url = configuration.baseURL()
+            .appendingPathComponent(apiRequest.endpoint)
         var request = URLRequest(url: url)
 
         switch apiRequest.method {
