@@ -5,88 +5,60 @@
 import Foundation
 import Combine
 
-struct RatesService {
-    /// Сервис для доступа к удаленным данным.
-    private let _remote: RatesAPIService
-    /// Локальное хранилище данных.
-    private let _store: RatesStore?
-    /// Конвертер для преобразования даты.
-    private let _dateConverter: DateConverter
+final class RatesService {
+    private let remote: RatesAPI
+    private let store: RatesStore?
+    private let dateConverter: DateConverter
     
-    init(remote: RatesAPIService,
-         store: RatesStore?,
-         dateConverter: DateConverter) {
-        _remote = remote
-        _store = store
-        _dateConverter = dateConverter
+    init(
+        remote: RatesAPI,
+        store: RatesStore?,
+        dateConverter: DateConverter
+    ) {
+        self.remote = remote
+        self.store = store
+        self.dateConverter = dateConverter
     }
     
     func rates(
         on date: Date,
         sortedUsing policy: RatesSort.Policy = .standard
-    ) -> AnyPublisher<RatesResult, Error> {
-
-        let yesterday = _dateConverter.date(removedTimeOffsetFor: date.addingTimeInterval(-24 * 60 * 60))
-        let today = _dateConverter.date(removedTimeOffsetFor: date)
+    ) -> AnyPublisher<DailyRates, Error> {
+        let today = dateConverter.date(removedTimeOffsetFor: date)
         let sortMethod = RatesSort.sort(for: policy)
 
-        return Publishers
-            .CombineLatest(dailyRates(on: yesterday), dailyRates(on: today))
-            .map { yesterdayRates, todayRates in
-                let _rates: [CurrencyDailyRate] = zip(yesterdayRates, todayRates)
-                    .compactMap { yesterdayRate, todayRate in
-                        guard yesterdayRate.code == todayRate.code else {
-                            return nil
-                        }
-                        return CurrencyDailyRate(
-                            model: todayRate,
-                            difference: todayRate.value - yesterdayRate.value
-                        )
-                    }
-                return RatesResult.success(rates: sortMethod(_rates))
-//            }
-//            .catch { error in
-
-//                guard let ratesError = error as? RatesError else {
-//                    return Fail(error)
-//                }
-//                return self.dailyRates(on: today)
-//                    .map { rates in
-//                        return rates.map { CurrencyDailyRate(apiModel: $0) }
-//                    }
-//                    .map { sortMethod($0) }
-//                    .map { RatesResult.today(rates: $0, error: ratesError) }
-            }
-            .catch { error -> AnyPublisher<RatesResult, Error> in
-                print(error)
-                return Fail(error: error)
-                    .eraseToAnyPublisher()
-            }
+        return dailyRates(on: today)
+            .map { DailyRates(rates: sortMethod($0)) }
             .eraseToAnyPublisher()
     }
 
     func currencies() -> Future<[Currency], Error> {
         return Future { promise in
-            self._store?.currencies { currencies in
+            self.store?.currencies { currencies in
                 promise(.success(currencies))
             }
         }
     }
-    
-    func dailyRates(on date: Date) -> AnyPublisher<[CurrencyRate], Error> {
+
+    func dailyRates(on date: Date) -> AnyPublisher<[CurrencyDailyRate], Error> {
         return Future { promise in
-            self._store?.getRates(on: date) { rates in
+            self.store?.getRates(on: date) { rates in
                 rates.isEmpty
                     ? promise(.failure(RatesError.emptyStore))
                     : promise(.success(rates))
             } ?? promise(.failure(RatesError.storeUnavailable))
         }
-        .catch { error -> AnyPublisher<[CurrencyRate], Error> in
-            self._remote.rates(on: date)
-                .map { $0.rates.compactMap(CurrencyRate.init) }
+        .catch { error -> AnyPublisher<[CurrencyDailyRate], Error> in
+            self.remote
+                .send(request: RatesRequest(date: date))
+                .map { response in
+                    response.rates.compactMap {
+                        CurrencyDailyRate(rate: $0)
+                    }
+                }
                 .mapError { $0 as Error }
                 .handleEvents(receiveOutput: {
-                    self._store?.save(rates: $0, on: date)
+                    self.store?.save(rates: $0, on: date)
                 })
                 .eraseToAnyPublisher()
         }
@@ -94,29 +66,22 @@ struct RatesService {
     }
 }
 
-struct CurrencyRate {
-    let id: String
-    let code: String
-    let characterCode: String
-    let nominal: Int
-    let name: String
-    let value: Double
-}
+// MARK: -
+extension CurrencyDailyRate {
 
-extension CurrencyRate {
-    init?(apiModel: RateAPIModel) {
+    init?(rate: RateAPIModel) {
         guard
-            let value = Double(apiModel.value.replacingOccurrences(of: ",", with: "."))
+            let value = Double(rate.value.replacingOccurrences(of: ",", with: "."))
         else {
             return nil
         }
 
         self.init(
-            id: apiModel.id,
-            code: apiModel.code,
-            characterCode: apiModel.characterCode,
-            nominal: apiModel.nominal,
-            name: apiModel.name,
+            id: rate.id,
+            code: rate.code,
+            characterCode: rate.characterCode,
+            currencyName: rate.name,
+            nominal: rate.nominal,
             value: value
         )
     }

@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct APIRequest<Response> {
-    let endpoint: String
-    let method: APIMethod
+struct APIConfiguration {
+
+    let baseURL: () -> URL
 }

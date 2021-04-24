@@ -54,10 +54,10 @@ class RatesViewController: UIViewController {
                 isLoading: true,
                 rates: []
             )
-        case let .success(rates):
+        case let .success(dailyRates):
             return RatesView.State(
                 isLoading: false,
-                rates: rates.map {
+                rates: dailyRates.rates.map {
                     RateCell.State(
                         flag: $0.flag.emoji,
                         characterCode: $0.characterCode,
@@ -66,7 +66,7 @@ class RatesViewController: UIViewController {
                     )
                 }
             )
-        default:
+        case .failure:
             return RatesView.State(
                 isLoading: false,
                 rates: []

@@ -5,25 +5,35 @@
 import Foundation
 
 struct CurrencyDailyRate: Equatable {
+    let id: String
     let flag: Flag
     let code: String
     let characterCode: String
     let currencyName: String
     let nominal: Int
     let value: Double
-    let difference: Double?
 }
 
 extension CurrencyDailyRate {
-    init(model: CurrencyRate, difference: Double? = nil) {
-        flag = Flag(rawValue: model.characterCode) ?? .unknown
-        code = model.code
-        characterCode = model.characterCode
-        currencyName = model.name
-        nominal = model.nominal
-        value = model.value
 
-        self.difference = difference
+    init(
+        id: String,
+        code: String,
+        characterCode: String,
+        currencyName: String,
+        nominal: Int,
+        value: Double
+    ) {
+        self.init(
+            id: id,
+            flag: Flag(rawValue: characterCode)
+                ?? .unknown,
+            code: code,
+            characterCode: characterCode,
+            currencyName: currencyName,
+            nominal: nominal,
+            value: value
+        )
     }
 }
 

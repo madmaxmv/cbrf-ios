@@ -1,8 +1,4 @@
 //
-//  RatesUpAPI.swift
-//  RatesUp
-//
-//  Created by Максим on 22/01/2018.
 //  Copyright © 2018 Matyushenko Maxim. All rights reserved.
 //
 
@@ -10,25 +6,69 @@ import Combine
 import Foundation
 import XMLParsing
 
-protocol RatesAPIService {
+protocol RatesAPI {
 
-    func rates(on date: Date) -> AnyPublisher<RatesResponse, APIError>
+    func send(request: RatesRequest) -> AnyPublisher<RatesResponse, APIError>
 }
 
-final class CentralBankAPI: RatesAPIService {
+protocol DynamicsAPI {
 
-    private let apiService: APIService
+    func send(request: DynamicsRequest) -> AnyPublisher<DynamicsResponse, APIError>
+}
 
-    init(apiService: APIService) {
-        self.apiService = apiService
+final class CentralBankAPI {
+
+    private static let configuration = APIConfiguration(
+        baseURL: { URL(string: "http://www.cbr.ru/scripts")! }
+    )
+
+    private static let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        return formatter
+    }()
+
+    private let apiProvider: APIProvider
+    private let dateFormatter: DateFormatter
+
+    init(
+        apiProvider: APIProvider,
+        dateFormatter: DateFormatter
+    ) {
+        self.apiProvider = apiProvider
+        self.dateFormatter = dateFormatter
+    }
+
+    convenience init(session: URLSession) {
+        self.init(
+            apiProvider: APIProviderImpl(
+                session: session,
+                configuration: CentralBankAPI.configuration
+            ),
+            dateFormatter: CentralBankAPI.dateFormatter
+        )
     }
 }
 
-extension CentralBankAPI {
+extension CentralBankAPI: RatesAPI {
 
-    func rates(on date: Date) -> AnyPublisher<RatesResponse, APIError> {
-        apiService.publisher(
-            for: RatesRequest(date: date),
+    func send(request: RatesRequest) -> AnyPublisher<RatesResponse, APIError> {
+        apiProvider.publisher(
+            for: request.toAPIRequest(
+                using: dateFormatter
+            ),
+            using: XMLDecoder()
+        )
+    }
+}
+
+extension CentralBankAPI: DynamicsAPI {
+
+    func send(request: DynamicsRequest) -> AnyPublisher<DynamicsResponse, APIError> {
+        apiProvider.publisher(
+            for: request.toAPIRequest(
+                using: dateFormatter
+            ),
             using: XMLDecoder()
         )
     }
