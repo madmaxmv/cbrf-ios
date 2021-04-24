@@ -17,6 +17,9 @@
 		1DC439B6262CF75F00AE3AD2 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC439B5262CF75F00AE3AD2 /* APIRequest.swift */; };
 		1DD120892631E5EE006E7485 /* XMLParsing in Frameworks */ = {isa = PBXBuildFile; productRef = 1DD120882631E5EE006E7485 /* XMLParsing */; };
 		1DD1209F26320A5E006E7485 /* RateAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD1209E26320A5E006E7485 /* RateAPIModel.swift */; };
+		1DD120D526342EDB006E7485 /* DynamicRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD120D426342EDB006E7485 /* DynamicRequest.swift */; };
+		1DD120DD26343474006E7485 /* DynamicsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD120DC26343474006E7485 /* DynamicsResponse.swift */; };
+		1DD120E226343488006E7485 /* DynamicsRateAPIRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD120E126343488006E7485 /* DynamicsRateAPIRecord.swift */; };
 		1DE419E62554AD86000EC48D /* RatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE419E52554AD86000EC48D /* RatesView.swift */; };
 		940265A7244F98D3005D53C0 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940265A6244F98D3005D53C0 /* Store.swift */; };
 		940265A9244F9A83005D53C0 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940265A8244F9A83005D53C0 /* AppReducer.swift */; };
@@ -45,7 +48,7 @@
 		946278E0204AF8C600645B99 /* DateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278DF204AF8C600645B99 /* DateConverter.swift */; };
 		946278E2204AF99F00645B99 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278E1204AF99F00645B99 /* AppServices.swift */; };
 		94729CA9206D8A170026C45D /* RatesSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CA8206D8A170026C45D /* RatesSort.swift */; };
-		94729CB5207005AB0026C45D /* RatesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CB4207005AB0026C45D /* RatesResult.swift */; };
+		94729CB5207005AB0026C45D /* DailyRates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CB4207005AB0026C45D /* DailyRates.swift */; };
 		94729CB7207005DD0026C45D /* RatesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CB6207005DD0026C45D /* RatesError.swift */; };
 		94A61AF7201CCBEC00299A4A /* UIColor+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A61AF6201CCBEC00299A4A /* UIColor+extensions.swift */; };
 /* End PBXBuildFile section */
@@ -77,6 +80,9 @@
 		1DC439B0262CF74500AE3AD2 /* APIMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMethod.swift; sourceTree = "<group>"; };
 		1DC439B5262CF75F00AE3AD2 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		1DD1209E26320A5E006E7485 /* RateAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateAPIModel.swift; sourceTree = "<group>"; };
+		1DD120D426342EDB006E7485 /* DynamicRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicRequest.swift; sourceTree = "<group>"; };
+		1DD120DC26343474006E7485 /* DynamicsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicsResponse.swift; sourceTree = "<group>"; };
+		1DD120E126343488006E7485 /* DynamicsRateAPIRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicsRateAPIRecord.swift; sourceTree = "<group>"; };
 		1DE419E52554AD86000EC48D /* RatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesView.swift; sourceTree = "<group>"; };
 		940265A6244F98D3005D53C0 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		940265A8244F9A83005D53C0 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
@@ -112,7 +118,7 @@
 		946278E1204AF99F00645B99 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
 		946278E3204AFDD700645B99 /* RatesUp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RatesUp.entitlements; sourceTree = "<group>"; };
 		94729CA8206D8A170026C45D /* RatesSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesSort.swift; sourceTree = "<group>"; };
-		94729CB4207005AB0026C45D /* RatesResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesResult.swift; sourceTree = "<group>"; };
+		94729CB4207005AB0026C45D /* DailyRates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRates.swift; sourceTree = "<group>"; };
 		94729CB6207005DD0026C45D /* RatesError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesError.swift; sourceTree = "<group>"; };
 		94A61AF6201CCBEC00299A4A /* UIColor+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,6 +175,16 @@
 				1DC439B5262CF75F00AE3AD2 /* APIRequest.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		1DD120D326342EB6006E7485 /* Dynamic */ = {
+			isa = PBXGroup;
+			children = (
+				1DD120D426342EDB006E7485 /* DynamicRequest.swift */,
+				1DD120DC26343474006E7485 /* DynamicsResponse.swift */,
+				1DD120E126343488006E7485 /* DynamicsRateAPIRecord.swift */,
+			);
+			path = Dynamic;
 			sourceTree = "<group>";
 		};
 		940265A5244F98BC005D53C0 /* Core */ = {
@@ -331,6 +347,7 @@
 		9452577D2016681300684439 /* CentralBankAPI */ = {
 			isa = PBXGroup;
 			children = (
+				1DD120D326342EB6006E7485 /* Dynamic */,
 				945257802016686A00684439 /* Rates */,
 				9452577E2016683E00684439 /* CentralBankAPI.swift */,
 			);
@@ -363,7 +380,7 @@
 			children = (
 				94729CA8206D8A170026C45D /* RatesSort.swift */,
 				9452577420137F7900684439 /* CurrencyDailyRate.swift */,
-				94729CB4207005AB0026C45D /* RatesResult.swift */,
+				94729CB4207005AB0026C45D /* DailyRates.swift */,
 				94729CB6207005DD0026C45D /* RatesError.swift */,
 			);
 			path = Models;
@@ -536,7 +553,7 @@
 				946278D62039779500645B99 /* Managed.swift in Sources */,
 				946278E2204AF99F00645B99 /* AppServices.swift in Sources */,
 				943E0AF9201356A0000C62C1 /* TabBarController.swift in Sources */,
-				94729CB5207005AB0026C45D /* RatesResult.swift in Sources */,
+				94729CB5207005AB0026C45D /* DailyRates.swift in Sources */,
 				94729CB7207005DD0026C45D /* RatesError.swift in Sources */,
 				9452577520137F7900684439 /* CurrencyDailyRate.swift in Sources */,
 				1DC439A9262CF71E00AE3AD2 /* APIError.swift in Sources */,
@@ -545,16 +562,19 @@
 				943E0B2020136938000C62C1 /* RatesViewController.swift in Sources */,
 				946278D8203977BD00645B99 /* NSManagedObjectContext+Extensions.swift in Sources */,
 				946278E0204AF8C600645B99 /* DateConverter.swift in Sources */,
+				1DD120E226343488006E7485 /* DynamicsRateAPIRecord.swift in Sources */,
 				1DC439B1262CF74500AE3AD2 /* APIMethod.swift in Sources */,
 				943E0B1320135A31000C62C1 /* RatesState.swift in Sources */,
 				1DC43965262C526E00AE3AD2 /* ActivityIndicator.swift in Sources */,
 				1D0FAE6A253CB4EB00E8AC71 /* RateCell.swift in Sources */,
 				1DE419E62554AD86000EC48D /* RatesView.swift in Sources */,
 				1DC4399E262CF16F00AE3AD2 /* APIConfiguration.swift in Sources */,
+				1DD120DD26343474006E7485 /* DynamicsResponse.swift in Sources */,
 				943E0B0820135876000C62C1 /* Assets.swift in Sources */,
 				946278DC204AD31400645B99 /* RatesResponse.swift in Sources */,
 				940265A9244F9A83005D53C0 /* AppReducer.swift in Sources */,
 				940265AB2450C041005D53C0 /* Effect.swift in Sources */,
+				1DD120D526342EDB006E7485 /* DynamicRequest.swift in Sources */,
 				1DC439B6262CF75F00AE3AD2 /* APIRequest.swift in Sources */,
 				946278DE204AECAF00645B99 /* RatesService.swift in Sources */,
 				9452577F2016683E00684439 /* CentralBankAPI.swift in Sources */,

@@ -9,25 +9,17 @@ struct RatesRequest {
     let date: Date
 }
 
-extension RatesRequest: APIRequest {
+extension RatesRequest {
 
-    typealias Response = RatesResponse
-
-    static let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
-        return formatter
-    }()
-
-    var endpoint: String { "/XML_daily.asp" }
-
-    var method: APIMethod {
-        .get {
-            URLQueryItem(
-                name: "date_req",
-                value: RatesRequest.dateFormatter
-                    .string(from: date)
-            )
-        }
+    func toAPIRequest(using dateFormatter: DateFormatter) -> APIRequest<RatesResponse> {
+        APIRequest(
+            endpoint: "/XML_daily.asp",
+            method: .get {
+                URLQueryItem(
+                    name: "date_req",
+                    value: dateFormatter.string(from: date)
+                )
+            }
+        )
     }
 }

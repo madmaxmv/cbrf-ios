@@ -6,7 +6,7 @@ import Foundation
 
 final class AppEnvironment {
     let services: AppServices
-    let fetchRates: (Date) -> Promise<RatesResult, Error>
+    let fetchRates: (Date) -> Promise<DailyRates, Error>
 
     init(services: AppServices) {
         self.services = services

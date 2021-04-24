@@ -5,7 +5,8 @@
 import Foundation
 
 struct RatesState: Equatable {
-    var ratesResult: RatesResult? = nil
+
+    var ratesResult: RatesResult?
 }
 
 extension RatesState {
@@ -36,6 +37,6 @@ extension RatesState {
 private extension RatesState {
     static let fetchRatesEffect = Effect<Event, AppEnvironment> { env in
         env.fetchRates(Date())
-            .map { .ratesResult($0) }
+            .map { .ratesResult(.success($0)) }
     }
 }

@@ -8,9 +8,13 @@ import XMLParsing
 
 protocol RatesAPI {
 
-    func rates(on date: Date) -> AnyPublisher<[CurrencyDailyRate], APIError>
+    func send(request: RatesRequest) -> AnyPublisher<RatesResponse, APIError>
 }
 
+protocol DynamicsAPI {
+
+    func send(request: DynamicsRequest) -> AnyPublisher<DynamicsResponse, APIError>
+}
 
 final class CentralBankAPI {
 
@@ -18,10 +22,21 @@ final class CentralBankAPI {
         baseURL: { URL(string: "http://www.cbr.ru/scripts")! }
     )
 
-    private let apiProvider: APIProvider
+    private static let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        return formatter
+    }()
 
-    init(apiProvider: APIProvider) {
+    private let apiProvider: APIProvider
+    private let dateFormatter: DateFormatter
+
+    init(
+        apiProvider: APIProvider,
+        dateFormatter: DateFormatter
+    ) {
         self.apiProvider = apiProvider
+        self.dateFormatter = dateFormatter
     }
 
     convenience init(session: URLSession) {
@@ -29,48 +44,37 @@ final class CentralBankAPI {
             apiProvider: APIProviderImpl(
                 session: session,
                 configuration: CentralBankAPI.configuration
-            )
+            ),
+            dateFormatter: CentralBankAPI.dateFormatter
         )
     }
 }
 
 extension CentralBankAPI: RatesAPI {
 
-    func rates(on date: Date) -> AnyPublisher<[CurrencyDailyRate], APIError> {
+    func send(request: RatesRequest) -> AnyPublisher<RatesResponse, APIError> {
         apiProvider.publisher(
-            for: RatesRequest(date: date),
+            for: request.toAPIRequest(
+                using: dateFormatter
+            ),
             using: XMLDecoder()
         )
-        .map { response in
-            response.rates
-                .compactMap { CurrencyDailyRate(rate: $0) }
-        }
-        .eraseToAnyPublisher()
+    }
+}
+
+extension CentralBankAPI: DynamicsAPI {
+
+    func send(request: DynamicsRequest) -> AnyPublisher<DynamicsResponse, APIError> {
+        apiProvider.publisher(
+            for: request.toAPIRequest(
+                using: dateFormatter
+            ),
+            using: XMLDecoder()
+        )
     }
 }
 
 // MARK: - XMLDecoder + TopLevelDecoder
 extension XMLDecoder: TopLevelDecoder {
     public typealias Input = Data
-}
-
-// MARK: -
-extension CurrencyDailyRate {
-
-    init?(rate: RateAPIModel) {
-        guard
-            let value = Double(rate.value.replacingOccurrences(of: ",", with: "."))
-        else {
-            return nil
-        }
-
-        self.init(
-            id: rate.id,
-            code: rate.code,
-            characterCode: rate.characterCode,
-            currencyName: rate.name,
-            nominal: rate.nominal,
-            value: value
-        )
-    }
 }

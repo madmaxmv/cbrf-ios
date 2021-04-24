@@ -7,11 +7,11 @@ import Foundation
 
 protocol APIProvider {
 
-    func publisher<Request: APIRequest, Decoder: TopLevelDecoder>(
-        for request: Request,
+    func publisher<Response, Decoder: TopLevelDecoder>(
+        for request: APIRequest<Response>,
         using decoder: Decoder
-    ) -> AnyPublisher<Request.Response, APIError> where
-        Request.Response: Decodable, Decoder.Input == Data
+    ) -> AnyPublisher<Response, APIError> where
+        Response: Decodable, Decoder.Input == Data
 }
 
 final class APIProviderImpl: APIProvider {
@@ -23,21 +23,21 @@ final class APIProviderImpl: APIProvider {
         self.configuration = configuration
     }
 
-    func publisher<Request: APIRequest, Decoder: TopLevelDecoder>(
-        for request: Request,
+    func publisher<Response, Decoder: TopLevelDecoder>(
+        for request: APIRequest<Response>,
         using decoder: Decoder
-    ) -> AnyPublisher<Request.Response, APIError> where
-        Request.Response: Decodable, Decoder.Input == Data
+    ) -> AnyPublisher<Response, APIError> where
+        Response: Decodable, Decoder.Input == Data
     {
         session.dataTaskPublisher(for: urlRequest(request))
             .mapError(APIError.networking)
             .map(\.data)
-            .decode(type: Request.Response.self, decoder: decoder)
+            .decode(type: Response.self, decoder: decoder)
             .mapError(APIError.decoding)
             .eraseToAnyPublisher()
     }
 
-    private func urlRequest<Request: APIRequest>(_ apiRequest: Request) -> URLRequest {
+    private func urlRequest<R>(_ apiRequest: APIRequest<R>) -> URLRequest {
         let url = configuration.baseURL()
             .appendingPathComponent(apiRequest.endpoint)
         var request = URLRequest(url: url)

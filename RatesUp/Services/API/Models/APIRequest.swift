@@ -4,9 +4,7 @@
 
 import Foundation
 
-protocol APIRequest {
-    associatedtype Response
-    
-    var endpoint: String { get }
-    var method: APIMethod { get }
+struct APIRequest<Response> {
+    let endpoint: String
+    let method: APIMethod
 }

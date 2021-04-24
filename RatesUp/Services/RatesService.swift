@@ -23,12 +23,12 @@ final class RatesService {
     func rates(
         on date: Date,
         sortedUsing policy: RatesSort.Policy = .standard
-    ) -> AnyPublisher<RatesResult, Error> {
+    ) -> AnyPublisher<DailyRates, Error> {
         let today = dateConverter.date(removedTimeOffsetFor: date)
         let sortMethod = RatesSort.sort(for: policy)
 
         return dailyRates(on: today)
-            .map { RatesResult.success(rates: sortMethod($0)) }
+            .map { DailyRates(rates: sortMethod($0)) }
             .eraseToAnyPublisher()
     }
 
@@ -49,7 +49,13 @@ final class RatesService {
             } ?? promise(.failure(RatesError.storeUnavailable))
         }
         .catch { error -> AnyPublisher<[CurrencyDailyRate], Error> in
-            self.remote.rates(on: date)
+            self.remote
+                .send(request: RatesRequest(date: date))
+                .map { response in
+                    response.rates.compactMap {
+                        CurrencyDailyRate(rate: $0)
+                    }
+                }
                 .mapError { $0 as Error }
                 .handleEvents(receiveOutput: {
                     self.store?.save(rates: $0, on: date)
@@ -57,5 +63,26 @@ final class RatesService {
                 .eraseToAnyPublisher()
         }
         .eraseToAnyPublisher()
+    }
+}
+
+// MARK: -
+extension CurrencyDailyRate {
+
+    init?(rate: RateAPIModel) {
+        guard
+            let value = Double(rate.value.replacingOccurrences(of: ",", with: "."))
+        else {
+            return nil
+        }
+
+        self.init(
+            id: rate.id,
+            code: rate.code,
+            characterCode: rate.characterCode,
+            currencyName: rate.name,
+            nominal: rate.nominal,
+            value: value
+        )
     }
 }
