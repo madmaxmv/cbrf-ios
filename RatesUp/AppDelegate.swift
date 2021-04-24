@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             environment: AppEnvironment(services: services)
         )
 
-        window?.rootViewController = TabBarController(
+        window?.rootViewController = RatesViewController(
             store: stateStore
         )
 

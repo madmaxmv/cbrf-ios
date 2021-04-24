@@ -3,7 +3,6 @@
 //
 
 struct AppState {
-    var tabs: [Tab] = [.exchangeRates]
     var rates = RatesState()
 }
 

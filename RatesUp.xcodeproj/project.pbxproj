@@ -26,7 +26,6 @@
 		940265AB2450C041005D53C0 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940265AA2450C041005D53C0 /* Effect.swift */; };
 		940265AD2450C81D005D53C0 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940265AC2450C81D005D53C0 /* AppEnvironment.swift */; };
 		943E0ADF201354D0000C62C1 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0AD9201354CF000C62C1 /* AppState.swift */; };
-		943E0AF9201356A0000C62C1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0AF6201356A0000C62C1 /* TabBarController.swift */; };
 		943E0B0820135876000C62C1 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0B0720135876000C62C1 /* Assets.swift */; };
 		943E0B1320135A31000C62C1 /* RatesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0B1220135A31000C62C1 /* RatesState.swift */; };
 		943E0B2020136938000C62C1 /* RatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0B1F20136938000C62C1 /* RatesViewController.swift */; };
@@ -89,7 +88,6 @@
 		940265AA2450C041005D53C0 /* Effect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
 		940265AC2450C81D005D53C0 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		943E0AD9201354CF000C62C1 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
-		943E0AF6201356A0000C62C1 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		943E0B0720135876000C62C1 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		943E0B1220135A31000C62C1 /* RatesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesState.swift; sourceTree = "<group>"; };
 		943E0B1F20136938000C62C1 /* RatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatesViewController.swift; sourceTree = "<group>"; };
@@ -202,7 +200,6 @@
 			children = (
 				943E0B1A20136199000C62C1 /* Launch */,
 				943E0B0C201359AB000C62C1 /* Rates */,
-				943E0AF420135690000C62C1 /* TabBar */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -216,14 +213,6 @@
 				940265AC2450C81D005D53C0 /* AppEnvironment.swift */,
 			);
 			path = AppState;
-			sourceTree = "<group>";
-		};
-		943E0AF420135690000C62C1 /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				943E0AF6201356A0000C62C1 /* TabBarController.swift */,
-			);
-			path = TabBar;
 			sourceTree = "<group>";
 		};
 		943E0AFB20135723000C62C1 /* Resources */ = {
@@ -552,7 +541,6 @@
 				943E0ADF201354D0000C62C1 /* AppState.swift in Sources */,
 				946278D62039779500645B99 /* Managed.swift in Sources */,
 				946278E2204AF99F00645B99 /* AppServices.swift in Sources */,
-				943E0AF9201356A0000C62C1 /* TabBarController.swift in Sources */,
 				94729CB5207005AB0026C45D /* DailyRates.swift in Sources */,
 				94729CB7207005DD0026C45D /* RatesError.swift in Sources */,
 				9452577520137F7900684439 /* CurrencyDailyRate.swift in Sources */,
