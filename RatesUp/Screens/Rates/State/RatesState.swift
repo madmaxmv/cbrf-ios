@@ -20,4 +20,5 @@ enum RatesEvent {
     case initial
     case ratesResult(RatesResult)
     case openRate(withID: String)
+    case nothing
 }

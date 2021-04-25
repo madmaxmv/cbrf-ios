@@ -7,6 +7,7 @@ import Nivelir
 
 struct RatesScreen: Screen {
 
+    let screens: AppScreens
     let services: AppServices
     
     func build(navigator: ScreenNavigator, payload: Any?) -> UIViewController {
@@ -15,6 +16,7 @@ struct RatesScreen: Screen {
                 initial: .initial,
                 reducer: RatesState.reducer,
                 environment: RatesEnvironment(
+                    screens: screens,
                     services: services
                 )
             )

@@ -2,7 +2,8 @@
 //  Copyright © 2021 Matyushenko Maxim. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import Nivelir
 
 protocol AppScreens {
 
@@ -18,9 +19,16 @@ final class ScreenFactory: AppScreens {
     }
 }
 
-extension ScreenFactory {
+extension AppScreens {
 
-    func ratesScreen() -> RatesScreen {
-        RatesScreen(services: services)
+    func ratesScreen() -> AnyScreen<UIViewController> {
+        RatesScreen(screens: self, services: services)
+            .eraseToAnyScreen()
+    }
+
+    func currencyRateScreen(rate: CurrencyDailyRate) -> AnyScreen<UIViewController> {
+        CurrencyRateScreen(currencyRate: rate)
+            .withPresentationStyle(UIModalPresentationStyle.formSheet)
+            .eraseToAnyScreen()
     }
 }
