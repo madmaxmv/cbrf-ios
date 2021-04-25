@@ -13,11 +13,23 @@ typealias CurrencyRateStore = Store<
 struct CurrencyRateState {
 
     let currencyRate: CurrencyDailyRate
-    let dynamics: [Int]?
+    let dynamics: [Int]? = nil
 }
 
 enum CurrencyRateEvent {
     case loadDynamics
+}
+
+typealias CurrencyRateReducer = Reducer<
+    CurrencyRateState,
+    CurrencyRateEvent,
+    CurrencyRateEnvironment
+>
+
+extension CurrencyRateState {
+    static let reducer: CurrencyRateReducer = { state, event in
+        return []
+    }
 }
 
 struct CurrencyRateEnvironment {

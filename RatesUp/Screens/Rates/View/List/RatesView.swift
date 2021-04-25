@@ -37,7 +37,7 @@ struct RatesView: View {
                         .padding([.top, .bottom], 16)
                     }
                     .background(
-                        Color.gray.opacity(0.1)
+                        Color(.background)
                             .edgesIgnoringSafeArea(.bottom)
                     )
                 }

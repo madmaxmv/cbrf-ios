@@ -20,15 +20,7 @@ class RatesViewController: UIViewController {
         self.store = store
         super.init(nibName: nil, bundle: nil)
 
-        addChild(hosting)
-        view.addSubview(hosting.view, constraints: [
-            hosting.view.topAnchor.constraint(equalTo: view.topAnchor),
-            hosting.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            hosting.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            hosting.view.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        ])
-        hosting.didMove(toParent: self)
-
+        setHostingController(hosting)
         subscribe(to: store)
     }
 
@@ -89,13 +81,5 @@ class RatesViewController: UIViewController {
                 rates: []
             )
         }
-    }
-}
-
-extension UIView {
-    func addSubview(_ view: UIView, constraints: [NSLayoutConstraint]) {
-        view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
-        NSLayoutConstraint.activate(constraints)
     }
 }

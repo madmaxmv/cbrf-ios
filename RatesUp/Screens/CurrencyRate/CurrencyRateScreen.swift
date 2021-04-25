@@ -10,6 +10,14 @@ struct CurrencyRateScreen: Screen {
     let currencyRate: CurrencyDailyRate
 
     func build(navigator: ScreenNavigator, payload: Any?) -> UIViewController {
-        CurrencyRateViewController()
+        CurrencyRateViewController(
+            store: CurrencyRateStore(
+                initial: CurrencyRateState(
+                    currencyRate: currencyRate
+                ),
+                reducer: CurrencyRateState.reducer,
+                environment: CurrencyRateEnvironment()
+            )
+        )
     }
 }

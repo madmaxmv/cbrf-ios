@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1D0FAE6A253CB4EB00E8AC71 /* RateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FAE69253CB4EB00E8AC71 /* RateCell.swift */; };
+		1D3F0A752635ACE6008DA608 /* CurrencyRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3F0A742635ACE6008DA608 /* CurrencyRateView.swift */; };
+		1D3F0A7A2635ADB6008DA608 /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3F0A792635ADB6008DA608 /* UIView+extensions.swift */; };
+		1D3F0A7F2635AE19008DA608 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3F0A7E2635AE19008DA608 /* UIViewController+extensions.swift */; };
 		1DAAB03D25F4175300ECAE67 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAAB03C25F4175300ECAE67 /* Reducer.swift */; };
 		1DC43965262C526E00AE3AD2 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC43964262C526E00AE3AD2 /* ActivityIndicator.swift */; };
 		1DC4399E262CF16F00AE3AD2 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC4399D262CF16F00AE3AD2 /* APIConfiguration.swift */; };
@@ -76,6 +79,9 @@
 
 /* Begin PBXFileReference section */
 		1D0FAE69253CB4EB00E8AC71 /* RateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCell.swift; sourceTree = "<group>"; };
+		1D3F0A742635ACE6008DA608 /* CurrencyRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRateView.swift; sourceTree = "<group>"; };
+		1D3F0A792635ADB6008DA608 /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
+		1D3F0A7E2635AE19008DA608 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
 		1DAAB03C25F4175300ECAE67 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
 		1DC43964262C526E00AE3AD2 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		1DC4399D262CF16F00AE3AD2 /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
@@ -198,8 +204,8 @@
 		1DD120F526344EB9006E7485 /* CurrencyRate */ = {
 			isa = PBXGroup;
 			children = (
-				1DD1216926358F37006E7485 /* View */,
 				1DD12113263499D7006E7485 /* State */,
+				1DD1216926358F37006E7485 /* View */,
 				1DD1216A26358F4A006E7485 /* CurrencyRateScreen.swift */,
 			);
 			path = CurrencyRate;
@@ -235,6 +241,7 @@
 		1DD1216926358F37006E7485 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1D3F0A742635ACE6008DA608 /* CurrencyRateView.swift */,
 				1DD120F626344ED9006E7485 /* CurrencyRateViewController.swift */,
 			);
 			path = View;
@@ -302,6 +309,8 @@
 			isa = PBXGroup;
 			children = (
 				94A61AF6201CCBEC00299A4A /* UIColor+extensions.swift */,
+				1D3F0A792635ADB6008DA608 /* UIView+extensions.swift */,
+				1D3F0A7E2635AE19008DA608 /* UIViewController+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -620,10 +629,13 @@
 				1DD120F726344ED9006E7485 /* CurrencyRateViewController.swift in Sources */,
 				946278C720385EBD00645B99 /* RatesStore.xcdatamodeld in Sources */,
 				9451DE8220134B3600F69318 /* AppDelegate.swift in Sources */,
+				1D3F0A752635ACE6008DA608 /* CurrencyRateView.swift in Sources */,
 				94729CA9206D8A170026C45D /* RatesSort.swift in Sources */,
+				1D3F0A7F2635AE19008DA608 /* UIViewController+extensions.swift in Sources */,
 				946278C92038609200645B99 /* Currency.swift in Sources */,
 				1DD12115263499FE006E7485 /* CurrencyRateState.swift in Sources */,
 				1DC439A3262CF6BF00AE3AD2 /* APIProvider.swift in Sources */,
+				1D3F0A7A2635ADB6008DA608 /* UIView+extensions.swift in Sources */,
 				9452578220166E4B00684439 /* RatesRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

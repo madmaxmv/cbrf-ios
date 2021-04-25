@@ -36,6 +36,10 @@ struct RateCell: View {
             .background(Color.white)
             .cornerRadius(12)
         }
+        .shadow(
+            color: Color.gray.opacity(0.1),
+            radius: 8, x: 0, y: 4
+        )
         .padding([.leading, .trailing], 12)
     }
 }
