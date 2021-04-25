@@ -3,17 +3,18 @@
 //
 
 import Foundation
+import Nivelir
 
 protocol AppServices {
     
     var ratesService: RatesService { get }
-    
-    init(groupIdentifier: String)
+    var screenNavigator: ScreenNavigator { get }
 }
 
 class Services: AppServices {
 
     let groupIdentifier: String
+    let screenNavigator: ScreenNavigator
     
     var storeDirectory: URL {
         let fileManager = FileManager.default
@@ -44,7 +45,11 @@ class Services: AppServices {
         )
     }()
 
-    required init(groupIdentifier: String) {
+    init(
+        groupIdentifier: String,
+        screenNavigator: ScreenNavigator
+    ) {
         self.groupIdentifier = groupIdentifier
+        self.screenNavigator = screenNavigator
     }
 }

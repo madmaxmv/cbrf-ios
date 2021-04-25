@@ -13,9 +13,11 @@ class RatesViewController: UIViewController {
         rootView: ratesView
     )
 
+    private let store: RatesStateStore
     private var subscriptions: Set<AnyCancellable> = []
 
-    init(store: AppStore) {
+    init(store: RatesStateStore) {
+        self.store = store
         super.init(nibName: nil, bundle: nil)
 
         addChild(hosting)
@@ -33,12 +35,26 @@ class RatesViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func subscribe(to store: AppStore) {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        store.send(.initial)
+    }
+
+    func subscribe(to store: RatesStateStore) {
         store.state
-            .map(\.rates)
             .sink { [weak self] state in
                 self?.render(state: state)
+            }
+            .store(in: &subscriptions)
+
+        ratesView.events
+            .sink { event in
+                switch event {
+                case .didTapRate(let id):
+                    store.send(.openRate(withID: id))
+                }
             }
             .store(in: &subscriptions)
     }
@@ -59,6 +75,7 @@ class RatesViewController: UIViewController {
                 isLoading: false,
                 rates: dailyRates.rates.map {
                     RateCell.State(
+                        id: $0.id,
                         flag: $0.flag.emoji,
                         characterCode: $0.characterCode,
                         details: "\($0.nominal) \($0.currencyName)",

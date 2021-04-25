@@ -4,10 +4,10 @@
 
 import Foundation
 
-final class AppEnvironment {
+final class RatesEnvironment {
     let services: AppServices
     let fetchRates: (Date) -> Promise<DailyRates, Error>
-
+    
     init(services: AppServices) {
         self.services = services
 

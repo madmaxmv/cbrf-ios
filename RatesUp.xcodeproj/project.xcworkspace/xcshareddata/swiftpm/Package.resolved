@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "Nivelir",
+        "repositoryURL": "https://github.com/hhru/Nivelir",
+        "state": {
+          "branch": null,
+          "revision": "67fb94b0a1a16c4b10443b5c50299efea23d6346",
+          "version": "1.0.0-alpha.2"
+        }
+      },
+      {
         "package": "XMLParsing",
         "repositoryURL": "https://github.com/ShawnMoore/XMLParsing.git",
         "state": {

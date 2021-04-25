@@ -20,14 +20,18 @@
 		1DD120D526342EDB006E7485 /* DynamicRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD120D426342EDB006E7485 /* DynamicRequest.swift */; };
 		1DD120DD26343474006E7485 /* DynamicsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD120DC26343474006E7485 /* DynamicsResponse.swift */; };
 		1DD120E226343488006E7485 /* DynamicsRateAPIRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD120E126343488006E7485 /* DynamicsRateAPIRecord.swift */; };
+		1DD120F726344ED9006E7485 /* CurrencyRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD120F626344ED9006E7485 /* CurrencyRateViewController.swift */; };
+		1DD12115263499FE006E7485 /* CurrencyRateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD12114263499FE006E7485 /* CurrencyRateStore.swift */; };
+		1DD121272634D13C006E7485 /* RatesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD121262634D13C006E7485 /* RatesScreen.swift */; };
+		1DD12133263581FE006E7485 /* Nivelir in Frameworks */ = {isa = PBXBuildFile; productRef = 1DD12132263581FE006E7485 /* Nivelir */; };
+		1DD12158263587AC006E7485 /* ScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD12157263587AC006E7485 /* ScreenFactory.swift */; };
 		1DE419E62554AD86000EC48D /* RatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE419E52554AD86000EC48D /* RatesView.swift */; };
 		940265A7244F98D3005D53C0 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940265A6244F98D3005D53C0 /* Store.swift */; };
-		940265A9244F9A83005D53C0 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940265A8244F9A83005D53C0 /* AppReducer.swift */; };
+		940265A9244F9A83005D53C0 /* RatesReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940265A8244F9A83005D53C0 /* RatesReducer.swift */; };
 		940265AB2450C041005D53C0 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940265AA2450C041005D53C0 /* Effect.swift */; };
-		940265AD2450C81D005D53C0 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940265AC2450C81D005D53C0 /* AppEnvironment.swift */; };
-		943E0ADF201354D0000C62C1 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0AD9201354CF000C62C1 /* AppState.swift */; };
+		940265AD2450C81D005D53C0 /* RatesEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940265AC2450C81D005D53C0 /* RatesEnvironment.swift */; };
+		943E0ADF201354D0000C62C1 /* RatesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0AD9201354CF000C62C1 /* RatesState.swift */; };
 		943E0B0820135876000C62C1 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0B0720135876000C62C1 /* Assets.swift */; };
-		943E0B1320135A31000C62C1 /* RatesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0B1220135A31000C62C1 /* RatesState.swift */; };
 		943E0B2020136938000C62C1 /* RatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943E0B1F20136938000C62C1 /* RatesViewController.swift */; };
 		9451DE8220134B3600F69318 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9451DE8120134B3600F69318 /* AppDelegate.swift */; };
 		9451DE8920134B3600F69318 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9451DE8820134B3600F69318 /* Assets.xcassets */; };
@@ -82,14 +86,17 @@
 		1DD120D426342EDB006E7485 /* DynamicRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicRequest.swift; sourceTree = "<group>"; };
 		1DD120DC26343474006E7485 /* DynamicsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicsResponse.swift; sourceTree = "<group>"; };
 		1DD120E126343488006E7485 /* DynamicsRateAPIRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicsRateAPIRecord.swift; sourceTree = "<group>"; };
+		1DD120F626344ED9006E7485 /* CurrencyRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRateViewController.swift; sourceTree = "<group>"; };
+		1DD12114263499FE006E7485 /* CurrencyRateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRateStore.swift; sourceTree = "<group>"; };
+		1DD121262634D13C006E7485 /* RatesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesScreen.swift; sourceTree = "<group>"; };
+		1DD12157263587AC006E7485 /* ScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenFactory.swift; sourceTree = "<group>"; };
 		1DE419E52554AD86000EC48D /* RatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesView.swift; sourceTree = "<group>"; };
 		940265A6244F98D3005D53C0 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		940265A8244F9A83005D53C0 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		940265A8244F9A83005D53C0 /* RatesReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesReducer.swift; sourceTree = "<group>"; };
 		940265AA2450C041005D53C0 /* Effect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
-		940265AC2450C81D005D53C0 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
-		943E0AD9201354CF000C62C1 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		940265AC2450C81D005D53C0 /* RatesEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesEnvironment.swift; sourceTree = "<group>"; };
+		943E0AD9201354CF000C62C1 /* RatesState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatesState.swift; sourceTree = "<group>"; };
 		943E0B0720135876000C62C1 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
-		943E0B1220135A31000C62C1 /* RatesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesState.swift; sourceTree = "<group>"; };
 		943E0B1F20136938000C62C1 /* RatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatesViewController.swift; sourceTree = "<group>"; };
 		9451DE7E20134B3600F69318 /* RatesUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RatesUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9451DE8120134B3600F69318 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DD12133263581FE006E7485 /* Nivelir in Frameworks */,
 				1DD120892631E5EE006E7485 /* XMLParsing in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,34 +193,52 @@
 			path = Dynamic;
 			sourceTree = "<group>";
 		};
-		940265A5244F98BC005D53C0 /* Core */ = {
+		1DD120F526344EB9006E7485 /* CurrencyRate */ = {
+			isa = PBXGroup;
+			children = (
+				1DD12113263499D7006E7485 /* Store */,
+				1DD120F626344ED9006E7485 /* CurrencyRateViewController.swift */,
+			);
+			path = CurrencyRate;
+			sourceTree = "<group>";
+		};
+		1DD12113263499D7006E7485 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				1DD12114263499FE006E7485 /* CurrencyRateStore.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		1DD1214326358672006E7485 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				940265AC2450C81D005D53C0 /* RatesEnvironment.swift */,
+				940265A8244F9A83005D53C0 /* RatesReducer.swift */,
+				943E0AD9201354CF000C62C1 /* RatesState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		943E0AD72013544B000C62C1 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				943E0B1A20136199000C62C1 /* Launch */,
+				943E0B0C201359AB000C62C1 /* Rates */,
+				1DD120F526344EB9006E7485 /* CurrencyRate */,
+				1DD12157263587AC006E7485 /* ScreenFactory.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		943E0AD820135457000C62C1 /* Architecture */ = {
 			isa = PBXGroup;
 			children = (
 				940265A6244F98D3005D53C0 /* Store.swift */,
 				940265AA2450C041005D53C0 /* Effect.swift */,
 				1DAAB03C25F4175300ECAE67 /* Reducer.swift */,
 			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		943E0AD72013544B000C62C1 /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-				943E0B1A20136199000C62C1 /* Launch */,
-				943E0B0C201359AB000C62C1 /* Rates */,
-			);
-			path = Scenes;
-			sourceTree = "<group>";
-		};
-		943E0AD820135457000C62C1 /* AppState */ = {
-			isa = PBXGroup;
-			children = (
-				940265A5244F98BC005D53C0 /* Core */,
-				943E0AD9201354CF000C62C1 /* AppState.swift */,
-				940265A8244F9A83005D53C0 /* AppReducer.swift */,
-				940265AC2450C81D005D53C0 /* AppEnvironment.swift */,
-			);
-			path = AppState;
+			path = Architecture;
 			sourceTree = "<group>";
 		};
 		943E0AFB20135723000C62C1 /* Resources */ = {
@@ -236,9 +262,10 @@
 		943E0B0C201359AB000C62C1 /* Rates */ = {
 			isa = PBXGroup;
 			children = (
+				1DD1214326358672006E7485 /* State */,
 				943E0B0F201359F8000C62C1 /* Table */,
-				943E0B1220135A31000C62C1 /* RatesState.swift */,
 				943E0B1F20136938000C62C1 /* RatesViewController.swift */,
+				1DD121262634D13C006E7485 /* RatesScreen.swift */,
 			);
 			path = Rates;
 			sourceTree = "<group>";
@@ -292,10 +319,10 @@
 			isa = PBXGroup;
 			children = (
 				946278E3204AFDD700645B99 /* RatesUp.entitlements */,
-				943E0AD820135457000C62C1 /* AppState */,
+				943E0AD820135457000C62C1 /* Architecture */,
 				943E0B1720135DBE000C62C1 /* Extensions */,
 				943E0AFB20135723000C62C1 /* Resources */,
-				943E0AD72013544B000C62C1 /* Scenes */,
+				943E0AD72013544B000C62C1 /* Screens */,
 				1DC43963262C525B00AE3AD2 /* UI */,
 				9452577C2016680000684439 /* Services */,
 				9451DE8120134B3600F69318 /* AppDelegate.swift */,
@@ -404,6 +431,7 @@
 			name = RatesUp;
 			packageProductDependencies = (
 				1DD120882631E5EE006E7485 /* XMLParsing */,
+				1DD12132263581FE006E7485 /* Nivelir */,
 			);
 			productName = CentralBank;
 			productReference = 9451DE7E20134B3600F69318 /* RatesUp.app */;
@@ -490,6 +518,7 @@
 			mainGroup = 9451DE7520134B3600F69318;
 			packageReferences = (
 				1DD120872631E5EE006E7485 /* XCRemoteSwiftPackageReference "XMLParsing" */,
+				1DD12131263581FE006E7485 /* XCRemoteSwiftPackageReference "Nivelir" */,
 			);
 			productRefGroup = 9451DE7F20134B3600F69318 /* Products */;
 			projectDirPath = "";
@@ -534,25 +563,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				94A61AF7201CCBEC00299A4A /* UIColor+extensions.swift in Sources */,
+				1DD12158263587AC006E7485 /* ScreenFactory.swift in Sources */,
 				1DAAB03D25F4175300ECAE67 /* Reducer.swift in Sources */,
 				946278CC2038616900645B99 /* Rate.swift in Sources */,
 				940265A7244F98D3005D53C0 /* Store.swift in Sources */,
 				1DD1209F26320A5E006E7485 /* RateAPIModel.swift in Sources */,
-				943E0ADF201354D0000C62C1 /* AppState.swift in Sources */,
+				943E0ADF201354D0000C62C1 /* RatesState.swift in Sources */,
 				946278D62039779500645B99 /* Managed.swift in Sources */,
 				946278E2204AF99F00645B99 /* AppServices.swift in Sources */,
 				94729CB5207005AB0026C45D /* DailyRates.swift in Sources */,
 				94729CB7207005DD0026C45D /* RatesError.swift in Sources */,
 				9452577520137F7900684439 /* CurrencyDailyRate.swift in Sources */,
+				1DD121272634D13C006E7485 /* RatesScreen.swift in Sources */,
 				1DC439A9262CF71E00AE3AD2 /* APIError.swift in Sources */,
-				940265AD2450C81D005D53C0 /* AppEnvironment.swift in Sources */,
+				940265AD2450C81D005D53C0 /* RatesEnvironment.swift in Sources */,
 				946278D02038790000645B99 /* RatesStore.swift in Sources */,
 				943E0B2020136938000C62C1 /* RatesViewController.swift in Sources */,
 				946278D8203977BD00645B99 /* NSManagedObjectContext+Extensions.swift in Sources */,
 				946278E0204AF8C600645B99 /* DateConverter.swift in Sources */,
 				1DD120E226343488006E7485 /* DynamicsRateAPIRecord.swift in Sources */,
 				1DC439B1262CF74500AE3AD2 /* APIMethod.swift in Sources */,
-				943E0B1320135A31000C62C1 /* RatesState.swift in Sources */,
 				1DC43965262C526E00AE3AD2 /* ActivityIndicator.swift in Sources */,
 				1D0FAE6A253CB4EB00E8AC71 /* RateCell.swift in Sources */,
 				1DE419E62554AD86000EC48D /* RatesView.swift in Sources */,
@@ -560,17 +590,19 @@
 				1DD120DD26343474006E7485 /* DynamicsResponse.swift in Sources */,
 				943E0B0820135876000C62C1 /* Assets.swift in Sources */,
 				946278DC204AD31400645B99 /* RatesResponse.swift in Sources */,
-				940265A9244F9A83005D53C0 /* AppReducer.swift in Sources */,
+				940265A9244F9A83005D53C0 /* RatesReducer.swift in Sources */,
 				940265AB2450C041005D53C0 /* Effect.swift in Sources */,
 				1DD120D526342EDB006E7485 /* DynamicRequest.swift in Sources */,
 				1DC439B6262CF75F00AE3AD2 /* APIRequest.swift in Sources */,
 				946278DE204AECAF00645B99 /* RatesService.swift in Sources */,
 				9452577F2016683E00684439 /* CentralBankAPI.swift in Sources */,
 				946278CE2038728400645B99 /* LocalStore.swift in Sources */,
+				1DD120F726344ED9006E7485 /* CurrencyRateViewController.swift in Sources */,
 				946278C720385EBD00645B99 /* RatesStore.xcdatamodeld in Sources */,
 				9451DE8220134B3600F69318 /* AppDelegate.swift in Sources */,
 				94729CA9206D8A170026C45D /* RatesSort.swift in Sources */,
 				946278C92038609200645B99 /* Currency.swift in Sources */,
+				1DD12115263499FE006E7485 /* CurrencyRateStore.swift in Sources */,
 				1DC439A3262CF6BF00AE3AD2 /* APIProvider.swift in Sources */,
 				9452578220166E4B00684439 /* RatesRequest.swift in Sources */,
 			);
@@ -903,6 +935,14 @@
 				minimumVersion = 0.0.3;
 			};
 		};
+		1DD12131263581FE006E7485 /* XCRemoteSwiftPackageReference "Nivelir" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hhru/Nivelir";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = "1.0.0-alpha.2";
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -910,6 +950,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1DD120872631E5EE006E7485 /* XCRemoteSwiftPackageReference "XMLParsing" */;
 			productName = XMLParsing;
+		};
+		1DD12132263581FE006E7485 /* Nivelir */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1DD12131263581FE006E7485 /* XCRemoteSwiftPackageReference "Nivelir" */;
+			productName = Nivelir;
 		};
 /* End XCSwiftPackageProductDependency section */
 

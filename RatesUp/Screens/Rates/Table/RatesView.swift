@@ -3,6 +3,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct RatesView: View {
 
@@ -11,7 +12,8 @@ struct RatesView: View {
         @Published var rates: [RateCell.State] = []
     }
 
-    @ObservedObject var stateObject = StateObject()
+    @ObservedObject private var stateObject = StateObject()
+    private var eventPublisher = PassthroughSubject<Event, Never>()
 
     init() {
         UINavigationBar.appearance().backgroundColor = .white
@@ -27,6 +29,9 @@ struct RatesView: View {
                         LazyVStack(spacing: 12) {
                             ForEach(stateObject.rates) { rate in
                                 RateCell(state: rate)
+                                    .onTapGesture {
+                                        eventPublisher.send(.didTapRate(withID: rate.id))
+                                    }
                             }
                         }
                         .padding([.top, .bottom], 16)
@@ -42,6 +47,7 @@ struct RatesView: View {
     }
 }
 
+// MARK: - State
 extension RatesView {
 
     struct State {
@@ -52,6 +58,17 @@ extension RatesView {
     func render(state: State) {
         stateObject.isLoading = state.isLoading
         stateObject.rates = state.rates
+    }
+}
+
+extension RatesView {
+
+    enum Event {
+        case didTapRate(withID: String)
+    }
+
+    var events: AnyPublisher<Event, Never> {
+        eventPublisher.eraseToAnyPublisher()
     }
 }
 
