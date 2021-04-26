@@ -44,13 +44,13 @@ final class CurrencyRateViewController: UIViewController {
             .store(in: &subscriptions)
     }
 
-    func render(_ currencyRate: CurrencyDailyRate) {
+    func render(_ currencyRate: CurrencyRate) {
         currencyRateView.render(
             currencyState: mapRate(currencyRate)
         )
     }
 
-    private func mapRate(_ rate: CurrencyDailyRate) -> CurrencyRateView.CurrencyState {
+    private func mapRate(_ rate: CurrencyRate) -> CurrencyRateView.CurrencyState {
         return CurrencyRateView.CurrencyState(
             icon: rate.flag.emoji,
             code: rate.characterCode,

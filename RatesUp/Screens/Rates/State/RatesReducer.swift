@@ -39,7 +39,7 @@ private extension RatesState {
             .map { .ratesResult(.success($0)) }
     }
 
-    static func open(currencyRate: CurrencyDailyRate) -> Effect<RatesEvent, RatesEnvironment> {
+    static func open(currencyRate: CurrencyRate) -> Effect<RatesEvent, RatesEnvironment> {
         Effect<RatesEvent, RatesEnvironment> { env in
             env.navigateToRate(currencyRate)
             return Just(.nothing)

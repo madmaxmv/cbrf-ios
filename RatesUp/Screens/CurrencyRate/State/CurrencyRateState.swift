@@ -12,7 +12,7 @@ typealias CurrencyRateStore = Store<
 
 struct CurrencyRateState {
 
-    let currencyRate: CurrencyDailyRate
+    let currencyRate: CurrencyRate
     let dynamics: [Int]? = nil
 }
 

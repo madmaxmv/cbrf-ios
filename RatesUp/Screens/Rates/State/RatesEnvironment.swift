@@ -9,7 +9,7 @@ final class RatesEnvironment {
     let screens: AppScreens
     let services: AppServices
     let fetchRates: (Date) -> Promise<DailyRates, Error>
-    let navigateToRate: (CurrencyDailyRate) -> Void
+    let navigateToRate: (CurrencyRate) -> Void
     
     init(
         screens: AppScreens,
@@ -22,7 +22,7 @@ final class RatesEnvironment {
             services.ratesService.rates(on: date).asPromise()
         }
 
-        navigateToRate = { (rate: CurrencyDailyRate) -> Void in
+        navigateToRate = { (rate: CurrencyRate) -> Void in
             services.screenNavigator
                 .navigate(fromTop: .modalContainer) { route in
                     route.present(

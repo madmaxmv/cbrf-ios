@@ -40,7 +40,7 @@
 		9451DE8220134B3600F69318 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9451DE8120134B3600F69318 /* AppDelegate.swift */; };
 		9451DE8920134B3600F69318 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9451DE8820134B3600F69318 /* Assets.xcassets */; };
 		9451DE8C20134B3600F69318 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9451DE8A20134B3600F69318 /* LaunchScreen.storyboard */; };
-		9452577520137F7900684439 /* CurrencyDailyRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452577420137F7900684439 /* CurrencyDailyRate.swift */; };
+		9452577520137F7900684439 /* CurrencyRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452577420137F7900684439 /* CurrencyRate.swift */; };
 		9452577F2016683E00684439 /* CentralBankAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452577E2016683E00684439 /* CentralBankAPI.swift */; };
 		9452578220166E4B00684439 /* RatesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452578120166E4B00684439 /* RatesRequest.swift */; };
 		946278C720385EBD00645B99 /* RatesStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 946278C520385EBD00645B99 /* RatesStore.xcdatamodeld */; };
@@ -115,7 +115,7 @@
 		9451DE9820134B3700F69318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9451DE9D20134B3700F69318 /* RatesUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RatesUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9451DEA320134B3700F69318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9452577420137F7900684439 /* CurrencyDailyRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDailyRate.swift; sourceTree = "<group>"; };
+		9452577420137F7900684439 /* CurrencyRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRate.swift; sourceTree = "<group>"; };
 		9452577E2016683E00684439 /* CentralBankAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralBankAPI.swift; sourceTree = "<group>"; };
 		9452578120166E4B00684439 /* RatesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesRequest.swift; sourceTree = "<group>"; };
 		946278C620385EBD00645B99 /* CentralBankStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CentralBankStore.xcdatamodel; sourceTree = "<group>"; };
@@ -423,7 +423,7 @@
 			isa = PBXGroup;
 			children = (
 				94729CA8206D8A170026C45D /* RatesSort.swift */,
-				9452577420137F7900684439 /* CurrencyDailyRate.swift */,
+				9452577420137F7900684439 /* CurrencyRate.swift */,
 				94729CB4207005AB0026C45D /* DailyRates.swift */,
 				94729CB6207005DD0026C45D /* RatesError.swift */,
 			);
@@ -601,7 +601,7 @@
 				946278E2204AF99F00645B99 /* AppServices.swift in Sources */,
 				94729CB5207005AB0026C45D /* DailyRates.swift in Sources */,
 				94729CB7207005DD0026C45D /* RatesError.swift in Sources */,
-				9452577520137F7900684439 /* CurrencyDailyRate.swift in Sources */,
+				9452577520137F7900684439 /* CurrencyRate.swift in Sources */,
 				1DD121272634D13C006E7485 /* RatesScreen.swift in Sources */,
 				1DC439A9262CF71E00AE3AD2 /* APIError.swift in Sources */,
 				940265AD2450C81D005D53C0 /* RatesEnvironment.swift in Sources */,

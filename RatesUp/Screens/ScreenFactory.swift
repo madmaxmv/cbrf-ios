@@ -26,7 +26,7 @@ extension AppScreens {
             .eraseToAnyScreen()
     }
 
-    func currencyRateScreen(rate: CurrencyDailyRate) -> AnyScreen<UIViewController> {
+    func currencyRateScreen(rate: CurrencyRate) -> AnyScreen<UIViewController> {
         CurrencyRateScreen(currencyRate: rate)
             .withPresentationStyle(UIModalPresentationStyle.formSheet)
             .eraseToAnyScreen()

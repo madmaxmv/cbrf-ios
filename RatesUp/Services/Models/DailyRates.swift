@@ -8,5 +8,5 @@ typealias RatesResult = Result<DailyRates, RatesError>
 
 struct DailyRates: Equatable {
 
-    let rates: [CurrencyDailyRate]
+    let rates: [CurrencyRate]
 }

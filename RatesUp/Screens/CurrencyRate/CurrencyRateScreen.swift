@@ -7,7 +7,7 @@ import Nivelir
 
 struct CurrencyRateScreen: Screen {
 
-    let currencyRate: CurrencyDailyRate
+    let currencyRate: CurrencyRate
 
     func build(navigator: ScreenNavigator, payload: Any?) -> UIViewController {
         CurrencyRateViewController(
