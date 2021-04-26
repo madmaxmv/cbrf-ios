@@ -8,6 +8,7 @@ import Nivelir
 struct CurrencyRateScreen: Screen {
 
     let currencyRate: CurrencyRate
+    let services: AppServices
 
     func build(navigator: ScreenNavigator, payload: Any?) -> UIViewController {
         CurrencyRateViewController(
@@ -16,7 +17,9 @@ struct CurrencyRateScreen: Screen {
                     currencyRate: currencyRate
                 ),
                 reducer: CurrencyRateState.reducer,
-                environment: CurrencyRateEnvironment()
+                environment: CurrencyRateEnvironment(
+                    dynamicsProvider: services.dynamicsProvider
+                )
             )
         )
     }

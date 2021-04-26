@@ -6,8 +6,6 @@ import Foundation
 import Nivelir
 
 final class RatesEnvironment {
-    let screens: AppScreens
-    let services: AppServices
     let fetchRates: (Date) -> Promise<ExchangeRates, Error>
     let navigateToRate: (CurrencyRate) -> Void
     
@@ -15,9 +13,6 @@ final class RatesEnvironment {
         screens: AppScreens,
         services: AppServices
     ) {
-        self.screens = screens
-        self.services = services
-
         fetchRates = { date in
             services.ratesService.rates(on: date).asPromise()
         }

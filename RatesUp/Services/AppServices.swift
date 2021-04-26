@@ -8,6 +8,8 @@ import Nivelir
 protocol AppServices {
     
     var ratesService: RatesService { get }
+    var dynamicsProvider: RateDynamicsProvider { get }
+
     var screenNavigator: ScreenNavigator { get }
 }
 
@@ -22,7 +24,7 @@ class Services: AppServices {
             ?? fileManager.urls(for: .documentDirectory, in: .userDomainMask).last!
     }
     
-    lazy var remote: RatesAPI = {
+    lazy var remote: RatesAPI & DynamicsAPI = {
         CentralBankAPI(session: .shared)
     }()
     
@@ -45,6 +47,10 @@ class Services: AppServices {
         )
     }()
 
+    var dynamicsProvider: RateDynamicsProvider {
+        return RateDynamicsService(apiService: remote)
+    }
+    
     init(
         groupIdentifier: String,
         screenNavigator: ScreenNavigator

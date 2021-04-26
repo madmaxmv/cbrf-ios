@@ -11,6 +11,8 @@
 		1D3F0A752635ACE6008DA608 /* CurrencyRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3F0A742635ACE6008DA608 /* CurrencyRateView.swift */; };
 		1D3F0A7A2635ADB6008DA608 /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3F0A792635ADB6008DA608 /* UIView+extensions.swift */; };
 		1D3F0A7F2635AE19008DA608 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3F0A7E2635AE19008DA608 /* UIViewController+extensions.swift */; };
+		1D3F0A8A2637093C008DA608 /* RateDynamics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3F0A892637093C008DA608 /* RateDynamics.swift */; };
+		1D3F0A8F26375F4C008DA608 /* RateDynamicsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3F0A8E26375F4C008DA608 /* RateDynamicsService.swift */; };
 		1DAAB03D25F4175300ECAE67 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAAB03C25F4175300ECAE67 /* Reducer.swift */; };
 		1DC43965262C526E00AE3AD2 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC43964262C526E00AE3AD2 /* ActivityIndicator.swift */; };
 		1DC4399E262CF16F00AE3AD2 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC4399D262CF16F00AE3AD2 /* APIConfiguration.swift */; };
@@ -82,6 +84,8 @@
 		1D3F0A742635ACE6008DA608 /* CurrencyRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRateView.swift; sourceTree = "<group>"; };
 		1D3F0A792635ADB6008DA608 /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
 		1D3F0A7E2635AE19008DA608 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
+		1D3F0A892637093C008DA608 /* RateDynamics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateDynamics.swift; sourceTree = "<group>"; };
+		1D3F0A8E26375F4C008DA608 /* RateDynamicsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateDynamicsService.swift; sourceTree = "<group>"; };
 		1DAAB03C25F4175300ECAE67 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
 		1DC43964262C526E00AE3AD2 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		1DC4399D262CF16F00AE3AD2 /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
@@ -382,6 +386,7 @@
 				94A61AFA201D090100299A4A /* Store */,
 				9452577D2016681300684439 /* CentralBankAPI */,
 				946278DD204AECAF00645B99 /* RatesService.swift */,
+				1D3F0A8E26375F4C008DA608 /* RateDynamicsService.swift */,
 				946278DF204AF8C600645B99 /* DateConverter.swift */,
 				946278E1204AF99F00645B99 /* AppServices.swift */,
 			);
@@ -426,6 +431,7 @@
 				9452577420137F7900684439 /* CurrencyRate.swift */,
 				94729CB4207005AB0026C45D /* ExchangeRates.swift */,
 				94729CB6207005DD0026C45D /* RatesError.swift */,
+				1D3F0A892637093C008DA608 /* RateDynamics.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -623,6 +629,8 @@
 				940265AB2450C041005D53C0 /* Effect.swift in Sources */,
 				1DD120D526342EDB006E7485 /* DynamicRequest.swift in Sources */,
 				1DC439B6262CF75F00AE3AD2 /* APIRequest.swift in Sources */,
+				1D3F0A8A2637093C008DA608 /* RateDynamics.swift in Sources */,
+				1D3F0A8F26375F4C008DA608 /* RateDynamicsService.swift in Sources */,
 				946278DE204AECAF00645B99 /* RatesService.swift in Sources */,
 				9452577F2016683E00684439 /* CentralBankAPI.swift in Sources */,
 				946278CE2038728400645B99 /* LocalStore.swift in Sources */,
