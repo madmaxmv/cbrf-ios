@@ -55,7 +55,7 @@
 		946278E0204AF8C600645B99 /* DateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278DF204AF8C600645B99 /* DateConverter.swift */; };
 		946278E2204AF99F00645B99 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946278E1204AF99F00645B99 /* AppServices.swift */; };
 		94729CA9206D8A170026C45D /* RatesSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CA8206D8A170026C45D /* RatesSort.swift */; };
-		94729CB5207005AB0026C45D /* DailyRates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CB4207005AB0026C45D /* DailyRates.swift */; };
+		94729CB5207005AB0026C45D /* ExchangeRates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CB4207005AB0026C45D /* ExchangeRates.swift */; };
 		94729CB7207005DD0026C45D /* RatesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94729CB6207005DD0026C45D /* RatesError.swift */; };
 		94A61AF7201CCBEC00299A4A /* UIColor+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A61AF6201CCBEC00299A4A /* UIColor+extensions.swift */; };
 /* End PBXBuildFile section */
@@ -131,7 +131,7 @@
 		946278E1204AF99F00645B99 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
 		946278E3204AFDD700645B99 /* RatesUp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RatesUp.entitlements; sourceTree = "<group>"; };
 		94729CA8206D8A170026C45D /* RatesSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesSort.swift; sourceTree = "<group>"; };
-		94729CB4207005AB0026C45D /* DailyRates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRates.swift; sourceTree = "<group>"; };
+		94729CB4207005AB0026C45D /* ExchangeRates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRates.swift; sourceTree = "<group>"; };
 		94729CB6207005DD0026C45D /* RatesError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesError.swift; sourceTree = "<group>"; };
 		94A61AF6201CCBEC00299A4A /* UIColor+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -424,7 +424,7 @@
 			children = (
 				94729CA8206D8A170026C45D /* RatesSort.swift */,
 				9452577420137F7900684439 /* CurrencyRate.swift */,
-				94729CB4207005AB0026C45D /* DailyRates.swift */,
+				94729CB4207005AB0026C45D /* ExchangeRates.swift */,
 				94729CB6207005DD0026C45D /* RatesError.swift */,
 			);
 			path = Models;
@@ -599,7 +599,7 @@
 				943E0ADF201354D0000C62C1 /* RatesState.swift in Sources */,
 				946278D62039779500645B99 /* Managed.swift in Sources */,
 				946278E2204AF99F00645B99 /* AppServices.swift in Sources */,
-				94729CB5207005AB0026C45D /* DailyRates.swift in Sources */,
+				94729CB5207005AB0026C45D /* ExchangeRates.swift in Sources */,
 				94729CB7207005DD0026C45D /* RatesError.swift in Sources */,
 				9452577520137F7900684439 /* CurrencyRate.swift in Sources */,
 				1DD121272634D13C006E7485 /* RatesScreen.swift in Sources */,

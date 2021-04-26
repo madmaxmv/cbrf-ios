@@ -23,12 +23,12 @@ final class RatesService {
     func rates(
         on date: Date,
         sortedUsing policy: RatesSort.Policy = .standard
-    ) -> AnyPublisher<DailyRates, Error> {
+    ) -> AnyPublisher<ExchangeRates, Error> {
         let today = dateConverter.date(removedTimeOffsetFor: date)
         let sortMethod = RatesSort.sort(for: policy)
 
         return dailyRates(on: today)
-            .map { DailyRates(rates: sortMethod($0)) }
+            .map { ExchangeRates(rates: sortMethod($0)) }
             .eraseToAnyPublisher()
     }
 

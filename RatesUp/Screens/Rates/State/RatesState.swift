@@ -11,14 +11,14 @@ typealias RatesStateStore = Store<
 struct RatesState: Equatable {
 
     var isLoading: Bool = false
-    var ratesResult: RatesResult?
+    var ratesResult: ExchangeRatesResult?
 
     static let initial = RatesState()
 }
 
 enum RatesEvent {
     case initial
-    case ratesResult(RatesResult)
+    case ratesResult(ExchangeRatesResult)
     case openRate(withID: String)
     case nothing
 }

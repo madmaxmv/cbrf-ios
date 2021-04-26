@@ -4,9 +4,9 @@
 
 import Foundation
 
-typealias RatesResult = Result<DailyRates, RatesError>
+typealias ExchangeRatesResult = Result<ExchangeRates, RatesError>
 
-struct DailyRates: Equatable {
+struct ExchangeRates: Equatable {
 
     let rates: [CurrencyRate]
 }

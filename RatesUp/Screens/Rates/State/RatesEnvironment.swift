@@ -8,7 +8,7 @@ import Nivelir
 final class RatesEnvironment {
     let screens: AppScreens
     let services: AppServices
-    let fetchRates: (Date) -> Promise<DailyRates, Error>
+    let fetchRates: (Date) -> Promise<ExchangeRates, Error>
     let navigateToRate: (CurrencyRate) -> Void
     
     init(
