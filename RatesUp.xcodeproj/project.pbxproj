@@ -13,6 +13,7 @@
 		1D3F0A7F2635AE19008DA608 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3F0A7E2635AE19008DA608 /* UIViewController+extensions.swift */; };
 		1D3F0A8A2637093C008DA608 /* RateDynamics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3F0A892637093C008DA608 /* RateDynamics.swift */; };
 		1D3F0A8F26375F4C008DA608 /* RateDynamicsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3F0A8E26375F4C008DA608 /* RateDynamicsService.swift */; };
+		1D3F0A982638626D008DA608 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 1D3F0A972638626D008DA608 /* SwiftUICharts */; };
 		1DAAB03D25F4175300ECAE67 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAAB03C25F4175300ECAE67 /* Reducer.swift */; };
 		1DC43965262C526E00AE3AD2 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC43964262C526E00AE3AD2 /* ActivityIndicator.swift */; };
 		1DC4399E262CF16F00AE3AD2 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC4399D262CF16F00AE3AD2 /* APIConfiguration.swift */; };
@@ -145,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D3F0A982638626D008DA608 /* SwiftUICharts in Frameworks */,
 				1DD12133263581FE006E7485 /* Nivelir in Frameworks */,
 				1DD120892631E5EE006E7485 /* XMLParsing in Frameworks */,
 			);
@@ -466,6 +468,7 @@
 			packageProductDependencies = (
 				1DD120882631E5EE006E7485 /* XMLParsing */,
 				1DD12132263581FE006E7485 /* Nivelir */,
+				1D3F0A972638626D008DA608 /* SwiftUICharts */,
 			);
 			productName = CentralBank;
 			productReference = 9451DE7E20134B3600F69318 /* RatesUp.app */;
@@ -553,6 +556,7 @@
 			packageReferences = (
 				1DD120872631E5EE006E7485 /* XCRemoteSwiftPackageReference "XMLParsing" */,
 				1DD12131263581FE006E7485 /* XCRemoteSwiftPackageReference "Nivelir" */,
+				1D3F0A962638626C008DA608 /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = 9451DE7F20134B3600F69318 /* Products */;
 			projectDirPath = "";
@@ -967,6 +971,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1D3F0A962638626C008DA608 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.5;
+			};
+		};
 		1DD120872631E5EE006E7485 /* XCRemoteSwiftPackageReference "XMLParsing" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ShawnMoore/XMLParsing.git";
@@ -986,6 +998,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1D3F0A972638626D008DA608 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D3F0A962638626C008DA608 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
 		1DD120882631E5EE006E7485 /* XMLParsing */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1DD120872631E5EE006E7485 /* XCRemoteSwiftPackageReference "XMLParsing" */;

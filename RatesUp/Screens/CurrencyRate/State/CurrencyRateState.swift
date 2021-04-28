@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import Combine
 
 typealias CurrencyRateStore = Store<
     CurrencyRateState,
@@ -19,6 +20,7 @@ struct CurrencyRateState {
 enum CurrencyRateEvent {
     case loadDynamics
     case dynamicsResult(RateDynamicsResult)
+    case close, nothing
 }
 
 typealias CurrencyRateReducer = Reducer<
@@ -36,6 +38,10 @@ extension CurrencyRateState {
             ]
         case .dynamicsResult(let result):
             state.dynamics = result
+        case .close:
+            return [closeEffect]
+        case .nothing:
+            return []
         }
         return []
     }
@@ -48,22 +54,37 @@ extension CurrencyRateState {
                 .map { .dynamicsResult(.success($0)) }
         }
     }
+
+    static let closeEffect = Effect<CurrencyRateEvent, CurrencyRateEnvironment> { env in
+        env.closeScreen()
+        return Just(.nothing)
+            .mapError { $0 as Error }
+            .asPromise()
+    }
 }
 
 struct CurrencyRateEnvironment {
 
     let fetchDynamics: (String) -> Promise<RateDynamics, Error>
+    let closeScreen: () -> Void
 
-    init(dynamicsProvider: RateDynamicsProvider) {
+    init(services: AppServices) {
         fetchDynamics = { currencyID in
-            dynamicsProvider.dynamicsForCurrency(
-                with: currencyID,
-                dateRange: (
-                    from: Date().addingTimeInterval(-60.0*60*24*30),
-                    to: Date()
-                )
-            ).asPromise()
-            
+            services.dynamicsProvider
+                .dynamicsForCurrency(
+                    with: currencyID,
+                    dateRange: (
+                        from: Date().addingTimeInterval(-60.0*60*24*30),
+                        to: Date()
+                    )
+                ).asPromise()
+        }
+
+        closeScreen = {
+            services.screenNavigator
+                .navigate(fromTop: .modalContainer) { route in
+                    route.dismiss(animated: true)
+            }
         }
     }
 }

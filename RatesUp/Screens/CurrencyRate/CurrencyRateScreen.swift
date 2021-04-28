@@ -18,7 +18,7 @@ struct CurrencyRateScreen: Screen {
                 ),
                 reducer: CurrencyRateState.reducer,
                 environment: CurrencyRateEnvironment(
-                    dynamicsProvider: services.dynamicsProvider
+                    services: services
                 )
             )
         )

@@ -13,7 +13,7 @@ extension RatesRequest {
 
     func toAPIRequest(using dateFormatter: DateFormatter) -> APIRequest<RatesResponse> {
         APIRequest(
-            endpoint: "/XML_daily.asp",
+            endpoint: "/XML_daily_eng.asp",
             method: .get {
                 URLQueryItem(
                     name: "date_req",

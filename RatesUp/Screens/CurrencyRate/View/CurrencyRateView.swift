@@ -2,17 +2,21 @@
 //  Copyright © 2021 Matyushenko Maxim. All rights reserved.
 //
 
+import Combine
 import SwiftUI
+import SwiftUICharts
 
 struct CurrencyRateView: View {
 
     class StateObject: ObservableObject {
         @Published var currencyState: CurrencyState? = nil
+        @Published var dynamicsState: DynamicsState? = nil
     }
     @ObservedObject private var stateObject = StateObject()
+    private var eventPublisher = PassthroughSubject<Event, Never>()
     
     var body: some View {
-        
+
         if let currencyState = stateObject.currencyState {
             VStack {
                 Text(currencyState.icon)
@@ -21,13 +25,22 @@ struct CurrencyRateView: View {
                 
                 Text(currencyState.code)
                     .font(.title)
-
+                
                 Text(currencyState.details)
                     .font(.subheadline)
                     .foregroundColor(Color.gray)
                     .padding(4)
                 
+                if let dynamicsState = stateObject.dynamicsState {
+                    LineView(
+                        data: dynamicsState.values,
+                        style: Styles.barChartStyleNeonBlueLight
+                    ).padding(20)
+                }
+                
                 Spacer()
+
+                Button("Done") { eventPublisher.send(.didTapDone) }
             }
         } else {
             ActivityIndicator()
@@ -51,10 +64,31 @@ extension CurrencyRateView {
         )
     }
 
+    struct DynamicsState {
+        let values: [Double]
+    }
+
     @discardableResult
     func render(currencyState: CurrencyState) -> CurrencyRateView {
         stateObject.currencyState = currencyState
         return self
+    }
+
+    @discardableResult
+    func render(dynamicsState: DynamicsState) -> CurrencyRateView {
+        stateObject.dynamicsState = dynamicsState
+        return self
+    }
+}
+
+extension CurrencyRateView {
+
+    enum Event {
+        case didTapDone
+    }
+
+    var events: AnyPublisher<Event, Never> {
+        eventPublisher.eraseToAnyPublisher()
     }
 }
 

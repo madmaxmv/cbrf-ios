@@ -42,11 +42,40 @@ final class CurrencyRateViewController: UIViewController {
                 self?.render(currencyRate)
             }
             .store(in: &subscriptions)
+
+        store.state
+            .map(\.dynamics)
+            .removeDuplicates()
+            .sink { [weak self] dynamicsResult in
+                self?.render(dynamicsResult)
+            }
+            .store(in: &subscriptions)
+
+        currencyRateView.events
+            .sink { [weak self] event in
+                switch event {
+                case .didTapDone:
+                    self?.dismiss(animated: true)
+                }
+            }
+            .store(in: &subscriptions)
     }
 
     func render(_ currencyRate: CurrencyRate) {
         currencyRateView.render(
             currencyState: mapRate(currencyRate)
+        )
+    }
+
+    func render(_ dynamicsResult: RateDynamicsResult?) {
+        guard case let .success(dynamicsData) = dynamicsResult else {
+            return
+        }
+
+        currencyRateView.render(
+            dynamicsState: CurrencyRateView.DynamicsState(
+                values: dynamicsData.dynamics.map(\.value)
+            )
         )
     }
 
