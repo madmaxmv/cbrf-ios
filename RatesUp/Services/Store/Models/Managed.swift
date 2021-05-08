@@ -5,7 +5,7 @@
 import Foundation
 import CoreData
 
-public protocol Managed: class, NSFetchRequestResult {
+public protocol Managed: NSFetchRequestResult {
     static var entityName: String { get }
     static var defaultSortDescriptors: [NSSortDescriptor] { get }
     static var defaultPredicate: NSPredicate { get }
@@ -45,12 +45,7 @@ extension Managed {
 extension Managed where Self: NSManagedObject {
     
     public static var entityName: String {
-        if #available(iOS 10.0, *) {
-            return entity().name
-                ?? String(describing: self)
-        } else {
-            return String(describing: self)
-        }
+        return entity().name ?? String(describing: self)
     }
     
     @discardableResult

@@ -43,7 +43,7 @@ private extension RatesState {
         Effect<RatesEvent, RatesEnvironment> { env in
             env.navigateToRate(currencyRate)
             return Just(.nothing)
-                .mapError { $0 as Error}
+                .setFailureType(to: Error.self)
                 .asPromise()
         }
     }

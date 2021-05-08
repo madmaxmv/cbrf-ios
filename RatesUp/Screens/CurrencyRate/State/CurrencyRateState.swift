@@ -58,7 +58,7 @@ extension CurrencyRateState {
     static let closeEffect = Effect<CurrencyRateEvent, CurrencyRateEnvironment> { env in
         env.closeScreen()
         return Just(.nothing)
-            .mapError { $0 as Error }
+            .setFailureType(to: Error.self)
             .asPromise()
     }
 }
