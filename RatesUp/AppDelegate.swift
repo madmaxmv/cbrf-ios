@@ -3,13 +3,12 @@
 //
 
 import UIKit
-
-typealias AppStore = Store<AppState, AppState.Event, AppEnvironment>
+import Nivelir
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    var store: AppStore?
+    var screensFactory: AppScreens?
 
     func application(
         _ application: UIApplication,
@@ -17,21 +16,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
 
         let services = Services(
-            groupIdentifier: "group.ru.madmaxmv.ratesup"
+            groupIdentifier: "group.ru.madmaxmv.ratesup",
+            screenNavigator: DefaultScreenNavigator(
+                windowProvider: ScreenKeyWindowProvider(
+                    application: application
+                )
+            )
         )
 
-        let stateStore = AppStore(
-            initial: AppState.initial,
-            reducer: AppState.reducer,
-            environment: AppEnvironment(services: services)
+        let screensFactory = ScreenFactory(
+            services: services
         )
 
-        window?.rootViewController = TabBarController(
-            store: stateStore
-        )
+        window?.makeKeyAndVisible()
 
-        stateStore.send(.rates(.initial))
-        store = stateStore
+        services.screenNavigator
+            .perform(
+                action: ScreenSetRootAction(
+                    screen: screensFactory.ratesScreen()
+                ),
+                completion: nil
+            )
 
         return true
     }

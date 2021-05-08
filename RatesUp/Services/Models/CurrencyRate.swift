@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct CurrencyDailyRate: Equatable {
+struct CurrencyRate: Equatable {
     let id: String
     let flag: Flag
     let code: String
@@ -14,7 +14,7 @@ struct CurrencyDailyRate: Equatable {
     let value: Double
 }
 
-extension CurrencyDailyRate {
+extension CurrencyRate {
 
     init(
         id: String,
@@ -37,12 +37,12 @@ extension CurrencyDailyRate {
     }
 }
 
-extension CurrencyDailyRate: Comparable {
-    static func <(lhs: CurrencyDailyRate, rhs: CurrencyDailyRate) -> Bool {
+extension CurrencyRate: Comparable {
+    static func <(lhs: CurrencyRate, rhs: CurrencyRate) -> Bool {
         return lhs.characterCode < rhs.characterCode
     }
     
-    static func ==(lhs: CurrencyDailyRate, rhs: CurrencyDailyRate) -> Bool {
+    static func ==(lhs: CurrencyRate, rhs: CurrencyRate) -> Bool {
         return lhs.code == rhs.code
     }
 }

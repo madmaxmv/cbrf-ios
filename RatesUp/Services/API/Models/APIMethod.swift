@@ -25,7 +25,7 @@ extension APIMethod {
 
 extension APIMethod {
 
-    @_functionBuilder struct QueryItemBuilder {
+    @resultBuilder struct QueryItemBuilder {
         static func buildBlock(_ queryItems: URLQueryItem?...) -> [URLQueryItem] {
             queryItems.compactMap { $0 }
         }

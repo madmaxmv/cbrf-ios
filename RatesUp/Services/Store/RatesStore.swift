@@ -6,16 +6,16 @@ import Foundation
 
 protocol RatesStore {
 
-    func save(rates: [CurrencyDailyRate], on date: Date)
+    func save(rates: [CurrencyRate], on date: Date)
 
-    func getRates(on date: Date, completion: @escaping (([CurrencyDailyRate]) -> Void))
+    func getRates(on date: Date, completion: @escaping (([CurrencyRate]) -> Void))
 
     func currencies(completion: @escaping (([Currency]) -> Void))
 }
 
 extension LocalStore: RatesStore {
     
-    func save(rates: [CurrencyDailyRate], on date: Date) {
+    func save(rates: [CurrencyRate], on date: Date) {
         writeContext.performChanges { context in
             rates.forEach { currencyRate in
                 let currency = Currency.findOrCreate(in: context,
@@ -41,18 +41,18 @@ extension LocalStore: RatesStore {
         }
     }
     
-    func getRates(on date: Date, completion: @escaping (([CurrencyDailyRate]) -> Void)) {
+    func getRates(on date: Date, completion: @escaping (([CurrencyRate]) -> Void)) {
         readContext.perform { context in
             let allCurrenies = Currency.fetch(in: context)
                 .filter { $0.isIncluded }
             
-            let rates: [CurrencyDailyRate] = allCurrenies.compactMap { currency in
+            let rates: [CurrencyRate] = allCurrenies.compactMap { currency in
                 guard let rate = Rate.findOrFetch(in: context, matching: Rate.predicate(currency: currency,
                                                                                         on: date))
                     else {
                         return nil
                 }
-                return CurrencyDailyRate(
+                return CurrencyRate(
                     id: currency.currencyId,
                     code: currency.currencyCode,
                     characterCode: currency.characterCode,

@@ -3,17 +3,20 @@
 //
 
 import Foundation
+import Nivelir
 
 protocol AppServices {
     
     var ratesService: RatesService { get }
-    
-    init(groupIdentifier: String)
+    var dynamicsProvider: RateDynamicsProvider { get }
+
+    var screenNavigator: ScreenNavigator { get }
 }
 
 class Services: AppServices {
 
     let groupIdentifier: String
+    let screenNavigator: ScreenNavigator
     
     var storeDirectory: URL {
         let fileManager = FileManager.default
@@ -21,7 +24,7 @@ class Services: AppServices {
             ?? fileManager.urls(for: .documentDirectory, in: .userDomainMask).last!
     }
     
-    lazy var remote: RatesAPI = {
+    lazy var remote: RatesAPI & DynamicsAPI = {
         CentralBankAPI(session: .shared)
     }()
     
@@ -44,7 +47,15 @@ class Services: AppServices {
         )
     }()
 
-    required init(groupIdentifier: String) {
+    var dynamicsProvider: RateDynamicsProvider {
+        return RateDynamicsService(apiService: remote)
+    }
+    
+    init(
+        groupIdentifier: String,
+        screenNavigator: ScreenNavigator
+    ) {
         self.groupIdentifier = groupIdentifier
+        self.screenNavigator = screenNavigator
     }
 }

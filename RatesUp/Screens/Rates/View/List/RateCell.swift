@@ -7,7 +7,7 @@ import SwiftUI
 struct RateCell: View {
 
     struct State: Equatable, Identifiable {
-        var id: String { characterCode + value }
+        let id: String
         let flag: String
         let characterCode: String
         let details: String
@@ -36,14 +36,20 @@ struct RateCell: View {
             .background(Color.white)
             .cornerRadius(12)
         }
+        .shadow(
+            color: Color.gray.opacity(0.1),
+            radius: 8, x: 0, y: 4
+        )
         .padding([.leading, .trailing], 12)
     }
 }
 
 struct RateCell_Previews: PreviewProvider {
+
     static var previews: some View {
         RateCell(
             state: RateCell.State(
+                id: "Some ID",
                 flag: "🇪🇺",
                 characterCode: "EUR",
                 details: "1 Euro",

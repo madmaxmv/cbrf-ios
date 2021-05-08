@@ -23,12 +23,12 @@ final class RatesService {
     func rates(
         on date: Date,
         sortedUsing policy: RatesSort.Policy = .standard
-    ) -> AnyPublisher<DailyRates, Error> {
+    ) -> AnyPublisher<ExchangeRates, Error> {
         let today = dateConverter.date(removedTimeOffsetFor: date)
         let sortMethod = RatesSort.sort(for: policy)
 
         return dailyRates(on: today)
-            .map { DailyRates(rates: sortMethod($0)) }
+            .map { ExchangeRates(rates: sortMethod($0)) }
             .eraseToAnyPublisher()
     }
 
@@ -40,7 +40,7 @@ final class RatesService {
         }
     }
 
-    func dailyRates(on date: Date) -> AnyPublisher<[CurrencyDailyRate], Error> {
+    func dailyRates(on date: Date) -> AnyPublisher<[CurrencyRate], Error> {
         return Future { promise in
             self.store?.getRates(on: date) { rates in
                 rates.isEmpty
@@ -48,12 +48,12 @@ final class RatesService {
                     : promise(.success(rates))
             } ?? promise(.failure(RatesError.storeUnavailable))
         }
-        .catch { error -> AnyPublisher<[CurrencyDailyRate], Error> in
+        .catch { error -> AnyPublisher<[CurrencyRate], Error> in
             self.remote
                 .send(request: RatesRequest(date: date))
                 .map { response in
                     response.rates.compactMap {
-                        CurrencyDailyRate(rate: $0)
+                        CurrencyRate(rate: $0)
                     }
                 }
                 .mapError { $0 as Error }
@@ -67,7 +67,7 @@ final class RatesService {
 }
 
 // MARK: -
-extension CurrencyDailyRate {
+extension CurrencyRate {
 
     init?(rate: RateAPIModel) {
         guard

@@ -9,16 +9,16 @@ struct RatesSort {
         case standard
     }
     
-    static func sort(for policy: Policy) -> (([CurrencyDailyRate]) -> [CurrencyDailyRate]) {
+    static func sort(for policy: Policy) -> (([CurrencyRate]) -> [CurrencyRate]) {
         switch policy {
         case .standard:
-            return standartSort
+            return standardSort
         }
     }
 
-    static func standartSort(rates: [CurrencyDailyRate]) -> [CurrencyDailyRate] {
+    static func standardSort(rates: [CurrencyRate]) -> [CurrencyRate] {
         var allRates = rates
-        var sortedRates: [CurrencyDailyRate] = []
+        var sortedRates: [CurrencyRate] = []
         if let usdIndex = allRates.firstIndex(where: { $0.characterCode == "USD" }) {
             sortedRates.append(allRates[usdIndex])
             allRates.remove(at: usdIndex)
