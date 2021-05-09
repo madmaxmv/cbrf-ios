@@ -5,31 +5,24 @@
 import Foundation
 import Combine
 
-typealias RatesReducer = Reducer<
-    RatesState,
-    RatesEvent,
-    RatesEnvironment
->
+typealias RatesReducer = Reducer<RatesState, RatesEvent>
 
 extension RatesState {
     static let reducer: RatesReducer = { state, event in
         switch event {
-        case .initial:
-            return [fetchRatesEffect]
+        case .initial: break
         case .ratesResult(let result):
             state.ratesResult = result
-        case .openRate(let id):
-            guard
-                case let .success(dailyRates) = state.ratesResult,
-                let rate = dailyRates.rates.first(where: { $0.id == id })
-            else {
-                return []
-            }
-            return [open(currencyRate: rate)]
+//        case .openRate(let id):
+//            guard
+//                case let .success(dailyRates) = state.ratesResult,
+//                let rate = dailyRates.rates.first(where: { $0.id == id })
+//            else {
+//                return []
+//            }
+//            return [open(currencyRate: rate)]
         default: break
         }
-
-        return []
     }
 }
 

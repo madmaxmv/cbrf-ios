@@ -25,25 +25,17 @@ enum CurrencyRateEvent {
 
 typealias CurrencyRateReducer = Reducer<
     CurrencyRateState,
-    CurrencyRateEvent,
-    CurrencyRateEnvironment
+    CurrencyRateEvent
 >
 
 extension CurrencyRateState {
     static let reducer: CurrencyRateReducer = { state, event in
         switch event {
-        case .loadDynamics:
-            return [
-                fetchDynamics(id: state.currencyRate.id)
-            ]
         case .dynamicsResult(let result):
             state.dynamics = result
-        case .close:
-            return [closeEffect]
-        case .nothing:
-            return []
+        default:
+            break
         }
-        return []
     }
 }
 
