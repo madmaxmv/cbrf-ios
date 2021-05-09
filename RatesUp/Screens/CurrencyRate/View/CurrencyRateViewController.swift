@@ -55,7 +55,7 @@ final class CurrencyRateViewController: UIViewController {
             .sink { [weak self] event in
                 switch event {
                 case .didTapDone:
-                    self?.dismiss(animated: true)
+                    self?.store.send(.close)
                 }
             }
             .store(in: &subscriptions)

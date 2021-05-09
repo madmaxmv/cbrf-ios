@@ -74,7 +74,7 @@ struct CurrencyRateEnvironment {
                 .dynamicsForCurrency(
                     with: currencyID,
                     dateRange: (
-                        from: Date().addingTimeInterval(-60.0*60*24*30),
+                        from: Date().addingTimeInterval(-60*60*24*30),
                         to: Date()
                     )
                 ).asPromise()
@@ -83,7 +83,7 @@ struct CurrencyRateEnvironment {
         closeScreen = {
             services.screenNavigator
                 .navigate(fromTop: .modalContainer) { route in
-                    route.dismiss(animated: true)
+                    route.dismissScreen(animated: true)
             }
         }
     }
