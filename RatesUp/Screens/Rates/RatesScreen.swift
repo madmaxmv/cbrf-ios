@@ -15,7 +15,10 @@ struct RatesScreen: Screen {
             store: RatesStateStore(
                 initial: .initial,
                 reducer: RatesState.reducer,
-                effects: { _, _ in return nil }
+                effects: RatesEffects(
+                    screens: screens,
+                    services: services
+                ).effects
             )
         )
     }

@@ -8,7 +8,7 @@ import Foundation
 typealias Reducer<State, Event> = (inout State, Event) -> Void
 typealias Effects<State, Event> = (State, Event) -> AnyPublisher<Event, Never>?
 
-final class Store<State, Event, Environment> {
+final class Store<State, Event> {
     var state: CurrentValueSubject<State, Never>
 
     private let reducer: Reducer<State, Event>
