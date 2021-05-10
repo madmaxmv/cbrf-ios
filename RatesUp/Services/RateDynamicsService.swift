@@ -8,13 +8,13 @@ import Foundation
 protocol RateDynamicsProvider {
 
     func dynamicsForCurrency(
-        with id: String,
+        withID currencyID: String,
         dateRange: (from: Date, to: Date)
     ) -> AnyPublisher<RateDynamics, Error>
 }
 
 final class RateDynamicsService {
-    
+
     private let apiService: DynamicsAPI
     private lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -30,7 +30,7 @@ final class RateDynamicsService {
 extension RateDynamicsService: RateDynamicsProvider {
 
     func dynamicsForCurrency(
-        with currencyID: String,
+        withID currencyID: String,
         dateRange: (from: Date, to: Date)
     ) -> AnyPublisher<RateDynamics, Error> {
         apiService
@@ -52,7 +52,7 @@ extension RateDynamicsService: RateDynamicsProvider {
                 else {
                     return nil
                 }
-                
+
                 return RateDynamics.CurrencyValue(
                     date: date,
                     value: value,

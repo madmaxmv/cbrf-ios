@@ -27,8 +27,8 @@ final class APIProviderImpl: APIProvider {
         for request: APIRequest<Response>,
         using decoder: Decoder
     ) -> AnyPublisher<Response, APIError> where
-        Response: Decodable, Decoder.Input == Data
-    {
+        Response: Decodable, Decoder.Input == Data {
+
         session.dataTaskPublisher(for: urlRequest(request))
             .mapError(APIError.networking)
             .map(\.data)

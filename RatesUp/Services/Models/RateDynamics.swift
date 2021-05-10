@@ -16,4 +16,3 @@ struct RateDynamics: Equatable {
         let originValue: String
     }
 }
-

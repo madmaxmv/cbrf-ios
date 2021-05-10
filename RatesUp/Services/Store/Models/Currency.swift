@@ -13,9 +13,9 @@ class Currency: NSManagedObject {
     @NSManaged var characterCode: String
     @NSManaged var name: String
     @NSManaged var nominal: Int64
-    
+
     @NSManaged var rates: [Rate]
-    
+
 }
 
 extension Currency: Managed { }

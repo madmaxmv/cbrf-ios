@@ -11,7 +11,7 @@ struct CurrencyRateState {
 
     let currencyRate: CurrencyRate
     var isLoading: Bool = false
-    var dynamics: RateDynamicsResult? = nil
+    var dynamics: RateDynamicsResult?
 }
 
 enum CurrencyRateEvent {

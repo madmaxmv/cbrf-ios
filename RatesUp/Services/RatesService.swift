@@ -15,7 +15,7 @@ protocol RatesProvider {
 }
 
 extension RatesProvider {
-    
+
     func rates(on date: Date) -> AnyPublisher<ExchangeRates, Error> {
         rates(on: date, sortingPolicy: .standard)
     }
@@ -45,7 +45,7 @@ final class RatesService {
                     : promise(.success(rates))
             } ?? promise(.failure(RatesError.storeUnavailable))
         }
-        .catch { error -> AnyPublisher<[CurrencyRate], Error> in
+        .catch { _ -> AnyPublisher<[CurrencyRate], Error> in
             self.remote
                 .send(request: RatesRequest(date: date))
                 .map { response in

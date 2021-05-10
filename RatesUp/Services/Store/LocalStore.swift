@@ -11,12 +11,12 @@ class LocalStore {
 
     init(withStoreAtDirectory storeURL: URL) throws {
         coordinator = NSPersistentStoreCoordinator(managedObjectModel: LocalStore.managedObjectModel)
-        
+
         let storeOptions: [AnyHashable: Any] = [
             NSInferMappingModelAutomaticallyOption: true,
             NSMigratePersistentStoresAutomaticallyOption: true
         ]
-        
+
         try coordinator.addPersistentStore(ofType: NSSQLiteStoreType,
                                            configurationName: nil,
                                            at: storeURL.appendingPathComponent(Name.store),
@@ -30,7 +30,7 @@ class LocalStore {
         managedObjectContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
         return managedObjectContext
     }()
-    
+
     lazy var writeContext: NSManagedObjectContext = {
         let coordinator = self.coordinator
         var managedObjectContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
@@ -50,7 +50,7 @@ class LocalStore {
         let modelURL = Bundle(for: self).url(forResource: Name.model, withExtension: "momd")!
         return NSManagedObjectModel(contentsOf: modelURL)!
     }
-    
+
     /// Очистка файлов Core Data Store.
     private static func destroyPersistentStore(atDirectory url: URL) throws {
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)

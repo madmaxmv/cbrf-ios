@@ -8,7 +8,7 @@ struct RatesSort {
     enum Policy {
         case standard
     }
-    
+
     static func sort(using policy: Policy) -> (([CurrencyRate]) -> [CurrencyRate]) {
         switch policy {
         case .standard:
@@ -29,7 +29,7 @@ struct RatesSort {
             allRates.remove(at: eurIndex)
         }
         sortedRates.append(contentsOf: allRates.sorted(by: <))
-        
+
         return sortedRates
     }
 }

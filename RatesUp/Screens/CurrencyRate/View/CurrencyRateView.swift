@@ -9,12 +9,12 @@ import SwiftUICharts
 struct CurrencyRateView: View {
 
     class StateObject: ObservableObject {
-        @Published var currencyState: CurrencyState? = nil
-        @Published var dynamicsState: DynamicsState? = nil
+        @Published var currencyState: CurrencyState?
+        @Published var dynamicsState: DynamicsState?
     }
     @ObservedObject private var stateObject = StateObject()
     private var eventPublisher = PassthroughSubject<Event, Never>()
-    
+
     var body: some View {
 
         if let currencyState = stateObject.currencyState {
@@ -22,22 +22,22 @@ struct CurrencyRateView: View {
                 Text(currencyState.icon)
                     .font(.system(size: 120))
                     .padding(40)
-                
+
                 Text(currencyState.code)
                     .font(.title)
-                
+
                 Text(currencyState.details)
                     .font(.subheadline)
                     .foregroundColor(Color.gray)
                     .padding(4)
-                
+
                 if let dynamicsState = stateObject.dynamicsState {
                     LineView(
                         data: dynamicsState.values,
                         style: Styles.barChartStyleNeonBlueLight
                     ).padding(20)
                 }
-                
+
                 Spacer()
 
                 Button("Done") { eventPublisher.send(.didTapDone) }
@@ -92,7 +92,7 @@ extension CurrencyRateView {
     }
 }
 
-struct CurrencyRateView_Preview: PreviewProvider {
+struct CurrencyRateViewPreview: PreviewProvider {
 
     static var previews: some View {
         CurrencyRateView()
