@@ -35,5 +35,3 @@ extension APIMethod {
         .get(queryItems())
     }
 }
-
-

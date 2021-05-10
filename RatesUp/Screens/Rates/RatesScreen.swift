@@ -9,7 +9,7 @@ struct RatesScreen: Screen {
 
     let screens: AppScreens
     let services: AppServices
-    
+
     func build(navigator: ScreenNavigator, payload: Any?) -> UIViewController {
         RatesViewController(
             store: RatesStateStore(

@@ -450,6 +450,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9451DEA620134B3700F69318 /* Build configuration list for PBXNativeTarget "RatesUp" */;
 			buildPhases = (
+				1D9FF8682649D492005EF8F4 /* ShellScript */,
 				9451DE7A20134B3600F69318 /* Sources */,
 				9451DE7B20134B3600F69318 /* Frameworks */,
 				9451DE7C20134B3600F69318 /* Resources */,
@@ -588,6 +589,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D9FF8682649D492005EF8F4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nmint run swiftlint autocorrect\nmint run swiftlint\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9451DE7A20134B3600F69318 /* Sources */ = {

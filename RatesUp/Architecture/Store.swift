@@ -37,4 +37,3 @@ final class Store<State, Event> {
         state.send(current)
     }
 }
-

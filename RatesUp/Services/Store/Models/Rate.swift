@@ -8,7 +8,7 @@ import CoreData
 class Rate: NSManagedObject {
     @NSManaged var date: Date
     @NSManaged var value: Double
-    
+
     @NSManaged var currency: Currency
 }
 
@@ -20,7 +20,7 @@ extension Rate {
             NSPredicate(format: "currency = %@", currency),
             NSPredicate(format: "date = %@", date as CVarArg)
         ]
-        
+
         return NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
     }
 }

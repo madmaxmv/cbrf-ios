@@ -38,11 +38,11 @@ extension CurrencyRate {
 }
 
 extension CurrencyRate: Comparable {
-    static func <(lhs: CurrencyRate, rhs: CurrencyRate) -> Bool {
+    static func < (lhs: CurrencyRate, rhs: CurrencyRate) -> Bool {
         return lhs.characterCode < rhs.characterCode
     }
-    
-    static func ==(lhs: CurrencyRate, rhs: CurrencyRate) -> Bool {
+
+    static func == (lhs: CurrencyRate, rhs: CurrencyRate) -> Bool {
         return lhs.code == rhs.code
     }
 }
@@ -124,4 +124,3 @@ enum Flag: String {
         }
     }
 }
-

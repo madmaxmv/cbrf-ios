@@ -8,7 +8,7 @@ import Combine
 final class CurrencyRateEffects {
 
     let effects: Effects<CurrencyRateState, CurrencyRateEvent>
-    
+
     init(services: AppServices) {
 
         effects = { state, event in
@@ -16,7 +16,7 @@ final class CurrencyRateEffects {
             case .loadDynamics:
                 return services.dynamicsProvider
                     .dynamicsForCurrency(
-                        with: state.currencyRate.id,
+                        withID: state.currencyRate.id,
                         dateRange: (
                             from: Date().addingTimeInterval(-60*60*24*30),
                             to: Date()

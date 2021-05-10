@@ -6,14 +6,14 @@ import Foundation
 import CoreData
 
 extension NSManagedObjectContext {
-    
+
     public func insertObject<A: NSManagedObject>() -> A where A: Managed {
         guard let obj = NSEntityDescription.insertNewObject(forEntityName: A.entityName, into: self) as? A else {
             fatalError("Wrong object type")
         }
         return obj
     }
-    
+
     @discardableResult
     public func saveOrRollback() -> Bool {
         do {
@@ -25,13 +25,13 @@ extension NSManagedObjectContext {
             return false
         }
     }
-    
+
     public func performSaveOrRollback() {
         perform {
             self.saveOrRollback()
         }
     }
-    
+
     public func performChanges(block: @escaping (NSManagedObjectContext) -> Void) {
         perform { [weak self] in
             if let `self` = self {
@@ -40,7 +40,7 @@ extension NSManagedObjectContext {
             }
         }
     }
-    
+
     public func perform(_ block: @escaping (NSManagedObjectContext) -> Void) {
         perform { [weak self] in
             if let `self` = self {
@@ -48,7 +48,7 @@ extension NSManagedObjectContext {
             }
         }
     }
-    
+
     public func performAndWait(_ block: @escaping (NSManagedObjectContext) -> Void) {
         performAndWait { [weak self] in
             if let `self` = self {
