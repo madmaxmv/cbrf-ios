@@ -9,7 +9,7 @@ struct RatesSort {
         case standard
     }
     
-    static func sort(for policy: Policy) -> (([CurrencyRate]) -> [CurrencyRate]) {
+    static func sort(using policy: Policy) -> (([CurrencyRate]) -> [CurrencyRate]) {
         switch policy {
         case .standard:
             return standardSort

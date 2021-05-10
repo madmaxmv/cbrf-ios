@@ -7,7 +7,7 @@ import Nivelir
 
 protocol AppServices {
     
-    var ratesService: RatesService { get }
+    var ratesProvider: RatesProvider { get }
     var dynamicsProvider: RateDynamicsProvider { get }
 
     var screenNavigator: ScreenNavigator { get }
@@ -39,7 +39,7 @@ class Services: AppServices {
     
     lazy var dateConverter: DateConverter = { .gregorian }()
     
-    lazy var ratesService: RatesService = {
+    lazy var ratesProvider: RatesProvider = {
         RatesService(
             remote: remote,
             store: store,

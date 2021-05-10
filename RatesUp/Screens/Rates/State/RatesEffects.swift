@@ -16,7 +16,7 @@ final class RatesEffects {
         effects = { state, event in
             switch event {
             case .initial:
-                return services.ratesService
+                return services.ratesProvider
                     .rates(on: Date())
                     .map { .ratesResult(.success($0)) }
                     .replaceError(
