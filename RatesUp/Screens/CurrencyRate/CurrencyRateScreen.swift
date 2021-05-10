@@ -17,9 +17,9 @@ struct CurrencyRateScreen: Screen {
                     currencyRate: currencyRate
                 ),
                 reducer: CurrencyRateState.reducer,
-                environment: CurrencyRateEnvironment(
+                effects: CurrencyRateEffects(
                     services: services
-                )
+                ).effects
             )
         )
     }

@@ -5,11 +5,28 @@
 import Foundation
 import Combine
 
+// MARK: - RatesProvider
+protocol RatesProvider {
+
+    func rates(
+        on date: Date,
+        sortingPolicy: RatesSort.Policy
+    ) -> AnyPublisher<ExchangeRates, Error>
+}
+
+extension RatesProvider {
+    
+    func rates(on date: Date) -> AnyPublisher<ExchangeRates, Error> {
+        rates(on: date, sortingPolicy: .standard)
+    }
+}
+
+// MARK: - RatesService
 final class RatesService {
     private let remote: RatesAPI
     private let store: RatesStore?
     private let dateConverter: DateConverter
-    
+
     init(
         remote: RatesAPI,
         store: RatesStore?,
@@ -19,28 +36,8 @@ final class RatesService {
         self.store = store
         self.dateConverter = dateConverter
     }
-    
-    func rates(
-        on date: Date,
-        sortedUsing policy: RatesSort.Policy = .standard
-    ) -> AnyPublisher<ExchangeRates, Error> {
-        let today = dateConverter.date(removedTimeOffsetFor: date)
-        let sortMethod = RatesSort.sort(for: policy)
 
-        return dailyRates(on: today)
-            .map { ExchangeRates(rates: sortMethod($0)) }
-            .eraseToAnyPublisher()
-    }
-
-    func currencies() -> Future<[Currency], Error> {
-        return Future { promise in
-            self.store?.currencies { currencies in
-                promise(.success(currencies))
-            }
-        }
-    }
-
-    func dailyRates(on date: Date) -> AnyPublisher<[CurrencyRate], Error> {
+    private func fetchRates(on date: Date) -> AnyPublisher<[CurrencyRate], Error> {
         return Future { promise in
             self.store?.getRates(on: date) { rates in
                 rates.isEmpty
@@ -63,6 +60,20 @@ final class RatesService {
                 .eraseToAnyPublisher()
         }
         .eraseToAnyPublisher()
+    }
+}
+
+extension RatesService: RatesProvider {
+
+    func rates(
+        on date: Date,
+        sortingPolicy: RatesSort.Policy = .standard
+    ) -> AnyPublisher<ExchangeRates, Error> {
+        let sortMethod = RatesSort.sort(using: sortingPolicy)
+
+        return fetchRates(on: date)
+            .map { ExchangeRates(rates: sortMethod($0)) }
+            .eraseToAnyPublisher()
     }
 }
 

@@ -15,10 +15,10 @@ struct RatesScreen: Screen {
             store: RatesStateStore(
                 initial: .initial,
                 reducer: RatesState.reducer,
-                environment: RatesEnvironment(
+                effects: RatesEffects(
                     screens: screens,
                     services: services
-                )
+                ).effects
             )
         )
     }
